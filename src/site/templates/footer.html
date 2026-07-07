@@ -1,0 +1,107 @@
+<footer class="py-5 mt-auto">
+    <div class="container py-4">
+         <div class="row g-5">
+             <!-- Brand & Mission (Dual Logos) -->
+             <div class="col-lg-4 col-md-6">
+                 <a href="{{BASE_URL}}/" class="d-flex align-items-center mb-4 text-decoration-none">
+                     <img src="{{BASE_URL}}/assets/logo.svg" alt="Qsite" class="logo-footer logo-light-theme">
+                     <img src="{{BASE_URL}}/assets/logo-inverted.svg" alt="Qsite" class="logo-footer logo-dark-theme">
+                 </a>
+                 <p class="text-muted mb-4 pe-lg-5">
+                     Arquitetura de alta performance. Eliminamos a complexidade para que você foque apenas no
+                     crescimento do seu negócio.
+                 </p>
+             </div>
+
+             <!-- Quick Links -->
+             <div class="col-lg-2 col-md-6">
+                 <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Links Rápidos</h6>
+                 <ul class="list-unstyled d-flex flex-column gap-2">
+                     <li><a href="{{BASE_URL}}/" class="text-decoration-none transition-all">Home</a></li>
+                     <!-- BLOG_NAV_LINK -->
+                     <li><a href="{{BASE_URL}}/blog" class="text-decoration-none transition-all">Blog</a></li>
+                     <!-- END_BLOG_NAV_LINK -->
+                     <!-- PODCAST_NAV_LINK -->
+                     <li><a href="{{BASE_URL}}/podcast" class="text-decoration-none transition-all">Podcast</a></li>
+                     <!-- END_PODCAST_NAV_LINK -->
+                     <li><a href="{{BASE_URL}}/contato" class="text-decoration-none transition-all">Contato</a></li>
+                 </ul>
+             </div>
+
+             <!-- Legal/Help -->
+             <div class="col-lg-2 col-md-6">
+                 <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Suporte</h6>
+                 <ul class="list-unstyled d-flex flex-column gap-2">
+                     <li><a href="{{BASE_URL}}/faq" class="text-decoration-none transition-all">FAQ</a></li>
+                     <li><a href="{{BASE_URL}}/sobre" class="text-decoration-none transition-all">Sobre Nós</a></li>
+                     <li><a href="{{BASE_URL}}/privacidade" class="text-decoration-none transition-all">Privacidade</a></li>
+                     <li><a href="{{BASE_URL}}/termos" class="text-decoration-none transition-all">Termos</a></li>
+                     <!-- BIO_NAV_LINK -->
+                     <li class="mt-2 pt-2 border-top border-secondary border-opacity-10">
+                         <a href="{{BASE_URL}}/bio" class="text-decoration-none transition-all small">
+                             <i class="bi bi-people me-1"></i> Lista de Bios
+                         </a>
+                     </li>
+                     <!-- END_BIO_NAV_LINK -->
+                 </ul>
+             </div>
+
+             <!-- Newsletter -->
+             <div class="col-lg-4 col-md-6">
+                 <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Comunidade</h6>
+                 <p class="text-muted mb-4">Acompanhe as novidades e participe da conversa em nossas redes.</p>
+
+                 <div id="social-icons-container" class="d-flex flex-wrap gap-3"></div>
+
+                 <script>
+                     document.addEventListener("DOMContentLoaded", function () {
+                         if (typeof CONFIG === 'undefined' || !CONFIG.social) return;
+
+                         const socialMap = {
+                             discord: 'bi-discord',
+                             twitter: 'bi-twitter-x',
+                             instagram: 'bi-instagram',
+                             linkedin: 'bi-linkedin',
+                             facebook: 'bi-facebook',
+                             tiktok: 'bi-tiktok'
+                         };
+
+                         const container = document.getElementById('social-icons-container');
+                         let html = '';
+
+                         for (const [key, iconClass] of Object.entries(socialMap)) {
+                             const url = CONFIG.social[key];
+                             if (url && url.trim() !== '') {
+                                 html += `<a href="${url}" target="_blank" class="social-icon-link d-flex align-items-center justify-content-center bg-card-custom text-theme-icon rounded-circle text-decoration-none transition-all" style="width: 48px; height: 48px; transition: all 0.3s ease;" aria-label="${key}">
+                                     <i class="bi ${iconClass} fs-5"></i>
+                                 </a>`;
+                             }
+                         }
+                         container.innerHTML = html;
+                     });
+                 </script>
+             </div>
+         </div>
+     </div>
+
+     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center pt-5 mt-5 footer-bottom text-center text-md-start">
+         <p class="mb-0 text-muted fs-7">&copy; 2025 Qsite - Agência Quadri. Todos os direitos reservados.
+
+             <!-- BIO_FOOTER_LINK -->
+             <a href="{{BASE_URL}}/bio" class="text-decoration-none ms-2 uppercase" style="font-size: 0.6rem; letter-spacing: 1px;">BIO</a>
+             <!-- END_BIO_FOOTER_LINK -->
+
+             <!-- CATALOG_FOOTER_LINK -->
+             <a href="{{BASE_URL}}/catalogo" class="text-decoration-none ms-2 uppercase" style="font-size: 0.6rem; letter-spacing: 1px;">GALERIA</a>
+             <!-- END_CATALOG_FOOTER_LINK -->
+
+             <!-- PODCAST_FEED_LINK -->
+             <a href="{{BASE_URL}}/podcast/feed.xml" target="_blank" class="text-decoration-none ms-2 uppercase" style="font-size: 0.6rem; letter-spacing: 1px;">FEED</a>
+             <!-- END_PODCAST_FEED_LINK -->
+         </p>
+         <p class="mb-0 text-muted fs-7 mt-2 mt-md-0">
+             <span class="opacity-75">Desenvolvido por</span>
+             <a href="https://quadri.com.br" class="text-decoration-none fw-bold">Agência Quadri</a>
+         </p>
+     </div>
+ </footer>

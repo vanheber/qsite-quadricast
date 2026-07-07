@@ -1,0 +1,142 @@
+/* 
+   BIO MODULE - INTEGRATED BRANDING (Boilerplate)
+*/
+
+:root {
+  --bio-bg-page: var(--bs-primary, #0a0a0a);
+  --bio-card-container: rgba(255, 255, 255, 0.05);
+  --bio-btn-bg: rgba(255, 255, 255, 0.1);
+  --bio-btn-hover: rgba(255, 255, 255, 0.15);
+  --bio-border-color: rgba(255, 255, 255, 0.1);
+  --bio-text-primary: var(--bs-light, #ffffff);
+  --bio-text-secondary: rgba(255, 255, 255, 0.6);
+  --bio-accent: var(--bs-secondary, #0d6efd);
+  --bio-radius: var(--bs-border-radius, 12px);
+}
+
+body.bio-body {
+  color: var(--bio-text-primary);
+  font-family: var(--font-sans), var(--bs-body-font-family, system-ui);
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.bio-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--bio-card-container);
+  backdrop-filter: blur(20px);
+  border-radius: calc(var(--bio-radius) * 2);
+  padding: 3rem 2rem;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border: 1px solid var(--bio-border-color);
+  text-align: center;
+}
+
+.bio-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bio-accent);
+  margin-bottom: 1.5rem;
+}
+
+.bio-name {
+  font-family: var(--font-headings), var(--bs-headings-font-family, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.bio-description {
+  color: var(--bio-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+.bio-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bio-link-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--bio-btn-bg);
+  border: 1px solid var(--bio-border-color);
+  border-radius: var(--bio-radius);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bio-link-card:hover {
+  background-color: var(--bio-btn-hover);
+  border-color: var(--bio-accent);
+  transform: translateY(-2px);
+}
+
+.bio-link-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bio-accent);
+  border-radius: calc(var(--bio-radius) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.bio-link-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.bio-link-title {
+  display: block;
+  font-weight: 600;
+  color: var(--bio-text-primary);
+  font-size: 0.93rem;
+}
+
+.bio-link-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--bio-text-secondary);
+}
+
+.bio-link-action {
+  color: var(--bio-accent);
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.bio-logo {
+  height: 30px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+  opacity: 0.3;
+  font-size: 0.75rem;
+}
+
+.bio-vcard-highlight {
+  background-color: rgba(var(--bs-primary-rgb, 13, 110, 253), 0.1) !important;
+  border-color: var(--bio-accent) !important;
+}
+
+.bio-logo-large {
+  max-height: 50px !important;
+}

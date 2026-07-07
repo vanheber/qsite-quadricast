@@ -1,0 +1,491 @@
+<!-- HERO BLOCK (Modern Card Slider) -->
+<section class="py-4 mt-4" data-bs-theme="dark">
+    <div class="container">
+        <!-- The Card Container -->
+        <div class="rounded-5 shadow-lg position-relative overflow-hidden" style="min-height: 80vh;">
+
+            <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                <div class="carousel-indicators mb-5">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner h-100">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active h-100" data-bs-interval="5000">
+                        <div class="d-flex align-items-center justify-content-center h-100 position-relative text-center text-white p-5"
+                            style="min-height: 80vh; background-image: url('https://picsum.photos/seed/bloom/1920/1080'); background-size: cover; background-position: center;">
+
+                            <!-- Overlay -->
+                            <div class="position-absolute top-0 start-0 w-100 h-100"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));"></div>
+
+                            <div class="position-relative z-1 content-max-width" style="max-width: 800px;">
+                                <span
+                                    class="badge bg-white bg-opacity-25 text-white border border-white border-opacity-25 rounded-pill px-3 py-2 mb-4 backdrop-blur tracking-wide text-uppercase fs-7">
+                                    ✨ O Futuro é Estático
+                                </span>
+                                <h1 class="display-2 fw-bold mb-4 animate-fade-in-up">Performance que Escala</h1>
+                                <p class="lead mb-5 fs-4 text-white-50 animate-fade-in-up delay-100">
+                                    Segurança absoluta, zero manutenção e velocidade que o Google ama.
+                                </p>
+                                <div class="d-flex justify-content-center gap-3 hero-btns animate-fade-in-up delay-200">
+                                    <a href="#sobre"
+                                        class="btn btn-white text-black rounded-pill px-5 fw-bold shadow-sm">Começar</a>
+                                    <a href="{{BASE_URL}}/blog"
+                                        class="btn btn-outline-light rounded-pill px-5 fw-bold backdrop-blur">Ver
+                                        Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item h-100" data-bs-interval="5000">
+                        <div class="d-flex align-items-center justify-content-center h-100 position-relative text-center text-white p-5"
+                            style="min-height: 80vh; background-image: url('https://picsum.photos/seed/design/1920/1080'); background-size: cover; background-position: center;">
+
+                            <!-- Overlay -->
+                            <div class="position-absolute top-0 start-0 w-100 h-100"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));"></div>
+
+                            <div class="position-relative z-1 content-max-width" style="max-width: 800px;">
+                                <span
+                                    class="badge bg-white bg-opacity-25 text-white border border-white border-opacity-25 rounded-pill px-3 py-2 mb-4 backdrop-blur tracking-wide text-uppercase fs-7">
+                                    🎨 Design Moderno
+                                </span>
+                                <h1 class="display-2 fw-bold mb-4 animate-fade-in-up">Beleza e Função</h1>
+                                <p class="lead mb-5 fs-4 text-white-50 animate-fade-in-up delay-100">
+                                    Interfaces limpas que convertem visitantes em clientes fieis.
+                                </p>
+                                <div class="d-flex justify-content-center gap-3 hero-btns animate-fade-in-up delay-200">
+                                    <a href="{{BASE_URL}}/contato"
+                                        class="btn btn-white text-black rounded-pill px-5 fw-bold shadow-sm">Fale
+                                        Conosco</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item h-100" data-bs-interval="5000">
+                        <div class="d-flex align-items-center justify-content-center h-100 position-relative text-center text-white p-5"
+                            style="min-height: 80vh; background-image: url('https://picsum.photos/seed/growth/1920/1080'); background-size: cover; background-position: center;">
+
+                            <!-- Overlay -->
+                            <div class="position-absolute top-0 start-0 w-100 h-100"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));"></div>
+
+                            <div class="position-relative z-1 content-max-width" style="max-width: 800px;">
+                                <span
+                                    class="badge bg-white bg-opacity-25 text-white border border-white border-opacity-25 rounded-pill px-3 py-2 mb-4 backdrop-blur tracking-wide text-uppercase fs-7">
+                                    🚀 Growth Ready
+                                </span>
+                                <h1 class="display-2 fw-bold mb-4 animate-fade-in-up">Escale Sem Medo</h1>
+                                <p class="lead mb-5 fs-4 text-white-50 animate-fade-in-up delay-100">
+                                    Sua infraestrutura não pode ser o gargalo do seu crescimento.
+                                </p>
+                                <div class="d-flex justify-content-center gap-3 hero-btns animate-fade-in-up delay-200">
+                                    <a href="{{BASE_URL}}/blog"
+                                        class="btn btn-white text-black rounded-pill px-5 fw-bold shadow-sm">Ler
+                                        Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. COMPANIES SECTION (Floating Chips) -->
+<div class="container mt-n5 position-relative z-2 mb-5">
+    <div class="text-center mb-4">
+        <p class="text-uppercase text-muted fs-7 fw-bold tracking-wide">TRUSTED BY INNOVATORS</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4"
+        style="max-width: 900px; margin: 0 auto;">
+
+        <!-- Icon 1 -->
+        <div class="p-3 bg-card-custom rounded-4 d-flex align-items-center justify-content-center hover-lift transition-all"
+            style="width: 80px; height: 80px;">
+            <i class="bi bi-apple fs-2 text-theme-icon"></i>
+        </div>
+
+        <!-- Icon 2 -->
+        <div class="p-3 bg-card-custom rounded-4 d-flex align-items-center justify-content-center hover-lift transition-all"
+            style="width: 80px; height: 80px;">
+            <i class="bi bi-google fs-2 text-theme-icon"></i>
+        </div>
+
+        <!-- Icon 3 -->
+        <div class="p-3 bg-card-custom rounded-4 d-flex align-items-center justify-content-center hover-lift transition-all"
+            style="width: 80px; height: 80px;">
+            <i class="bi bi-microsoft fs-2 text-theme-icon"></i>
+        </div>
+
+        <!-- Icon 4 -->
+        <div class="p-3 bg-card-custom rounded-4 d-flex align-items-center justify-content-center hover-lift transition-all"
+            style="width: 80px; height: 80px;">
+            <i class="bi bi-spotify fs-2 text-theme-icon"></i>
+        </div>
+
+        <!-- Icon 5 -->
+        <div class="p-3 bg-card-custom rounded-4 d-flex align-items-center justify-content-center hover-lift transition-all"
+            style="width: 80px; height: 80px;">
+            <i class="bi bi-slack fs-2 text-theme-icon"></i>
+        </div>
+
+    </div>
+</div>
+
+<!-- 3. PROBLEM / AGITATION (Grid Layout) -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4 d-flex align-items-stretch">
+            <!-- Texto Intro -->
+            <div class="col-lg-12 mb-4 text-center">
+                <span class="badge bg-danger-subtle text-danger mb-3 px-3 py-2 rounded-pill fw-bold">O PROBLEMA</span>
+                <h2 class="display-6 fw-bold">Por que sites tradicionais falham?</h2>
+            </div>
+
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card p-5 h-100 position-relative overflow-hidden group-hover">
+                    <div class="mb-4 icon-box">
+                        <i class="bi bi-hourglass-bottom display-4 text-danger"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Lentidão</h4>
+                    <p class="text-muted mb-4">Sites Wordpress carregando em 5s+ perdem 40% do tráfego.</p>
+                    <div class="progress bg-secondary bg-opacity-10" style="height: 6px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">Performance média</small>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card p-5 h-100 position-relative overflow-hidden">
+                    <div class="mb-4 icon-box">
+                        <i class="bi bi-shield-x display-4 text-warning"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Segurança</h4>
+                    <p class="text-muted">Plugins vulneráveis são a porta de entrada para ataques constantes.</p>
+                    <div class="d-flex gap-2 mt-4">
+                        <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-10">SQL
+                            Injection</span>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-10">Malware</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card p-5 h-100 position-relative overflow-hidden">
+                    <div class="mb-4 icon-box">
+                        <i class="bi bi-wallet2 display-4 text-secondary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Custos Altos</h4>
+                    <p class="text-muted">Hospedagem VPS + Manutenção Mensal + Dev Freelancer.</p>
+                    <h3 class="fw-bold mt-3 text-secondary">R$ 5.000+/ano</h3>
+                    <small class="text-muted mt-2 d-block">Custo médio de manutenção</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. TESTIMONIALS (Grid Layout) -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold">O que dizem os Mestres</h2>
+        </div>
+        <div class="row g-4">
+
+            <!-- Depoimento 1 -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100 d-flex flex-column backdrop-blur transition-all hover-lift">
+                    <div class="mb-3">
+                        <i class="bi bi-quote fs-1 text-body-tertiary"></i>
+                    </div>
+                    <blockquote class="text-body-secondary flex-grow-1 mb-4 fst-italic">
+                        "O QSITE não é apenas um site, é uma vantagem competitiva injusta. Nosso SEO decolou na primeira
+                        semana."
+                    </blockquote>
+                    <div class="d-flex align-items-center gap-3 mt-auto">
+                        <div class="bg-primary bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 shadow-sm"
+                            style="width: 42px; height: 42px;">SC</div>
+                        <div>
+                            <div class="fw-bold fs-7">Sarah Connor</div>
+                            <div class="text-body-tertiary fs-9 text-uppercase tracking-wide">CTO, Cyberdyne</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100 d-flex flex-column backdrop-blur transition-all hover-lift">
+                    <div class="mb-3">
+                        <i class="bi bi-quote fs-1 text-body-tertiary"></i>
+                    </div>
+                    <blockquote class="text-body-secondary flex-grow-1 mb-4 fst-italic">
+                        "Finalmente livre de plugins e atualizações de segurança constantes. A paz de espírito vale cada
+                        centavo."
+                    </blockquote>
+                    <div class="d-flex align-items-center gap-3 mt-auto">
+                        <div class="bg-info bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 shadow-sm"
+                            style="width: 42px; height: 42px;">MS</div>
+                        <div>
+                            <div class="fw-bold fs-7">Marco Silva</div>
+                            <div class="text-body-tertiary fs-9 text-uppercase tracking-wide">Founder, E-Shop</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Depoimento 3 -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100 d-flex flex-column backdrop-blur transition-all hover-lift">
+                    <div class="mb-3">
+                        <i class="bi bi-quote fs-1 text-body-tertiary"></i>
+                    </div>
+                    <blockquote class="text-body-secondary flex-grow-1 mb-4 fst-italic">
+                        "A velocidade de carregamento é insana. O Google PageSpeed bateu 100/100 mobile pela primeira
+                        vez."
+                    </blockquote>
+                    <div class="d-flex align-items-center gap-3 mt-auto">
+                        <div class="bg-warning bg-gradient text-dark rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 shadow-sm"
+                            style="width: 42px; height: 42px;">EL</div>
+                        <div>
+                            <div class="fw-bold fs-7">Elena Lima</div>
+                            <div class="text-body-tertiary fs-9 text-uppercase tracking-wide">Marketing Director</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 5. SOLUTION SECTION (Split Block) -->
+<section class="py-5">
+    <div class="container">
+        <div class="bg-dark text-white rounded-5 shadow-lg overflow-hidden" data-bs-theme="dark">
+            <div class="row g-0">
+                <div class="col-lg-6 p-5 d-flex flex-column justify-content-center">
+                    <span
+                        class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-10 mb-3 w-auto align-self-start px-3 py-2 rounded-pill">SOLUÇÃO
+                        DEFINITIVA</span>
+                    <h2 class="display-5 fw-bold mb-4">Arquitetura Estática Moderna</h2>
+                    <p class="lead text-white-50 mb-5">Esqueça bancos de dados lentos. O QSITE gera arquivos puros,
+                        prontos para dominar a web.</p>
+
+                    <div class="d-grid gap-3">
+                        <div class="card d-flex flex-row gap-3 align-items-center p-3 hover-lift">
+                            <i class="bi bi-shield-check fs-2 text-success"></i>
+                            <div>
+                                <h5 class="fw-bold mb-0">Imune a Hacks</h5>
+                                <small class="text-white-50">Sem banco de dados para invadir.</small>
+                            </div>
+                        </div>
+                        <div class="card d-flex flex-row gap-3 align-items-center p-3 hover-lift">
+                            <i class="bi bi-server fs-2 text-info"></i>
+                            <div>
+                                <h5 class="fw-bold mb-0">Backup Automatizado</h5>
+                                <small class="text-white-50">GitHub Pages ou Vercel.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 bg-secondary position-relative"
+                    style="min-height: 400px; background-image: url('https://picsum.photos/seed/code/800/800'); background-size: cover; background-position: center;">
+                    <div
+                        class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-to-r from-dark to-transparent opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. FEATURES / BENEFITS -->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Por que escolher o QSITE?</h2>
+            <p class="text-muted fs-5">Tecnologia de ponta simplificada para humanos.</p>
+        </div>
+        <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div
+                    class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur border border-white border-opacity-10">
+                    <i class="bi bi-lightning-charge-fill display-4 text-warning mb-3"></i>
+                    <h4 class="fw-bold">Ultra Rápido</h4>
+                    <p class="text-muted">Carregamento instantâneo que o Google ama.</p>
+                </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div
+                    class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur border border-white border-opacity-10">
+                    <i class="bi bi-google display-4 text-info mb-3"></i>
+                    <h4 class="fw-bold">SEO Nativo</h4>
+                    <p class="text-muted">Sitemaps, Meta Tags e Schema gerados automaticamente.</p>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div
+                    class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur border border-white border-opacity-10">
+                    <i class="bi bi-mic-fill display-4 text-danger mb-3"></i>
+                    <h4 class="fw-bold">Podcast Ready</h4>
+                    <p class="text-muted">Hospede seus áudios sem pagar plataformas caras.</p>
+                </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div
+                    class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur border border-white border-opacity-10">
+                    <i class="bi bi-person-vcard-fill display-4 text-success mb-3"></i>
+                    <h4 class="fw-bold">Bio Link</h4>
+                    <p class="text-muted">Substitua o Linktree com um módulo próprio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. HOW IT WORKS (3 Steps) -->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-6">Como Funciona</h2>
+            <p class="text-muted fs-5">Simples como 1, 2, 3.</p>
+        </div>
+        <div class="row g-4 text-center position-relative">
+            <!-- Line connector (Desktop only) -->
+            <div class="d-none d-lg-block position-absolute start-0 end-0 top-50 translate-middle-y border-top border-2 border-dashed z-0"
+                style="left:15%; right:15%;"></div>
+
+            <div class="col-lg-4 z-1">
+                <div class="p-3 d-inline-block">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 shadow"
+                        style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">1</div>
+                    <h4 class="fw-bold bg-body-secondary rounded-pill p-2 fs-6">Preencha o Form</h4>
+                    <p class="text-muted px-4">Envie seu conteúdo via Google Forms simples e rápido.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 z-1">
+                <div class="p-3 d-inline-block">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 shadow"
+                        style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">2</div>
+                    <h4 class="fw-bold bg-body-secondary rounded-pill p-2 fs-6">IA Processa</h4>
+                    <p class="text-muted px-4">O GEMINI formata, otimiza e organiza tudo automaticamente.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 z-1">
+                <div class="p-3 d-inline-block">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 shadow"
+                        style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">3</div>
+                    <h4 class="fw-bold bg-body-secondary rounded-pill p-2 fs-6">Está no Ar</h4>
+                    <p class="text-muted px-4">Seu site é atualizado instantaneamente sem você tocar em código.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. OBJECTION HANDLING (FAQ) -->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold text-center mb-5">Perguntas Frequentes</h2>
+                <div class="accordion accordion-dark" id="accordionFAQ">
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq1">
+                                Preciso saber programar?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Não! Todo o gerenciamento de conteúdo é feito via Google Forms e Planilhas. O código
+                                roda sozinho.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq2">
+                                E se eu quiser mudar o design?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                O QSITE é baseado em templates Bootstrap 5. Você pode editar o HTML/CSS ou contratar
+                                qualquer desenvolvedor web júnior para ajustar.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq3">
+                                Funciona para e-commerce?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                O foco atual é conteúdo (Blog, Podcast, Bio, Institucional). Para vendas, recomendamos
+                                integrar botões de pagamento (Stripe/MercadoPago) ou links externos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. FINAL CTA SECTION (Urgency + Value) -->
+<section class="py-5 bg-primary bg-opacity-25 text-white text-center" data-bs-theme="dark">
+    <div class="container py-5">
+        <h2 class="display-4 fw-bold mb-4">Pronto para o Próximo Nível?</h2>
+        <p class="lead mb-5 opacity-75 fs-3 col-lg-8 mx-auto">Pare de gastar com hospedagem e plugins lentos.<br />Tenha
+            um
+            site de elite hoje.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{BASE_URL}}/contato"
+                class="btn btn-light rounded-pill px-5 fw-bold shadow-lg hover-scale">Começar Agora</a>
+            <a href="{{BASE_URL}}/blog" class="btn btn-outline-light rounded-pill px-5 fw-bold hover-scale">Ver
+                Exemplos</a>
+        </div>
+    </div>
+</section>

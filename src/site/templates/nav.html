@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-transition" id="mainNav">
+    <div class="container position-relative">
+        <!-- Brand (Dual Logos for Dark/Light Themes) -->
+        <a class="navbar-brand" href="{{BASE_URL}}/">
+            <img src="{{BASE_URL}}/assets/logo.svg" alt="Qsite" class="logo-nav logo-light-theme">
+            <img src="{{BASE_URL}}/assets/logo-inverted.svg" alt="Qsite" class="logo-nav logo-dark-theme">
+        </a>
+
+        <!-- Toggler for Offcanvas (Mobile) -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Desktop (Visível apenas em telas grandes) -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarDesktop">
+            <ul class="navbar-nav align-items-center gap-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{BASE_URL}}/">Home</a>
+                </li>
+                <!-- BLOG_NAV_LINK -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{BASE_URL}}/blog">Blog</a>
+                </li>
+                <!-- END_BLOG_NAV_LINK -->
+                <!-- PODCAST_NAV_LINK -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{BASE_URL}}/podcast">Podcast</a>
+                </li>
+                <!-- END_PODCAST_NAV_LINK -->
+                <!-- CATALOG_NAV_LINK -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{BASE_URL}}/catalogo">Galeria</a>
+                </li>
+                <!-- END_CATALOG_NAV_LINK -->
+
+                <!-- Theme Toggle Button (Desktop) -->
+                <li class="nav-item">
+                    <button class="btn btn-link text-white-50 px-2 theme-toggle-btn shadow-none" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-sun-fill d-none-light fs-5 text-theme-icon"></i>
+                        <i class="bi bi-moon-stars-fill d-none-dark fs-5 text-theme-icon"></i>
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-primary rounded-pill px-4" href="{{BASE_URL}}/contato">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Menu Mobile (Offcanvas - Fora do Nav para evitar conflitos de layout) -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+    aria-labelledby="offcanvasNavbarLabel" style="z-index: 9999;">
+    <div class="offcanvas-header border-bottom border-white border-opacity-10">
+        <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Mestre</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="navbar-nav flex-column gap-3">
+            <li class="nav-item border-bottom border-white border-opacity-10 pb-2">
+                <a class="nav-link fs-5" href="{{BASE_URL}}/">Home</a>
+            </li>
+            <!-- BLOG_NAV_LINK -->
+            <li class="nav-item border-bottom border-white border-opacity-10 pb-2">
+                <a class="nav-link fs-5" href="{{BASE_URL}}/blog">Blog</a>
+            </li>
+            <!-- END_BLOG_NAV_LINK -->
+            <!-- PODCAST_NAV_LINK -->
+            <li class="nav-item border-bottom border-white border-opacity-10 pb-2">
+                <a class="nav-link fs-5" href="{{BASE_URL}}/podcast">Podcast</a>
+            </li>
+            <!-- END_PODCAST_NAV_LINK -->
+            <!-- CATALOG_NAV_LINK -->
+            <li class="nav-item border-bottom border-white border-opacity-10 pb-2">
+                <a class="nav-link fs-5" href="{{BASE_URL}}/catalogo">Galeria</a>
+            </li>
+            <!-- END_CATALOG_NAV_LINK -->
+
+            <!-- Theme Toggle Option (Mobile) -->
+            <li class="nav-item border-bottom border-white border-opacity-10 pb-2 d-flex justify-content-between align-items-center">
+                <span class="fs-5 text-white-50">Tema</span>
+                <button class="btn btn-link text-white-50 p-0 theme-toggle-btn shadow-none" type="button" aria-label="Toggle theme">
+                    <i class="bi bi-sun-fill d-none-light fs-4 text-theme-icon"></i>
+                    <i class="bi bi-moon-stars-fill d-none-dark fs-4 text-theme-icon"></i>
+                </button>
+            </li>
+
+            <li class="nav-item mt-3">
+                <a class="btn btn-primary w-100 rounded-pill py-3" href="{{BASE_URL}}/contato">Contato</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+    "pages": [
+        {
+            "id": "page-1",
+            "title": "Portfólio",
+            "slug": "portfolio",
+            "description": "Galeria de imagens organizadas por categoria.",
+            "tags": [
+                "Portfolio"
+            ]
+        },
+        {
+            "id": "eventos",
+            "title": "Eventos",
+            "slug": "eventos",
+            "description": "Galeria de eventos.",
+            "tags": [
+                "Eventos"
+            ]
+        }
+    ],
+    "indexPage": {
+        "enabled": true,
+        "title": "Nossos Catálogos",
+        "slug": "catalogo",
+        "description": "Veja nossas galerias e portfólios organizados."
+    }
+}

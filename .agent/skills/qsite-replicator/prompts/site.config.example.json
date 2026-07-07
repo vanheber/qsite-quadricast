@@ -1,0 +1,30 @@
+{
+    "site_title": "ACME Corporation",
+    "slug": "acme-corp",
+    "domain": "https://acmecorp.com.br",
+    "_last_deploy": "2026-01-26_InitialSetup",
+    "base_url": "",
+    "features": {
+        "site": true,
+        "blog": true,
+        "podcast": false,
+        "bios": false
+    },
+    "social": {
+        "instagram": "https://instagram.com/acmecorp",
+        "twitter": "",
+        "linkedin": "https://linkedin.com/company/acme-corporation",
+        "discord": "",
+        "facebook": "https://facebook.com/acmecorp",
+        "tiktok": ""
+    },
+    "contact_email": "contato@acmecorp.com.br",
+    "podcast": {
+        "title": "ACME Talks",
+        "author": "João Silva",
+        "summary": "Conversas sobre inovação e tecnologia",
+        "category": "Technology",
+        "explicit": "no",
+        "language": "pt-br"
+    }
+}

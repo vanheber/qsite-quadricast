@@ -1,0 +1,73 @@
+{
+    "site_title": "QSITE",
+    "slug": "qsite",
+    "domain": "qsite.quadriweb.com.br",
+    "_last_deploy": "2025-12-12_RefreshSecret",
+    "base_url": "/qsite",
+    "features": {
+        "site": true,
+        "blog": true,
+        "podcast": true,
+        "bios": true,
+        "catalog": true,
+        "leads": true
+    },
+    "social": {
+        "instagram": "https://instagram.com",
+        "twitter": "https://twitter.com",
+        "linkedin": "https://linkedin.com",
+        "discord": "https://discord.gg",
+        "facebook": "",
+        "tiktok": "",
+        "whatsapp": "https://wa.me/5511999999999"
+    },
+    "contact_email": "contato@qsite.com",
+    "brand": {
+        "logo_sizes": {
+            "navbar": {
+                "width": "auto",
+                "height": "40px"
+            },
+            "footer": {
+                "width": "auto",
+                "height": "30px"
+            }
+        },
+        "colors": {
+            "primary": "#1e1e1e",
+            "secondary": "#3d5a80",
+            "tertiary": "#98c1a9",
+            "info": "#90c2e7",
+            "success": "#98c1a9",
+            "warning": "#f4a261",
+            "danger": "#b00020",
+            "light": "#f8f9fa",
+            "dark": "#212529"
+        },
+        "typography": {
+            "headings": {
+                "family": "Google Sans Flex",
+                "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+            },
+            "body": {
+                "family": "Google Sans Flex",
+                "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+            }
+        },
+        "settings": {
+            "border_radius": "0.6rem"
+        }
+    },
+    "podcast": {
+        "title": "Mestre Podcast",
+        "author": "Mestre",
+        "summary": "Conte\u00fado estrat\u00e9gico para mentes digitais em formato de \u00e1udio.",
+        "category": "Technology, IA",
+        "explicit": "no",
+        "language": "pt-br"
+    },
+    "theme_layout": {
+        "header": "navbar-classic",
+        "footer": "footer-standard"
+    }
+}

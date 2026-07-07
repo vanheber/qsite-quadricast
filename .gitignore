@@ -1,0 +1,34 @@
+# Dependências do Node (O Lixo)
+node_modules/
+npm-debug.log
+
+# Build Final (Gerado automaticamente, não precisa versionar se não quiser, mas recomendo versionar o /public para ter histórico visual)
+# Se quiser economizar espaço no repo, descomente a linha abaixo:
+# /public
+
+# Variáveis de Ambiente (CRÍTICO: CONTÉM SENHAS)
+.env
+.env.local
+
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+
+# Logs e Temporários
+*.log
+.temp/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Prompts and Markdown Templates
+prompt_client_marketing_qsite.md
+prompt_bio_builder.md
+PROMPT_BIO_BUILDER.md
+modelo_markdown_qsite.md
+MODELO_MARKDOWN_QSITE.md
+PROMPT_GERAL_GEM_CLIENT.md
+
+public/

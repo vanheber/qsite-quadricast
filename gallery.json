@@ -1,0 +1,66 @@
+{
+    "images": [
+        {
+            "id": "mock-1",
+            "title": "Projeto Alpha",
+            "description": "Design arquitetônico moderno com elementos de vidro.",
+            "filename": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "mock-2",
+            "title": "Projeto Beta",
+            "description": "Interiores minimalistas com luz natural abundante.",
+            "filename": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "mock-3",
+            "title": "Projeto Gamma",
+            "description": "Escritório corporativo focado em produtividade.",
+            "filename": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "mock-4",
+            "title": "Projeto Delta",
+            "description": "Residência contemporânea sustentável.",
+            "filename": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "mock-5",
+            "title": "Projeto Epsilon",
+            "description": "Área de lazer com piscina de borda infinita.",
+            "filename": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "mock-6",
+            "title": "Projeto Zeta",
+            "description": "Cozinha gourmet com acabamentos em mármore.",
+            "filename": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Portfolio"]
+        },
+        {
+            "id": "evento-1",
+            "title": "Palestra",
+            "description": "Uma palestra interessante.",
+            "filename": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
+            "tags": ["Eventos"]
+        }
+    ],
+    "tagOrders": {
+        "Portfolio": [
+            "mock-1",
+            "mock-2",
+            "mock-3",
+            "mock-4",
+            "mock-5",
+            "mock-6"
+        ],
+        "Eventos": [
+            "evento-1"
+        ]
+    }
+}

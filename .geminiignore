@@ -1,0 +1,30 @@
+node_modules/
+public/
+dist/
+.git/
+.backups/
+backups/local_sync/
+
+# Segurança
+.env
+.env.example
+
+# Diversos
+.DS_Store
+*.zip
+*.log
+package-lock.json
+
+# Binários (O mais importante para economia de contexto)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.webp
+*.mp4
+*.mp3
+*.woff
+*.woff2
+*.ttf
