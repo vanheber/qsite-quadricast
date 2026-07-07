@@ -19,6 +19,9 @@ Thumbs.db
 .temp/
 .cache/
 
+# Deploy (local a cada projeto, não versionar)
+.deploy-hashes.json
+
 # IDE
 .vscode/
 .idea/

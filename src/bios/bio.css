@@ -2,7 +2,7 @@
    BIO MODULE - INTEGRATED BRANDING (Boilerplate)
 */
 
-:root {
+:root, [data-bs-theme="dark"] {
   --bio-bg-page: var(--bs-primary, #0a0a0a);
   --bio-card-container: rgba(255, 255, 255, 0.05);
   --bio-btn-bg: rgba(255, 255, 255, 0.1);
@@ -11,6 +11,18 @@
   --bio-text-primary: var(--bs-light, #ffffff);
   --bio-text-secondary: rgba(255, 255, 255, 0.6);
   --bio-accent: var(--bs-secondary, #0d6efd);
+  --bio-radius: var(--bs-border-radius, 12px);
+}
+
+[data-bs-theme="light"] {
+  --bio-bg-page: #f8f9fa;
+  --bio-card-container: rgba(0, 0, 0, 0.03);
+  --bio-btn-bg: rgba(0, 0, 0, 0.05);
+  --bio-btn-hover: rgba(0, 0, 0, 0.08);
+  --bio-border-color: rgba(0, 0, 0, 0.08);
+  --bio-text-primary: #121212;
+  --bio-text-secondary: rgba(0, 0, 0, 0.55);
+  --bio-accent: var(--bs-primary, #0d6efd);
   --bio-radius: var(--bs-border-radius, 12px);
 }
 

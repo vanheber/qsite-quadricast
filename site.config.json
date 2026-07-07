@@ -1,16 +1,16 @@
 {
-    "site_title": "QSITE",
+    "site_title": "Quadricast",
     "slug": "qsite",
-    "domain": "qsite.quadriweb.com.br",
+    "domain": "quadricast.com.br",
     "_last_deploy": "2025-12-12_RefreshSecret",
     "base_url": "/qsite",
     "features": {
-        "site": true,
-        "blog": true,
-        "podcast": true,
+        "site": false,
+        "blog": false,
+        "podcast": false,
         "bios": true,
-        "catalog": true,
-        "leads": true
+        "catalog": false,
+        "leads": false
     },
     "social": {
         "instagram": "https://instagram.com",
@@ -21,7 +21,7 @@
         "tiktok": "",
         "whatsapp": "https://wa.me/5511999999999"
     },
-    "contact_email": "contato@qsite.com",
+    "contact_email": "contato@quadricast.com.br",
     "brand": {
         "logo_sizes": {
             "navbar": {
