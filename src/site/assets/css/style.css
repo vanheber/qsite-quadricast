@@ -9,10 +9,10 @@
     --font-sans: var(--font-body, var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif));
     --font-headings: var(--font-headline, var(--bs-headings-font-family, serif));
 
-    /* Layout Variables */
-    --radius-xl: var(--bs-border-radius-xxl, 32px);
-    --radius-lg: var(--bs-border-radius-xl, 24px);
-    --radius-sm: var(--bs-border-radius-lg, 12px);
+    /* Layout Variables — escala única: border_radius exato do site config */
+    --radius-xl: var(--bs-border-radius, 4px);
+    --radius-lg: var(--bs-border-radius, 4px);
+    --radius-sm: var(--bs-border-radius, 4px);
 
     /* Dark Theme Palette */
     --bg-body: #0a0a0a;

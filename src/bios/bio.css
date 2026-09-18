@@ -12,6 +12,8 @@
   --bio-text-secondary: rgba(255, 255, 255, 0.6);
   --bio-accent: var(--bs-secondary, #0d6efd);
   --bio-radius: var(--bs-border-radius, 12px);
+  /* url() de custom property resolve relativo a ESTE css (bios/), nao ao style.css */
+  --bg-body-image: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.85) 100%), url('../assets/img/bg.jpg');
 }
 
 [data-bs-theme="light"] {
@@ -24,6 +26,7 @@
   --bio-text-secondary: rgba(0, 0, 0, 0.55);
   --bio-accent: var(--bs-primary, #0d6efd);
   --bio-radius: var(--bs-border-radius, 12px);
+  --bg-body-image: linear-gradient(180deg, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.95) 100%), url('../assets/img/bg.jpg');
 }
 
 body.bio-body {
