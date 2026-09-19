@@ -21,7 +21,7 @@
     ],
     "indexPage": {
         "enabled": true,
-        "title": "Nossos Catálogos",
+        "title": "Nosso Estúdio",
         "slug": "catalogo",
         "description": "Veja nossas galerias e portfólios organizados."
     }
