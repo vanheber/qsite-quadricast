@@ -1,329 +1,227 @@
 ---
 layout: sections-page
-title: "Home"
-description: "Seu site estático modular de altíssima performance."
+title: Quadricast - Estúdio e Produção Audiovisual de Padrão Broadcast
+description: Estrutura de estúdio e tecnologia audiovisual para produzir onde sua marca precisar, do planejamento à entrega final.
+theme_layout: navbar-classic
 sections:
-  - type: hero-carousel
-    slides:
-      - badge: "✨ O Futuro é Estático"
-        title: "Performance que Escala"
-        description: "Segurança absoluta, zero manutenção e velocidade que o Google ama."
-        bg_image: "/assets/img/hero-carousel-1.webp"
-        cta_text: "Começar"
-        cta_link: "#problema"
-        cta_secondary_text: "Ver Demo"
-        cta_secondary_link: "/blog"
-      - badge: "🎨 Design Moderno"
-        title: "Beleza e Função"
-        description: "Interfaces limpas que convertem visitantes em clientes fieis."
-        bg_image: "/assets/img/hero-carousel-2.webp"
-        cta_text: "Fale Conosco"
-        cta_link: "/contato"
-      - badge: "🚀 Growth Ready"
-        title: "Escale Sem Medo"
-        description: "Sua infraestrutura não pode ser o gargalo do seu crescimento."
-        bg_image: "/assets/img/hero-carousel-3.webp"
-        cta_text: "Ler Blog"
-        cta_link: "/blog"
-
+  - type: hero-split-form
+    bg_image: assets/img/hero-split-form-bg.webp
+    badge: Estúdio & Produção Móvel
+    title: Sua marca com padrão de TV. Produza onde precisar.
+    desc: Unimos infraestrutura técnica de ponta, tecnologia multicâmera e direção especializada para gravar no nosso estúdio ou levar a estrutura completa para dentro do seu projeto ou evento.
+    bullet_points:
+      - icon: mic-fill
+        title: Padrão Broadcast
+        desc: Captação 4K, acústica dedicada com zero ruído e iluminação cenográfica profissional.
+      - icon: truck
+        title: Estúdio Itinerante
+        desc: Transportamos toda a infraestrutura e equipe técnica para feiras, congressos e sedes corporativas.
+      - icon: diagram-3-fill
+        title: Inteligência de Cortes
+        desc: Transformamos uma única gravação em dezenas de pílulas e cortes de alto impacto para as redes.
+    form_title: Planeje sua Produção
+    form_desc: Preencha os dados e receba um diagnóstico técnico personalizado para o seu podcast, live ou projeto corporativo.
+    form_fields:
+      - name: name
+        label: Seu Nome
+        type: text
+        placeholder: 'Ex: Marcelo Prado'
+        required: true
+      - name: email
+        label: E-mail Corporativo
+        type: email
+        placeholder: 'Ex: marcelo@suaempresa.com.br'
+        required: true
+      - name: phone
+        label: WhatsApp Corporativo
+        type: tel
+        placeholder: 'Ex: (15) 99999-9999'
+        required: true
+    cta_text: Agendar Diagnóstico Gratuito
   - type: companies-chips
-    title: "TRUSTED BY INNOVATORS"
+    title: Empresas e marcas de autoridade que confiam no nosso padrão técnico
     icons:
-      - apple
-      - google
-      - microsoft
+      - youtube
       - spotify
-      - slack
+      - apple
+      - linkedin
+      - google
+  - type: stats-counters
+    title: A solidez técnica que valida seu conteúdo
+    desc: Combinamos rigor acústico com engenharia de produção para garantir entrega impecável.
+    items:
+      - number: '+1.500'
+        label: Horas de Gravação Ativa
+        color: primary
+      - number: 100%
+        label: Tratamento Acústico Certificado
+        color: success
+      - number: '+50'
+        label: Transmissões ao Vivo e Coberturas
+        color: info
+      - number: 4K
+        label: Captação Multicâmera Nativa
+        color: warning
 
-  - type: problem-grid
-    badge: "O PROBLEMA"
-    title: "Por que sites tradicionais falham?"
+
+- type: problem-grid
+    badge: O Obstáculo Invisível
+    title: O que está limitando o impacto digital da sua marca?
     cards:
-      - icon: "hourglass-bottom"
-        color: "danger"
-        title: "Lentidão"
-        desc: "Sites Wordpress carregando em 5s+ perdem 40% do tráfego."
-        percentage: 20
-        percentage_label: "Performance média"
-      - icon: "shield-x"
-        color: "warning"
-        title: "Segurança"
-        desc: "Plugins vulneráveis são a porta de entrada para ataques constantes."
-        tags:
-          - "SQL Injection"
-          - "Malware"
-      - icon: "wallet2"
-        color: "secondary"
-        title: "Custos Altos"
-        desc: "Hospedagem VPS + Manutenção Mensal + Dev Freelancer."
-        value_highlight: "R$ 5.000+/ano"
-        value_label: "Custo médio de manutenção"
-
-  - type: testimonials-grid
-    title: "O que dizem os Mestres"
-    items:
-      - quote: "O QSITE não é apenas um site, é uma vantagem competitiva injusta. Nosso SEO decolou na primeira semana."
-        author: "Sarah Connor"
-        role: "CTO, Cyberdyne"
-        initials: "SC"
-        bg_class: "bg-primary"
-      - quote: "Finalmente livre de plugins e atualizações de segurança constantes. A paz de espírito vale cada centavo."
-        author: "Marco Silva"
-        role: "Founder, E-Shop"
-        initials: "MS"
-        bg_class: "bg-info"
-      - quote: "A velocidade de carregamento é insana. O Google PageSpeed bateu 100/100 mobile pela primeira vez."
-        author: "Elena Lima"
-        role: "Marketing Director"
-        initials: "EL"
-        bg_class: "bg-warning text-dark"
-
+      - icon: exclamation-triangle-fill
+        color: danger
+        title: Perda de Autoridade Visual
+        desc: Gravações amadoras, áudio com eco e iluminação inadequada corroem a credibilidade de líderes de mercado e marcas corporativas.
+        percentage: 90
+        percentage_label: dos espectadores associam a qualidade técnica do vídeo diretamente à qualidade do produto.
+      - icon: clock-fill
+        color: warning
+        title: Desgaste e Desperdício de Tempo
+        desc: Gerenciar múltiplos prestadores de serviço dispersos — um para estúdio, outro para edição e outro para cortes — gera falhas e atrasos.
+        percentage: 75
+        percentage_label: dos profissionais de marketing perdem tempo operacional integrando múltiplos fornecedores.
+      - icon: arrow-repeat
+        color: primary
+        title: Conteúdo Sem Vida Útil
+        desc: Investir pesado em transmissões ou eventos pontuais que duram um dia e desaparecem da mente do público no dia seguinte.
+        percentage: 80
+        percentage_label: do conhecimento gerado em palestras é perdido por falta de inteligência de desdobramento.
   - type: solution-split
-    badge: "SOLUÇÃO DEFINITIVA"
-    title: "Arquitetura Estática Moderna"
-    desc: "Esqueça bancos de dados lentos. O QSITE gera arquivos puros, prontos para dominar a web."
+    badge: A Engenharia do Conteúdo
+    title: A estrutura definitiva para dar vida às suas ideias
+    desc: Nós eliminamos a barreira técnica entre a sua mensagem e uma entrega de nível broadcast. Do planejamento de pauta aos múltiplos cortes de alta retenção para redes sociais, nossa equipe cuida da engenharia de produção completa.
     features:
-      - icon: "shield-check"
-        color: "success"
-        title: "Imune a Hacks"
-        desc: "Sem banco de dados para invadir."
-      - icon: "server"
-        color: "info"
-        title: "Backup Automatizado"
-        desc: "GitHub Pages ou Vercel."
-
-  - type: features-benefits
-    title: "Por que escolher o QSITE?"
-    desc: "Tecnologia de ponta simplificada para humanos."
-    features:
-      - icon: "lightning-charge-fill"
-        color: "warning"
-        title: "Ultra Rápido"
-        desc: "Carregamento instantâneo que o Google ama."
-      - icon: "google"
-        color: "info"
-        title: "SEO Nativo"
-        desc: "Sitemaps, Meta Tags e Schema gerados automaticamente."
-      - icon: "mic-fill"
-        color: "danger"
-        title: "Podcast Ready"
-        desc: "Hospede seus áudios sem pagar plataformas caras."
-      - icon: "person-vcard-fill"
-        color: "success"
-        title: "Bio Link"
-        desc: "Substitua o Linktree com um módulo próprio."
-
-  - type: how-it-works-steps
-    title: "Como Funciona"
-    desc: "Simples como 1, 2, 3."
-    steps:
-      - title: "Preencha o Form"
-        desc: "Envie seu conteúdo via Google Forms simples e rápido."
-      - title: "IA Processa"
-        desc: "O GEMINI formata, otimiza e organiza tudo automaticamente."
-      - title: "Está no Ar"
-        desc: "Seu site é atualizado instantaneamente sem você tocar em código."
-
-  - type: bento-grid
-    title: "Layout Bento Grid de Destaques"
-    desc: "Organização visual moderna baseada em blocos assimétricos de alta qualidade."
-    items:
-      - title: "Performance Extrema"
-        desc: "Sua página carregando em menos de 300ms."
-        icon: "lightning-fill"
-        size: "large"
-      - title: "Design Minimalista"
-        desc: "Visual focado em conteúdo e usabilidade."
-        icon: "palette-fill"
-        size: "small"
-      - title: "Modularidade"
-        desc: "Adicione e remova seções alterando apenas lines de texto."
-        icon: "grid-3x3-gap-fill"
-        size: "small"
-      - title: "Soberania Digital"
-        desc: "Seus dados, seu site, sem intermediários."
-        icon: "lock-fill"
-        size: "large"
-
+      - icon: mic-fill
+        color: primary
+        title: Rigor Técnico Sem Esforço
+        desc: Você entra com a ideia e o conhecimento técnico; nós fornecemos os estúdios físicos de alta performance acústica, tecnologia multicâmera e direção ativa.
+      - icon: broadcast
+        color: success
+        title: Operação Itinerante
+        desc: Seja nos cenários dedicados dos nossos estúdios ou transportando toda a infraestrutura e equipe técnica para dentro do seu evento, feira ou sede corporativa.
+      - icon: grid-3x3-gap-fill
+        color: info
+        title: Inteligência de Reaproveitamento
+        desc: Uma única diária de captação se transforma em dezenas de pílulas, cortes verticais de alta retenção e carrosséis para abastecer seus canais por um mês inteiro.
   - type: feature-tabs
-    title: "Painel Funcional Interativo"
-    desc: "Navegue entre os recursos e entenda a arquitetura interna do template."
+    title: Nossos Formatos de Produção
+    desc: Infraestrutura avançada de estúdio e mobilidade operacional customizadas para a escala da sua empresa ou posicionamento digital.
     tabs:
-      - id: "engine"
-        label: "Site Engine"
-        icon: "cpu"
-        badge: "TECNOLOGIA"
-        title: "Compilador Estático Otimizado"
-        desc: "Compilação ultra-rápida utilizando EJS e Markdown nativos rodando em Node.js com tempo de build abaixo de 1 segundo."
-      - id: "branding"
-        label: "Visual & Design"
-        icon: "palette"
-        badge: "CUSTOMIZAÇÃO"
-        title: "Identidade Visual Centralizada"
-        desc: "Configuração total de cores, tipografia (Google Fonts) e raios de borda diretamente em um único arquivo de configuração centralizado."
-      - id: "seo"
-        label: "SEO Nativo"
-        icon: "search"
-        badge: "MARKETING"
-        title: "Pronto para os Buscadores"
-        desc: "Geração automatizada de sitemaps, robots.txt, tags Open Graph para redes sociais e marcação estruturada de dados Rich Snippets do Schema.org."
+      - id: estudios-gravacao
+        label: Estúdios de Gravação
+        icon: camera-video-fill
+        badge: PODCAST & GASTRONOMIA
+        title: Cenários modulares e acústica certificada
+        desc: Grave seus podcasts, videocasts ou masterclasses em nossos estúdios com tratamento acústico zero-hiss e iluminação cenográfica. Contamos também com um estúdio de gastronomia totalmente funcional e estruturado para produções culinárias e branded content de alimentos e bebidas.
+        image: assets/img/feature-tab-1.webp
+        cta_text: Conhecer nossos Estúdios
+        cta_link: '#contato'
+      - id: producao-externa
+        label: Transmissões e Eventos
+        icon: broadcast
+        badge: ESTÚDIO MÓVEL
+        title: Sua estrutura móvel onde você precisar
+        desc: Leve o padrão broadcast para dentro de seus congressos, feiras de negócios ou convenções. Montamos uma ilha técnica completa de transmissão ao vivo com latência zero, múltiplos operadores de câmera e geração de cortes rápidos direto no local.
+        image: assets/img/feature-tab-2.webp
+        cta_text: Falar com Engenharia
+        cta_link: '#contato'
+      - id: conteudo-corporativo
+        label: Conteúdo Corporativo
+        icon: briefcase-fill
+        badge: CONTRATO RECORRENTE
+        title: Sua própria mídia proprietária corporativa
+        desc: Abasteça de forma contínua seus canais de comunicação interna, RH, treinamento ou marketing. Estruturamos planos mensais sob medida com diárias de captação planejadas para gerar fluxo constante de ativos de conteúdo para sua marca.
+        image: assets/img/feature-tab-3.webp
+        cta_text: Solicitar Proposta Comercial
+        cta_link: '#contato'
+  - type: how-it-works-steps
+    title: A Jornada da Produção Impecável
+    desc: Nossa metodologia integrada assegura previsibilidade técnica e conforto absoluto em todas as etapas do processo.
+    steps:
+      - title: Briefing e Planejamento
+        desc: Mapeamos os objetivos da sua marca, estruturamos os roteiros de captação e dimensionamos a necessidade técnica do projeto.
+      - title: Direção e Captação de Elite
+        desc: A equipe operacional Quadricast assume os switches de corte, câmeras 4K e engenharia de áudio para garantir que você foque apenas na fala.
+      - title: Pós-Produção e Desdobramentos
+        desc: Nossos editores seniores finalizam a peça principal, refinam som e imagem e entregam os cortes verticais legendados prontos para publicação.
 
-  - type: vsl-section
-    pre_headline: "VÍDEO DE VENDAS"
-    headline: "Assista à apresentação e descubra o método QSITE"
-    sub_headline: "Como construímos páginas rápidas com custo zero de infraestrutura e hospedagem"
-    video_id: "dQw4w9WgXcQ"
-    cta_text: "Quero Garantir Minha Vaga"
-    cta_link: "#planos"
-    cta_subtext: "Garantia incondicional de satisfação"
-
-  - type: product-stack
-    badge: "O QUE ESTÁ INCLUSO"
-    title: "A Pilha Completa de Entregáveis"
-    desc: "Tudo o que você precisa para obter resultados consistentes desde o primeiro dia."
+- type: testimonials-grid
+    title: Quem projeta sua autoridade com a Quadricast
     items:
-      - title: "Template Base qsite"
-        desc: "Arquivos HTML/CSS base limpos, comentados e otimizados."
-      - title: "Configuração Automatizada"
-        desc: "Deploy automático na Vercel ou Netlify em poucos cliques."
-      - title: "Módulos Extras"
-        desc: "Templates adicionais de Blog, Podcasts e Bio Links inclusos."
-
-  - type: countdown-timer
-    title: "Oferta Especial por Tempo Limitado"
-    desc: "Esta oferta expira em breve. Garanta o seu acesso vitalício com desconto agora mesmo."
-    target_date: "2026-12-31T23:59:59"
-
+      - quote: Unificamos toda a nossa comunicação interna e o podcast institucional com a equipe da Quadricast. O profissionalismo, a previsibilidade de entrega e o rigor técnico trouxeram um nível de autoridade que não encontrávamos em nenhum outro fornecedor do mercado.
+        initials: MP
+        bg_class: bg-primary
+        author: Marcelo Prado
+        role: Diretor de Marketing, TecnoIndústria
+      - quote: O modelo 'sente e grave' deles mudou completamente o meu jogo. Eu só preciso focar no meu conhecimento. Em apenas uma tarde de gravação nos estúdios, saio com conteúdo de altíssimo nível estético e cortes verticais suficientes para abastecer minhas redes o mês inteiro.
+        initials: CG
+        bg_class: bg-dark text-white
+        author: Camila Guimarães
+        role: Mentora e Palestrante Corporativa
+      - quote: Contratamos a operação de estúdio móvel para nossa feira de negócios e a entrega foi simplesmente impecável. Transmissão de sinal robusta, áudio perfeito e cortes dinâmicos em tempo real enquanto o evento acontecia. Uma verdadeira usina de conteúdo de padrão broadcast.
+        initials: RZ
+        bg_class: bg-secondary text-dark
+        author: Roberto Zanin
+        role: Head de Eventos, ExpoBusiness SP
   - type: pricing-tables
-    title: "Nossos Planos de Acesso"
-    desc: "Escolha a licença ideal para o tamanho do seu projeto ou agência."
+    title: Soluções e Planos Sob Medida
+    desc: Escolha o modelo de produção que melhor se alinha à estratégia de crescimento e presença digital da sua marca.
     plans:
-      - name: "Start"
-        desc: "Perfeito para projetos pessoais e portfólios simples."
-        price: "R$ 97"
-        period: "único"
+      - name: Locação de Estúdio
+        desc: Para criadores e agências que demandam infraestrutura física de alto padrão para captação.
+        price: R$ 290
+        period: hora
+        popular: false
         features:
-          - "1 Site Ativo"
-          - "Atualizações via Forms"
-          - "Suporte via Email"
-        cta_text: "Adquirir Start"
-        cta_link: "#checkout"
-      - name: "Pro"
-        desc: "Ideal para profissionais digitais e criadores de conteúdo."
-        price: "R$ 197"
-        period: "único"
+          - Estúdios físicos com acústica zero-hiss certificada
+          - Iluminação cenográfica profissional configurada
+          - Câmeras 4K nativas e microfones broadcast
+          - Operador de switcher técnico dedicado incluso
+          - Entrega dos arquivos brutos em alta definição
+        cta_text: Reservar Horário de Estúdio
+        cta_link: '#contato'
+      - name: Produção de Podcasts / Videocasts
+        desc: Solução completa ponta a ponta para profissionais e empresas liderarem seus mercados.
+        price: R$ 1.890
+        period: por episódio
         popular: true
         features:
-          - "Sites Ilimitados"
-          - "Módulos de Blog e Podcast"
-          - "Suporte prioritário 24/7"
-        cta_text: "Adquirir Pro"
-        cta_link: "#checkout"
-
-  - type: order-bump
-    badge_text: "OFERTA COMPLEMENTAR"
-    title: "Adicionar Pacote de Suporte VIP"
-    bump_price: "R$ 47"
-    desc: "Acesso direto aos desenvolvedores core por 1 ano via Discord para tirar qualquer dúvida."
-
-  - type: checkout-embed
-    title: "Conclua seu Pedido"
-    desc: "Preencha seus dados para finalizar a inscrição."
-    checkout_url: "#contato"
-
-  - type: guarantee-box
-    badge_text: "GARANTIA INCONDICIONAL"
-    title: "7 Dias de Garantia ou 100% do Dinheiro de Volta"
-    desc: "Teste todos os recursos do QSITE. Se em até 7 dias você não estiver impressionado com a velocidade do site, solicite o reembolso integral."
-
-  - type: team-grid
-    title: "Nossa Equipe"
-    desc: "Quem está por trás do desenvolvimento e otimização do qsite."
-    members:
-      - name: "Alexandre Silva"
-        role: "Core Developer"
-        bio: "Especialista em engines estáticas e performance de carregamento."
-        initials: "AS"
-        avatar: "/assets/img/avatar-1.webp"
-      - name: "Beatriz Mota"
-        role: "UX/UI Designer"
-        bio: "Focada em converter acessos em cliques com interfaces atraentes."
-        initials: "BM"
-        avatar: "/assets/img/avatar-2.webp"
-
-  - type: hero-split-image
-    badge: "MODERN WORKFLOW"
-    title: "Transforme Ideias em Páginas Incrivelmente Rápidas"
-    desc: "Nossa arquitetura foi desenhada para agências e produtores que precisam de velocidade extrema sem complicações com servidores ou bancos de dados tradicionais."
-    image: "/assets/img/hero-split-image.webp"
-    cta_text: "Experimentar Agora"
-    cta_link: "#planos"
-    cta_secondary_text: "Falar com Consultor"
-    cta_secondary_link: "/contato"
-
-  - type: hero-split-form
-    badge: "PRÉ-CADASTRO"
-    title: "Seja um dos Primeiros a Testar as Novidades"
-    desc: "Preencha seus dados para entrar na lista de acesso antecipado às novas seções interativas."
-    bullet_points:
-      - icon: "check-lg"
-        title: "Atualizações semanais"
-        desc: "Novos blocos e melhorias gratuitas direto no seu repositório."
-      - icon: "check-lg"
-        title: "Grupo exclusivo"
-        desc: "Networking com outros usuários e desenvolvedores."
-    form_title: "Preencha seus Dados"
-    form_desc: "Envie e receba um guia de otimização de brinde."
-    form_fields:
-      - name: "nome"
-        label: "Seu Nome"
-        type: "text"
-        placeholder: "Ex: Roberto"
-        required: true
-      - name: "email"
-        label: "E-mail Principal"
-        type: "email"
-        placeholder: "roberto@email.com"
-        required: true
-    cta_text: "Cadastrar na Lista"
-
-  - type: hero-video
-    badge: "VÍDEO REVIEW"
-    title: "Assista a um Review Completo do Sistema"
-    desc: "Aprenda a configurar os templates e a deployar seu primeiro site estático em menos de 5 minutos."
-    video_url: "/assets/video/hero-video-bg.mp4"
-    cta_text: "Criar Minha Conta"
-    cta_link: "#planos"
-
-  - type: youtube-embed
-    title: "Tutorial Detalhado do Painel"
-    desc: "Uma caminhada passo a passo de como funciona a sincronização e geração automática de conteúdo."
-    video_id: "dQw4w9WgXcQ"
-
-  - type: trust-badges-bar
-    badges:
-      - icon: "shield-fill-check"
-        title: "Compra 100% Segura"
-      - icon: "patch-check-fill"
-        title: "Garantia Estendida"
-      - icon: "truck"
-        title: "Acesso Imediato"
-
+          - Direção técnica ativa e suporte no planejamento de pauta
+          - Captação multicâmera e engenharia de áudio dedicada
+          - Edição e pós-produção completas (ajustes de áudio e vídeo)
+          - Pacote com até 5 cortes verticais legendados por episódio
+          - Criação de vinhetas e identidade visual do programa
+        cta_text: Iniciar Nossa Produção
+        cta_link: '#contato'
+      - name: Corporativo & Eventos
+        desc: Projetos de estúdio móvel para convenções, transmissões ao vivo de feiras ou assinaturas recorrentes.
+        price: Sob Consulta
+        period: projeto
+        popular: false
+        features:
+          - Deslocamento de estúdio móvel e equipe para sua empresa ou evento
+          - Transmissão ao vivo multicâmera com latência zero
+          - Estruturação de universidade corporativa e vídeos de RH
+          - Planos mensais de conteúdo recorrente com diárias programadas
+          - Gerente de conta e equipe de pós-produção sob demanda
+        cta_text: Falar com Engenharia Comercial
+        cta_link: '#contato'
   - type: faq-accordion
-    title: "Perguntas Frequentes"
+    title: Dúvidas Frequentes sobre nossa Produção
     items:
-      - question: "Preciso saber programar?"
-        answer: "Não! Todo o gerenciamento de conteúdo é feito via Google Forms e Planilhas. O código roda sozinho."
-      - question: "E se eu quiser mudar o design?"
-        answer: "O QSITE é baseado em templates Bootstrap 5. Você pode editar o HTML/CSS ou contratar qualquer desenvolvedor web júnior para ajustar."
-      - question: "Funciona para e-commerce?"
-        answer: "O foco atual é conteúdo (Blog, Podcast, Bio, Institucional). Para vendas, recomendamos integrar botões de pagamento (Stripe/MercadoPago) ou links externos."
-
+      - question: Como funciona o modelo 'chegue, sente e grave' da Quadricast?
+        answer: Nós eliminamos toda a complexidade técnica para você. Nossa equipe cuida da preparação dos microfones, configuração de câmeras, iluminação cenográfica e monitoramento do som. Você só precisa focar no roteiro e na sua mensagem. No final, cuidamos da edição e dos cortes.
+      - question: Quais são as especificações do estúdio gastronômico?
+        answer: Nosso estúdio de gastronomia é totalmente operacional e planejado para produções de alimentos e bebidas. Ele conta com bancada estruturada, iluminação direcionada para captação detalhada de ingredientes, pia funcional e infraestrutura para transmissões ao vivo ou gravações de receitas e branded content.
+      - question: Como funciona a logística do estúdio móvel para eventos externos?
+        answer: Nós transportamos toda a nossa infraestrutura de ponta (câmeras, switchers, microfones profissionais de lapela ou pedestal, iluminação e painéis acústicos portáteis) diretamente para o pavilhão do seu congresso ou empresa. Montamos uma ilha técnica completa para streaming estável e gravação de palco.
+      - question: Qual é o tempo de entrega das edições e dos cortes?
+        answer: O prazo de entrega padrão para episódios editados e seus respectivos pacotes de cortes verticais é de 5 a 7 dias úteis após a gravação. Para coberturas em tempo real durante eventos e transmissões ao vivo, podemos estruturar uma ilha de edição rápida diretamente no local para geração instantânea de ativos.
+      - question: Posso fechar um contrato mensal para minha empresa?
+        answer: Sim. Oferecemos planos de Conteúdo Corporativo Recorrente, estruturados com diárias mensais fixas de captação. Esse formato otimiza os custos e garante um fluxo contínuo de vídeos de treinamento, posicionamento de marca ou comunicação de liderança para os seus canais.
   - type: cta-final
-    title: "Pronto para o Próximo Nível?"
-    desc: "Pare de gastar com hospedagem e plugins lentos.<br />Tenha um site de elite hoje."
-    cta_text: "Começar Agora"
-    cta_link: "/contato"
-    cta_secondary_text: "Ver Exemplos"
-    cta_secondary_link: "/blog"
+    title: Transforme sua mensagem em conteúdo de padrão broadcast.
+    desc: Conecte-se com seu público e construa relevância através da melhor infraestrutura audiovisual. Fale com um produtor e garanta a sua agenda.
+    cta_text: Solicitar Proposta Personalizada
+    cta_link: '#contato'
 ---

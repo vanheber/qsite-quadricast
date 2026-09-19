@@ -1,25 +1,39 @@
 {
-    "site_title": "Quadricast",
-    "slug": "qsite",
-    "domain": "quadricast.com.br",
+    "site_title": "Quadricast - Estúdio e Produção Audiovisual",
+    "slug": "quadricast",
+    "domain": "quadricast.agenciaquadri.com.br",
     "_last_deploy": "2025-12-12_RefreshSecret",
-    "base_url": "/qsite",
+    "base_url": "/quadricast",
     "features": {
-        "site": false,
-        "blog": false,
-        "podcast": false,
+        "site": true,
+        "blog": true,
+        "podcast": true,
         "bios": true,
-        "catalog": false,
-        "leads": false
+        "catalog": true,
+        "catalog_slug": "catalogo",
+        "cart": {
+            "enabled": false,
+            "channel": "whatsapp"
+        },
+        "leads": true,
+        "qzap": true
     },
     "social": {
-        "instagram": "https://instagram.com",
-        "twitter": "https://twitter.com",
-        "linkedin": "https://linkedin.com",
-        "discord": "https://discord.gg",
+        "instagram": "https://instagram.com/quadricast",
+        "twitter": "",
+        "linkedin": "https://linkedin.com/company/quadricast",
+        "discord": "",
         "facebook": "",
         "tiktok": "",
-        "whatsapp": "https://wa.me/5511999999999"
+        "whatsapp": "https://wa.me/5515999999999"
+    },
+    "messaging": {
+        "channels": [
+            "whatsapp"
+        ],
+        "whatsapp": "5515999999999",
+        "telegram": "",
+        "xchat": ""
     },
     "contact_email": "contato@quadricast.com.br",
     "brand": {
@@ -34,40 +48,70 @@
             }
         },
         "colors": {
-            "primary": "#1e1e1e",
-            "secondary": "#3d5a80",
-            "tertiary": "#98c1a9",
-            "info": "#90c2e7",
-            "success": "#98c1a9",
-            "warning": "#f4a261",
-            "danger": "#b00020",
-            "light": "#f8f9fa",
-            "dark": "#212529"
+            "primary": "#0762C8",
+            "secondary": "#9BC31D",
+            "tertiary": "#054FA3",
+            "info": "#054FA3",
+            "success": "#7EA314",
+            "warning": "#E5A812",
+            "danger": "#D62828",
+            "light": "#F0F5FC",
+            "dark": "#04162B"
         },
         "typography": {
             "headings": {
-                "family": "Google Sans Flex",
-                "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+                "family": "Poppins",
+                "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             },
             "body": {
-                "family": "Google Sans Flex",
-                "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+                "family": "Poppins",
+                "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             }
         },
         "settings": {
-            "border_radius": "0.6rem"
+            "border_radius": "0.5rem"
         }
     },
     "podcast": {
-        "title": "Mestre Podcast",
-        "author": "Mestre",
-        "summary": "Conte\u00fado estrat\u00e9gico para mentes digitais em formato de \u00e1udio.",
-        "category": "Technology, IA",
+        "title": "Quadricast",
+        "author": "Quadricast",
+        "summary": "Estrutura de estúdio e tecnologia audiovisual para produzir onde sua marca precisar, do planejamento à entrega final.",
+        "category": "Business, Technology",
         "explicit": "no",
         "language": "pt-br"
+    },
+    "company": {
+        "cnpj": "",
+        "emails": [
+            {
+                "email": "contato@quadricast.com.br",
+                "label": "Comercial"
+            }
+        ],
+        "phones": [
+            {
+                "number": "(15) 99999-9999",
+                "label": "WhatsApp Comercial",
+                "type": "whatsapp"
+            }
+        ],
+        "addresses": [
+            {
+                "label": "Matriz",
+                "street": "",
+                "neighborhood": "",
+                "complement": "",
+                "city": "Sorocaba",
+                "state": "SP",
+                "zip": "",
+                "googleMapsEmbed": ""
+            }
+        ],
+        "place_id": ""
     },
     "theme_layout": {
         "header": "navbar-classic",
         "footer": "footer-standard"
-    }
+    },
+    "qsite_version": "4.4.7"
 }
