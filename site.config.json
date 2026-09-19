@@ -5,17 +5,17 @@
     "_last_deploy": "2025-12-12_RefreshSecret",
     "base_url": "/quadricast",
     "features": {
-        "site": false,
-        "blog": false,
-        "podcast": false,
-        "bios": false,
-        "catalog": false,
+        "site": true,
+        "blog": true,
+        "podcast": true,
+        "bios": true,
+        "catalog": true,
         "catalog_slug": "catalogo",
         "cart": {
             "enabled": false,
             "channel": "whatsapp"
         },
-        "leads": false,
+        "leads": true,
         "qzap": true,
         "conjurador": false
     },
