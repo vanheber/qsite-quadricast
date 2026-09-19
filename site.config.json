@@ -17,7 +17,8 @@
         },
         "leads": true,
         "qzap": true,
-        "conjurador": false
+        "conjurador": false,
+        "maintenance": true
     },
     "social": {
         "instagram": "https://instagram.com/quadricast",
@@ -71,6 +72,9 @@
         },
         "settings": {
             "border_radius": "0.5rem"
+        },
+        "menu": {
+            "catalog_label": "Nosso Estúdio"
         }
     },
     "podcast": {
