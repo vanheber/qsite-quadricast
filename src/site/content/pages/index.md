@@ -1,227 +1,279 @@
 ---
 layout: sections-page
-title: Quadricast - Estúdio e Produção Audiovisual de Padrão Broadcast
-description: Estrutura de estúdio e tecnologia audiovisual para produzir onde sua marca precisar, do planejamento à entrega final.
+title: Quadricast | Estúdios, Podcasts, Vídeos, Lives e Produção Audiovisual
+description: Estúdios profissionais e produção audiovisual completa para podcasts, vídeos, lives, transmissões, eventos e conteúdos corporativos em Sorocaba e projetos externos.
 theme_layout: navbar-classic
 sections:
   - type: hero-split-form
     bg_image: assets/img/hero-split-form-bg.webp
-    badge: Estúdio & Produção Móvel
-    title: Sua marca com padrão de TV. Produza onde precisar.
-    desc: Unimos infraestrutura técnica de ponta, tecnologia multicâmera e direção especializada para gravar no nosso estúdio ou levar a estrutura completa para dentro do seu projeto ou evento.
+    badge: Estratégia • Produção • Transmissão • Resultados
+    title: Conteúdo profissional começa com estrutura.
+    desc: Estúdios profissionais, tecnologia multicâmera e equipe especializada para podcasts, vídeos, lives, transmissões, conteúdos corporativos e produções externas.
     bullet_points:
-      - icon: mic-fill
-        title: Padrão Broadcast
-        desc: Captação 4K, acústica dedicada com zero ruído e iluminação cenográfica profissional.
-      - icon: truck
-        title: Estúdio Itinerante
-        desc: Transportamos toda a infraestrutura e equipe técnica para feiras, congressos e sedes corporativas.
-      - icon: diagram-3-fill
-        title: Inteligência de Cortes
-        desc: Transformamos uma única gravação em dezenas de pílulas e cortes de alto impacto para as redes.
-    form_title: Planeje sua Produção
-    form_desc: Preencha os dados e receba um diagnóstico técnico personalizado para o seu podcast, live ou projeto corporativo.
+      - icon: camera-reels-fill
+        title: Estrutura Própria Completa
+        desc: Ambientes dedicados com acústica tratada, captação 4K nativa e iluminação cenográfica profissional.
+      - icon: broadcast-pin
+        title: Operação Itinerante Modular
+        desc: Transportamos equipe técnica, ilha de corte e sinal broadcast até feiras, congressos e sedes corporativas.
+      - icon: stack
+        title: Uma Produção, Vários Formatos
+        desc: Transformamos uma única diária de gravação em dezenas de pílulas, carrosséis e cortes verticais de alta retenção.
+    form_title: Vamos produzir?
+    form_desc: Conte seu projeto e receba uma orientação estratégica sobre estrutura de estúdio, transmissão ou produção externa.
     form_fields:
       - name: name
         label: Seu Nome
         type: text
         placeholder: 'Ex: Marcelo Prado'
         required: true
-      - name: email
-        label: E-mail Corporativo
-        type: email
-        placeholder: 'Ex: marcelo@suaempresa.com.br'
-        required: true
+      - name: company
+        label: Empresa / Marca
+        type: text
+        placeholder: 'Ex: TecnoIndústria ou Marca Pessoal'
+        required: false
       - name: phone
         label: WhatsApp Corporativo
         type: tel
         placeholder: 'Ex: (15) 99999-9999'
         required: true
-    cta_text: Agendar Diagnóstico Gratuito
-  - type: companies-chips
-    title: Empresas e marcas de autoridade que confiam no nosso padrão técnico
-    icons:
-      - youtube
-      - spotify
-      - apple
-      - linkedin
-      - google
+      - name: email
+        label: E-mail Corporativo
+        type: email
+        placeholder: 'Ex: contato@suaempresa.com.br'
+        required: true
+    cta_text: Enviar Meu Projeto
+  - type: trust-badges-bar
+    bg_class: bg-body-tertiary
+    badges:
+      - title: Padrão Broadcast
+        desc: Imagem 4K e som zero-hiss
+        icon: mic-fill
+      - title: Operação Fim a Fim
+        desc: Do briefing à entrega final
+        icon: check-circle-fill
+      - title: Estúdio & Externa
+        desc: Onde a sua marca precisar
+        icon: geo-alt-fill
+      - title: Velocidade de Entrega
+        desc: Cortes prontos para redes
+        icon: lightning-charge-fill
   - type: stats-counters
-    title: A solidez técnica que valida seu conteúdo
-    desc: Combinamos rigor acústico com engenharia de produção para garantir entrega impecável.
+    title: Estrutura técnica comprovada em operação
+    desc: A segurança e previsibilidade que sustentam a autoridade visual da sua marca.
     items:
       - number: '+1.500'
-        label: Horas de Gravação Ativa
+        label: Horas de Gravação e Produção
         color: primary
       - number: 100%
         label: Tratamento Acústico Certificado
         color: success
       - number: '+50'
-        label: Transmissões ao Vivo e Coberturas
+        label: Transmissões e Lives Externas
         color: info
       - number: 4K
-        label: Captação Multicâmera Nativa
+        label: Tecnologia Multicâmera Nativa
         color: warning
-
-
-- type: problem-grid
-    badge: O Obstáculo Invisível
-    title: O que está limitando o impacto digital da sua marca?
-    cards:
-      - icon: exclamation-triangle-fill
-        color: danger
-        title: Perda de Autoridade Visual
-        desc: Gravações amadoras, áudio com eco e iluminação inadequada corroem a credibilidade de líderes de mercado e marcas corporativas.
-        percentage: 90
-        percentage_label: dos espectadores associam a qualidade técnica do vídeo diretamente à qualidade do produto.
-      - icon: clock-fill
-        color: warning
-        title: Desgaste e Desperdício de Tempo
-        desc: Gerenciar múltiplos prestadores de serviço dispersos — um para estúdio, outro para edição e outro para cortes — gera falhas e atrasos.
-        percentage: 75
-        percentage_label: dos profissionais de marketing perdem tempo operacional integrando múltiplos fornecedores.
-      - icon: arrow-repeat
-        color: primary
-        title: Conteúdo Sem Vida Útil
-        desc: Investir pesado em transmissões ou eventos pontuais que duram um dia e desaparecem da mente do público no dia seguinte.
-        percentage: 80
-        percentage_label: do conhecimento gerado em palestras é perdido por falta de inteligência de desdobramento.
-  - type: solution-split
-    badge: A Engenharia do Conteúdo
-    title: A estrutura definitiva para dar vida às suas ideias
-    desc: Nós eliminamos a barreira técnica entre a sua mensagem e uma entrega de nível broadcast. Do planejamento de pauta aos múltiplos cortes de alta retenção para redes sociais, nossa equipe cuida da engenharia de produção completa.
+  - type: features-benefits
+    title: Tudo o que sua marca precisa para estar no ar
+    desc: Da ideia à publicação. Do estúdio ao evento. Estrutura técnica, equipe, direção e pós-produção para transformar conhecimento, histórias e experiências em conteúdo profissional.
     features:
-      - icon: mic-fill
+      - image: assets/img/feature-benefit-1.webp
+        icon: mic-fill
         color: primary
-        title: Rigor Técnico Sem Esforço
-        desc: Você entra com a ideia e o conhecimento técnico; nós fornecemos os estúdios físicos de alta performance acústica, tecnologia multicâmera e direção ativa.
-      - icon: broadcast
-        color: success
-        title: Operação Itinerante
-        desc: Seja nos cenários dedicados dos nossos estúdios ou transportando toda a infraestrutura e equipe técnica para dentro do seu evento, feira ou sede corporativa.
-      - icon: grid-3x3-gap-fill
-        color: info
-        title: Inteligência de Reaproveitamento
-        desc: Uma única diária de captação se transforma em dezenas de pílulas, cortes verticais de alta retenção e carrosséis para abastecer seus canais por um mês inteiro.
-  - type: feature-tabs
-    title: Nossos Formatos de Produção
-    desc: Infraestrutura avançada de estúdio e mobilidade operacional customizadas para a escala da sua empresa ou posicionamento digital.
-    tabs:
-      - id: estudios-gravacao
-        label: Estúdios de Gravação
-        icon: camera-video-fill
-        badge: PODCAST & GASTRONOMIA
-        title: Cenários modulares e acústica certificada
-        desc: Grave seus podcasts, videocasts ou masterclasses em nossos estúdios com tratamento acústico zero-hiss e iluminação cenográfica. Contamos também com um estúdio de gastronomia totalmente funcional e estruturado para produções culinárias e branded content de alimentos e bebidas.
-        image: assets/img/feature-tab-1.webp
-        cta_text: Conhecer nossos Estúdios
-        cta_link: '#contato'
-      - id: producao-externa
-        label: Transmissões e Eventos
+        title: Estúdios de Gravação
+        desc: Ambientes profissionais com tratamento acústico, iluminação cenográfica, tecnologia multicâmera e operação técnica dedicada.
+      - image: assets/img/feature-benefit-2.webp
         icon: broadcast
-        badge: ESTÚDIO MÓVEL
-        title: Sua estrutura móvel onde você precisar
-        desc: Leve o padrão broadcast para dentro de seus congressos, feiras de negócios ou convenções. Montamos uma ilha técnica completa de transmissão ao vivo com latência zero, múltiplos operadores de câmera e geração de cortes rápidos direto no local.
+        color: success
+        title: Podcasts & Videocasts
+        desc: Entrevistas, programas periódicos, branded content corporativo e temporadas estruturadas com desdobramentos completos.
+      - image: assets/img/feature-benefit-3.webp
+        icon: camera-video-fill
+        color: info
+        title: Produção Audiovisual
+        desc: Vídeos institucionais, cursos, videoaulas, campanhas, cases de clientes e pacotes de conteúdos para redes sociais.
+      - image: assets/img/feature-benefit-4.webp
+        icon: display
+        color: warning
+        title: Eventos & Lives
+        desc: Transmissões ao vivo, podcasts montados dentro de feiras e congressos, cobertura dinâmica e geração de conteúdo em tempo real.
+  - type: solution-split
+    badge: Produções Externas
+    title: A qualidade do estúdio, adaptada ao lugar onde a história acontece
+    desc: Nem todo conteúdo deve acontecer dentro de um estúdio. Quando o contexto faz parte da narrativa, levamos câmeras, áudio, iluminação, direção e equipe técnica até sua empresa ou evento — sem abrir mão do rigor de broadcast.
+    features:
+      - icon: building
+        color: primary
+        title: Em Empresas, Feiras e Convenções
+        desc: Montamos operações completas em salas corporativas, indústrias, estandes de feiras ou auditórios com análise prévia de energia, acústica e conectividade.
+      - icon: diagram-3-fill
+        color: success
+        title: Podcast e Entrevistas no Evento
+        desc: Transformamos seu evento em uma usina de conteúdo, entrevistando palestrantes, patrocinadores e executivos com captação multicâmera no local.
+      - icon: play-circle-fill
+        color: info
+        title: Streaming com Latência Zero
+        desc: Transmissão ao vivo estável para plataformas públicas (YouTube, LinkedIn) ou redes corporativas privadas com operadores dedicados.
+  - type: feature-tabs
+    title: Estrutura Própria de Alta Performance
+    desc: Produza em um ambiente pensado para imagem, som e conforto. Mais do que uma sala com câmeras, uma engenharia completa para sua produção.
+    tabs:
+      - id: podcast-videocast
+        label: Podcasts & Videocasts
+        icon: mic-fill
+        badge: MULTICÂMERA 4K
+        title: Conversas que precisam ser vistas, ouvidas e lembradas
+        desc: 'Chegue, sente e grave. Nossa equipe deixa toda a operação pronta: microfones broadcast, iluminação difusa, monitores integrados para identidade visual do programa e direção ativa para garantir foco na mensagem.'
+        image: assets/img/feature-tab-1.webp
+        cta_text: Conhecer os Estúdios
+        cta_link: '#contato'
+      - id: estudio-gastronomico
+        label: Estúdio Gastronômico
+        icon: fire
+        badge: COZINHA CENOGRÁFICA
+        title: Produções culinárias com enquadramento e ritmo de cozinha
+        desc: Espaço totalmente funcional com bancada planejada, iluminação zenital específica para ingredientes, ponto de água e estrutura para programas de receitas, branded content de alimentos e bebidas ou transmissões com preparo ao vivo.
         image: assets/img/feature-tab-2.webp
-        cta_text: Falar com Engenharia
+        cta_text: Produzir Conteúdo Gastronômico
         cta_link: '#contato'
-      - id: conteudo-corporativo
-        label: Conteúdo Corporativo
-        icon: briefcase-fill
-        badge: CONTRATO RECORRENTE
-        title: Sua própria mídia proprietária corporativa
-        desc: Abasteça de forma contínua seus canais de comunicação interna, RH, treinamento ou marketing. Estruturamos planos mensais sob medida com diárias de captação planejadas para gerar fluxo constante de ativos de conteúdo para sua marca.
+      - id: cursos-corporativo
+        label: Vídeos, Cursos & Corporativo
+        icon: mortarboard-fill
+        badge: VERSATILIDADE TOTAL
+        title: Sets adaptáveis para masterclasses, VSLs e treinamentos
+        desc: Um mesmo ambiente modular adaptado para a linguagem do seu projeto executivo. Ideal para videoaulas, apresentações de diretoria, onboarding de colaboradores e programas contínuos de universidade corporativa.
         image: assets/img/feature-tab-3.webp
-        cta_text: Solicitar Proposta Comercial
+        cta_text: Agendar uma Visita
         cta_link: '#contato'
-  - type: how-it-works-steps
-    title: A Jornada da Produção Impecável
-    desc: Nossa metodologia integrada assegura previsibilidade técnica e conforto absoluto em todas as etapas do processo.
-    steps:
-      - title: Briefing e Planejamento
-        desc: Mapeamos os objetivos da sua marca, estruturamos os roteiros de captação e dimensionamos a necessidade técnica do projeto.
-      - title: Direção e Captação de Elite
-        desc: A equipe operacional Quadricast assume os switches de corte, câmeras 4K e engenharia de áudio para garantir que você foque apenas na fala.
-      - title: Pós-Produção e Desdobramentos
-        desc: Nossos editores seniores finalizam a peça principal, refinam som e imagem e entregam os cortes verticais legendados prontos para publicação.
-
-- type: testimonials-grid
-    title: Quem projeta sua autoridade com a Quadricast
+  - type: bento-grid
+    title: Aproveitamento Estratégico de Conteúdo
+    desc: Uma única sessão de gravação pode render muito mais do que um vídeo. Planejamos sua produção para abastecer múltiplos canais e formatos.
     items:
-      - quote: Unificamos toda a nossa comunicação interna e o podcast institucional com a equipe da Quadricast. O profissionalismo, a previsibilidade de entrega e o rigor técnico trouxeram um nível de autoridade que não encontrávamos em nenhum outro fornecedor do mercado.
+      - size: large
+        bg_class: bg-primary text-white
+        image: assets/img/bento-1.webp
+        icon: collection-play-fill
+        title: O Ativo Central (Episódio Master)
+        desc: A peça completa gravada em 4K nativo, tratada com engenharia acústica zero-hiss e pós-produzida com vinhetas, GC e identidade da sua marca.
+      - bg_class: bg-body-tertiary bg-opacity-25
+        image: assets/img/bento-2.webp
+        icon: phone-fill
+        title: Cortes Verticais de Alta Retenção
+        desc: Edições dinâmicas em 9:16 com legendas assertivas, ganchos magnéticos e enquadramentos perfeitos para Reels, TikTok e YouTube Shorts.
+      - bg_class: bg-body-tertiary bg-opacity-25
+        image: assets/img/bento-3.webp
+        icon: linkedin
+        title: Insights para LinkedIn & Negócios
+        desc: Pílulas de liderança executiva e falas de autoridade recortadas estrategicamente para impactar decisores e fortalecer o employer branding.
+      - bg_class: bg-body-tertiary bg-opacity-25
+        image: assets/img/bento-4.webp
+        icon: camera-fill
+        title: Cobertura de Bastidores e Fotos
+        desc: Registros fotográficos e microvídeos captados em tempo real na ilha técnica e set para comprovar solidez e gerar engajamento imediato.
+  - type: how-it-works-steps
+    title: O Método Quadricast
+    desc: Você entra com a ideia e o conhecimento. Nós cuidamos de toda a engenharia de produção, do primeiro briefing à entrega final.
+    steps:
+      - title: 1. Briefing e Alinhamento
+        desc: Compreendemos o objetivo de negócio, público-alvo, formato ideal, locação e canais de distribuição do projeto.
+      - title: 2. Pré-Produção e Roteiro
+        desc: Estruturamos a pauta, a dinâmica de gravação, o cronograma operacional e toda a configuração cenográfica necessária.
+      - title: 3. Captação de Alta Performance
+        desc: Nossa equipe assume a operação dos switches, câmeras 4K, microfonia e iluminação para que você grave com conforto absoluto.
+      - title: 4. Transmissão (Lives e Eventos)
+        desc: Quando o projeto exige sinal em tempo real, executamos streaming multicâmera com latência mínima e redundância de sinal.
+      - title: 5. Pós-Produção e Tratamento
+        desc: Edição refinada, balanceamento fino de áudio, color grading, inserção de artes, GC e vinhetas personalizadas.
+      - title: 6. Desdobramentos e Cortes
+        desc: Criação de múltiplos cortes verticais e horizontais prontos para alimentar seu ecossistema digital por semanas.
+  - type: gallery-masonry
+    badge: Nossos Bastidores
+    title: Conteúdo profissional em diferentes cenários
+    desc: Estúdio, cozinha, feira de negócios, congresso ou convenção na sua empresa. Conheça a versatilidade de nossas produções reais.
+    tag: Portfolio
+  - type: testimonials-grid
+    title: Quem constrói autoridade com a Quadricast
+    items:
+      - quote: Centralizamos todos os videocasts corporativos e a comunicação institucional na Quadricast. O rigor técnico, o tratamento de áudio e a pontualidade nos entregaram uma autoridade que nos diferencia no mercado.
         initials: MP
         bg_class: bg-primary
         author: Marcelo Prado
         role: Diretor de Marketing, TecnoIndústria
-      - quote: O modelo 'sente e grave' deles mudou completamente o meu jogo. Eu só preciso focar no meu conhecimento. Em apenas uma tarde de gravação nos estúdios, saio com conteúdo de altíssimo nível estético e cortes verticais suficientes para abastecer minhas redes o mês inteiro.
+      - quote: O modelo 'chegue, sente e grave' mudou totalmente minha rotina. Em apenas uma tarde no estúdio, gravo episódios incríveis e saio com cortes verticais de alta qualidade suficientes para abastecer minhas redes o mês inteiro.
         initials: CG
         bg_class: bg-dark text-white
         author: Camila Guimarães
-        role: Mentora e Palestrante Corporativa
-      - quote: Contratamos a operação de estúdio móvel para nossa feira de negócios e a entrega foi simplesmente impecável. Transmissão de sinal robusta, áudio perfeito e cortes dinâmicos em tempo real enquanto o evento acontecia. Uma verdadeira usina de conteúdo de padrão broadcast.
+        role: Mentora e Consultora Executiva B2B
+      - quote: A operação móvel que montaram dentro do nosso congresso foi impressionante. Transmissão estável, áudio impecável e entrevistas dinâmicas com patrocinadores em tempo real. Uma usina de conteúdo completa.
         initials: RZ
         bg_class: bg-secondary text-dark
         author: Roberto Zanin
-        role: Head de Eventos, ExpoBusiness SP
+        role: Head de Eventos Corporativos
   - type: pricing-tables
-    title: Soluções e Planos Sob Medida
-    desc: Escolha o modelo de produção que melhor se alinha à estratégia de crescimento e presença digital da sua marca.
+    title: Formas Flexíveis de Contratação
+    desc: Escolha o modelo que melhor atende à escala de produção e aos objetivos da sua empresa ou projeto.
     plans:
       - name: Locação de Estúdio
-        desc: Para criadores e agências que demandam infraestrutura física de alto padrão para captação.
+        desc: Para produtoras, criadores e equipes que precisam de infraestrutura física de alto padrão para gravação independente.
         price: R$ 290
         period: hora
         popular: false
         features:
-          - Estúdios físicos com acústica zero-hiss certificada
-          - Iluminação cenográfica profissional configurada
-          - Câmeras 4K nativas e microfones broadcast
-          - Operador de switcher técnico dedicado incluso
-          - Entrega dos arquivos brutos em alta definição
-        cta_text: Reservar Horário de Estúdio
+          - Ambientes com acústica zero-hiss certificada
+          - Grid de iluminação cenográfica profissional pré-configurado
+          - Cenários versáteis e monitores para identidade visual
+          - Operador técnico de switcher e monitoramento de sinal
+          - Entrega de arquivos brutos em altíssima definição
+        cta_text: Agendar Visita ao Estúdio
         cta_link: '#contato'
-      - name: Produção de Podcasts / Videocasts
-        desc: Solução completa ponta a ponta para profissionais e empresas liderarem seus mercados.
+      - name: Produção de Podcasts & Videocasts
+        desc: Solução ponta a ponta para programas e especialistas que exigem direção técnica e pós-produção completa.
         price: R$ 1.890
         period: por episódio
         popular: true
         features:
-          - Direção técnica ativa e suporte no planejamento de pauta
-          - Captação multicâmera e engenharia de áudio dedicada
-          - Edição e pós-produção completas (ajustes de áudio e vídeo)
-          - Pacote com até 5 cortes verticais legendados por episódio
-          - Criação de vinhetas e identidade visual do programa
-        cta_text: Iniciar Nossa Produção
+          - Suporte no alinhamento de pauta e preparação técnica
+          - Direção de estúdio e captação multicâmera 4K nativa
+          - Edição completa com tratamento de cor e engenharia de áudio
+          - Pacote de até 5 cortes verticais legendados por gravação
+          - Inserção de vinhetas, GC e elementos de identidade de marca
+        cta_text: Produzir Meu Podcast
         cta_link: '#contato'
-      - name: Corporativo & Eventos
-        desc: Projetos de estúdio móvel para convenções, transmissões ao vivo de feiras ou assinaturas recorrentes.
-        price: Sob Consulta
+      - name: Conteúdo Corporativo & Eventos
+        desc: Produção recorrente mensal ou estruturas móveis completas para convenções, feiras e transmissões ao vivo.
+        price: Sob Medida
         period: projeto
         popular: false
         features:
-          - Deslocamento de estúdio móvel e equipe para sua empresa ou evento
-          - Transmissão ao vivo multicâmera com latência zero
-          - Estruturação de universidade corporativa e vídeos de RH
-          - Planos mensais de conteúdo recorrente com diárias programadas
-          - Gerente de conta e equipe de pós-produção sob demanda
-        cta_text: Falar com Engenharia Comercial
+          - Deslocamento de estúdio móvel e equipe técnica externa
+          - Transmissões ao vivo multicâmera para eventos e lives
+          - Diárias mensais planejadas para comunicação interna e RH
+          - Gravação de cursos online, masterclasses e treinamentos
+          - Gerente de projeto dedicado e calendário contínuo de entregas
+        cta_text: Falar com um Produtor
         cta_link: '#contato'
   - type: faq-accordion
     title: Dúvidas Frequentes sobre nossa Produção
     items:
-      - question: Como funciona o modelo 'chegue, sente e grave' da Quadricast?
-        answer: Nós eliminamos toda a complexidade técnica para você. Nossa equipe cuida da preparação dos microfones, configuração de câmeras, iluminação cenográfica e monitoramento do som. Você só precisa focar no roteiro e na sua mensagem. No final, cuidamos da edição e dos cortes.
-      - question: Quais são as especificações do estúdio gastronômico?
-        answer: Nosso estúdio de gastronomia é totalmente operacional e planejado para produções de alimentos e bebidas. Ele conta com bancada estruturada, iluminação direcionada para captação detalhada de ingredientes, pia funcional e infraestrutura para transmissões ao vivo ou gravações de receitas e branded content.
-      - question: Como funciona a logística do estúdio móvel para eventos externos?
-        answer: Nós transportamos toda a nossa infraestrutura de ponta (câmeras, switchers, microfones profissionais de lapela ou pedestal, iluminação e painéis acústicos portáteis) diretamente para o pavilhão do seu congresso ou empresa. Montamos uma ilha técnica completa para streaming estável e gravação de palco.
-      - question: Qual é o tempo de entrega das edições e dos cortes?
-        answer: O prazo de entrega padrão para episódios editados e seus respectivos pacotes de cortes verticais é de 5 a 7 dias úteis após a gravação. Para coberturas em tempo real durante eventos e transmissões ao vivo, podemos estruturar uma ilha de edição rápida diretamente no local para geração instantânea de ativos.
-      - question: Posso fechar um contrato mensal para minha empresa?
-        answer: Sim. Oferecemos planos de Conteúdo Corporativo Recorrente, estruturados com diárias mensais fixas de captação. Esse formato otimiza os custos e garante um fluxo contínuo de vídeos de treinamento, posicionamento de marca ou comunicação de liderança para os seus canais.
+      - question: Posso apenas alugar o estúdio?
+        answer: Sim. A locação está disponível para criadores e equipes que já possuem produção própria. Também é possível contratar o estúdio com operador técnico incluso ou optar pelo pacote de produção completa com direção e edição.
+      - question: Preciso levar minha própria equipe de suporte?
+        answer: Não necessariamente. A equipe da Quadricast pode absorver toda a operação técnica — cuidando de pré-produção, iluminação, microfonação, enquadramentos, direção de corte, edição e pós-produção de desdobramentos.
+      - question: Vocês produzem podcasts e videocasts do zero?
+        answer: Sim. Participamos desde a concepção do formato, dinâmica e alinhamento de pauta até a captação multicâmera, edição de blocos, vinhetas, cortes verticais legendados e arquivos finais organizados para distribuição.
+      - question: É possível realizar transmissões ao vivo (lives)?
+        answer: Sim. Realizamos transmissões ao vivo de padrão broadcast com tecnologia multicâmera e latência controlada, integradas ao YouTube, LinkedIn, plataformas privadas corporativas ou sistemas híbridos de eventos.
+      - question: Vocês realizam gravações fora do estúdio?
+        answer: Sim. Transportamos equipamentos e equipe para empresas, fábricas, congressos, feiras e convenções. Nossa equipe faz uma avaliação prévia de acústica, energia e conectividade para garantir estabilidade e previsibilidade.
+      - question: Como funciona o estúdio de culinária e gastronomia?
+        answer: É um espaço especializado com bancada operacional funcional, pia, iluminação desenhada para realçar textura de ingredientes e infraestrutura para programas de receitas, degustações, branded content e cursos práticos.
+      - question: Vocês editam e entregam cortes prontos para redes sociais?
+        answer: Sim. Em cada projeto podemos estruturar um pacote de desdobramentos com cortes verticais (9:16), teasers dinâmicos, legendas sincronizadas e materiais pensados especificamente para Reels, TikTok, YouTube Shorts e LinkedIn.
+      - question: Como é calculado o orçamento de um projeto?
+        answer: O investimento é dimensionado conforme a duração da captação, o formato desejado, a quantidade de câmeras, necessidade de estúdio móvel externo, pós-produção e número de entregas. Nossa equipe avalia sua demanda e monta a proposta ideal.
   - type: cta-final
-    title: Transforme sua mensagem em conteúdo de padrão broadcast.
-    desc: Conecte-se com seu público e construa relevância através da melhor infraestrutura audiovisual. Fale com um produtor e garanta a sua agenda.
-    cta_text: Solicitar Proposta Personalizada
+    title: Tem uma ideia? Vamos colocar no ar.
+    desc: Conte para a Quadricast o que você quer produzir. Nossa equipe ajuda a definir o formato, a estrutura e o melhor caminho técnico para o seu projeto.
+    cta_text: Fale com um Produtor
     cta_link: '#contato'
----
