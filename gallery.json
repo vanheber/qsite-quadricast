@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024736237-767721558",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 15_36_46 (4).png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T21:05:45.083Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024736237-767721558-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024736237-767721558-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024736237-767721558-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024736237-767721558-original.png"
+      },
+      "totalBytes": 1048020,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024712915-14722003",
       "filename": "ChatGPT Image 24 de jul. de 2026, 15_36_46 (3).png",
       "title": "ChatGPT Image 24 de jul",
@@ -555,15 +577,6 @@
       "title": "Projeto Alpha",
       "description": "Design arquitetônico moderno com elementos de vidro.",
       "filename": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-      "tags": [
-        "Portfolio"
-      ]
-    },
-    {
-      "id": "mock-4",
-      "title": "Projeto Delta",
-      "description": "Residência contemporânea sustentável.",
-      "filename": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
       "tags": [
         "Portfolio"
       ]
