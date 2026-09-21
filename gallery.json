@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024099722-465916973",
+      "filename": "feature-benefit-4.webp",
+      "title": "feature-benefit-4",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:55:10.782Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024099722-465916973-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024099722-465916973-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024099722-465916973-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024099722-465916973-original.webp"
+      },
+      "totalBytes": 163722,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024091401-505891950",
       "filename": "feature-benefit-3.webp",
       "title": "feature-benefit-3",
