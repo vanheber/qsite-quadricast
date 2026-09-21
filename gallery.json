@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024252618-998458935",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 14_40_28 (3).png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:57:41.782Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024252618-998458935-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024252618-998458935-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024252618-998458935-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024252618-998458935-original.png"
+      },
+      "totalBytes": 927341,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024235086-658093897",
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_40_27 (2).png",
       "title": "ChatGPT Image 24 de jul",
@@ -47,8 +69,8 @@
     {
       "id": "img-1790024193514-845238523",
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_33_59.png",
-      "title": "ChatGPT Image 24 de jul",
-      "description": "",
+      "title": "Gravação do Podcast Sabores em Papo",
+      "description": "Bastidores da gravação de um episódio do programa 'Sabores em Papo', destacando a equipe de produção de vídeo e os apresentadores em um estúdio de culinária moderno.",
       "tags": [],
       "uploadDate": "2026-09-21T20:56:45.064Z",
       "sizes": {
@@ -135,8 +157,8 @@
     {
       "id": "img-1790024119613-708712169",
       "filename": "feature-tab-2.webp",
-      "title": "feature-tab-2",
-      "description": "",
+      "title": "Chef Finalizando Prato com Precisão",
+      "description": "Um renomado chef de cozinha concentra-se na montagem detalhada de um prato gourmet em um ambiente de restaurante profissional. A imagem captura a essência da alta gastronomia e da precisão culinária durante uma produção de vídeo.",
       "tags": [],
       "uploadDate": "2026-09-21T20:55:22.080Z",
       "sizes": {
@@ -201,8 +223,8 @@
     {
       "id": "img-1790024091401-505891950",
       "filename": "feature-benefit-3.webp",
-      "title": "feature-benefit-3",
-      "description": "",
+      "title": "Edição de Vídeo Profissional de Alta Precisão",
+      "description": "Uma profissional focada trabalha em um estúdio moderno de edição de vídeo, utilizando ferramentas avançadas. A tela exibe uma timeline detalhada com destaque para recursos de geolocalização.",
       "tags": [],
       "uploadDate": "2026-09-21T20:54:58.316Z",
       "sizes": {
