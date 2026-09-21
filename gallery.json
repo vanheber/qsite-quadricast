@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024211655-792168464",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 14_40_27 (1).png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:57:02.805Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024211655-792168464-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024211655-792168464-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024211655-792168464-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024211655-792168464-original.png"
+      },
+      "totalBytes": 945873,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024193514-845238523",
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_33_59.png",
       "title": "ChatGPT Image 24 de jul",
@@ -113,8 +135,8 @@
     {
       "id": "img-1790024112007-314340669",
       "filename": "feature-tab-1.webp",
-      "title": "feature-tab-1",
-      "description": "",
+      "title": "Gravação de Podcast Profissional",
+      "description": "Dois profissionais realizam uma entrevista em um estúdio de gravação moderno e bem equipado, com microfones, câmeras e iluminação profissional.",
       "tags": [],
       "uploadDate": "2026-09-21T20:55:19.260Z",
       "sizes": {
