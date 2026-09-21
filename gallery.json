@@ -758,15 +758,6 @@
       ]
     },
     {
-      "id": "mock-2",
-      "title": "Projeto Beta",
-      "description": "Interiores minimalistas com luz natural abundante.",
-      "filename": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-      "tags": [
-        "Portfolio"
-      ]
-    },
-    {
       "id": "mock-3",
       "title": "Projeto Gamma",
       "description": "Escritório corporativo focado em produtividade.",
