@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024034384-717221387",
+      "filename": "bento-2.webp",
+      "title": "bento-2",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:53:56.603Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024034384-717221387-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024034384-717221387-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024034384-717221387-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024034384-717221387-original.webp"
+      },
+      "totalBytes": 100112,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024030630-957764444",
       "filename": "bento-1.webp",
       "title": "bento-1",
