@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024122677-272780374",
+      "filename": "feature-tab-3.webp",
+      "title": "feature-tab-3",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:55:25.678Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024122677-272780374-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024122677-272780374-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024122677-272780374-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024122677-272780374-original.webp"
+      },
+      "totalBytes": 101938,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024119613-708712169",
       "filename": "feature-tab-2.webp",
       "title": "feature-tab-2",
@@ -47,8 +69,8 @@
     {
       "id": "img-1790024099722-465916973",
       "filename": "feature-benefit-4.webp",
-      "title": "feature-benefit-4",
-      "description": "",
+      "title": "Produção de Vídeo Profissional em Eventos",
+      "description": "Um operador ajusta uma câmera de cinema em um carrinho de produção móvel durante uma grande feira de tecnologia. A imagem demonstra a alta qualidade e precisão na cobertura audiovisual de eventos corporativos.",
       "tags": [],
       "uploadDate": "2026-09-21T20:55:10.782Z",
       "sizes": {
@@ -113,8 +135,8 @@
     {
       "id": "img-1790024072212-927289411",
       "filename": "feature-benefit-1.webp",
-      "title": "feature-benefit-1",
-      "description": "",
+      "title": "Estúdio de Podcast Profissional",
+      "description": "Uma mão ajusta um microfone profissional em um estúdio de gravação moderno, equipado com câmeras e iluminação para produção de vídeo.",
       "tags": [],
       "uploadDate": "2026-09-21T20:54:40.319Z",
       "sizes": {
