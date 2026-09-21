@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024193514-845238523",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 14_33_59.png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:56:45.064Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024193514-845238523-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024193514-845238523-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024193514-845238523-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024193514-845238523-original.png"
+      },
+      "totalBytes": 954805,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024128801-643601089",
       "filename": "og-image.webp",
       "title": "Controle de Transmissão ao Vivo",
