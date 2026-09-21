@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024683704-950029869",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 15_36_46 (2).png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T21:04:58.875Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024683704-950029869-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024683704-950029869-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024683704-950029869-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024683704-950029869-original.png"
+      },
+      "totalBytes": 1221141,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024663584-927495290",
       "filename": "ChatGPT Image 24 de jul. de 2026, 15_36_45 (1).png",
       "title": "ChatGPT Image 24 de jul",
@@ -14,28 +36,6 @@
         "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024663584-927495290-original.png"
       },
       "totalBytes": 1260519,
-      "originalExt": ".png",
-      "visionLabels": [],
-      "usage": {
-        "qsiteCount": 0,
-        "chatCount": 0
-      },
-      "cachedContentId": null
-    },
-    {
-      "id": "img-1790024622815-737455631",
-      "filename": "ChatGPT Image 24 de jul. de 2026, 14_23_34 (4).png",
-      "title": "ChatGPT Image 24 de jul",
-      "description": "",
-      "tags": [],
-      "uploadDate": "2026-09-21T21:03:50.375Z",
-      "sizes": {
-        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024622815-737455631-thumb.webp",
-        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024622815-737455631-medium.webp",
-        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024622815-737455631-large.webp",
-        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024622815-737455631-original.png"
-      },
-      "totalBytes": 680341,
       "originalExt": ".png",
       "visionLabels": [],
       "usage": {
