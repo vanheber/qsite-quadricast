@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024297615-233920609",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 15_23_29 (1).png",
+      "title": "ChatGPT Image 24 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:58:29.170Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024297615-233920609-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024297615-233920609-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024297615-233920609-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024297615-233920609-original.png"
+      },
+      "totalBytes": 754884,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024267588-553524596",
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_54_23.png",
       "title": "Sabores em Pauta: Podcast Gastronômico",
