@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024046602-891611578",
+      "filename": "bento-4.webp",
+      "title": "bento-4",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:54:30.781Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024046602-891611578-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024046602-891611578-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024046602-891611578-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024046602-891611578-original.webp"
+      },
+      "totalBytes": 115200,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024037100-342925082",
       "filename": "bento-3.webp",
       "title": "Entrevista de Negócios e Liderança",
