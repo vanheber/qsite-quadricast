@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024495675-294065010",
+      "filename": "ChatGPT Image 27 de jul. de 2026, 16_37_38 (2).png",
+      "title": "ChatGPT Image 27 de jul",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T21:01:43.787Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024495675-294065010-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024495675-294065010-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024495675-294065010-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024495675-294065010-original.png"
+      },
+      "totalBytes": 722314,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024482250-421349264",
       "filename": "ChatGPT Image 27 de jul. de 2026, 16_37_38 (1).png",
       "title": "ChatGPT Image 27 de jul",
