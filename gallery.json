@@ -1,10 +1,32 @@
 {
   "images": [
     {
-      "id": "img-1790024332380-515753290",
-      "filename": "ChatGPT Image 24 de jul. de 2026, 15_23_29 (4).png",
+      "id": "img-1790024406507-544688417",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 15_18_26 (1).png",
       "title": "ChatGPT Image 24 de jul",
       "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T21:00:25.204Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024406507-544688417-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024406507-544688417-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024406507-544688417-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024406507-544688417-original.png"
+      },
+      "totalBytes": 854540,
+      "originalExt": ".png",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
+      "id": "img-1790024332380-515753290",
+      "filename": "ChatGPT Image 24 de jul. de 2026, 15_23_29 (4).png",
+      "title": "Produção de Live de Culinária Profissional",
+      "description": "Bastidores de uma gravação ao vivo de culinária, destacando o chef apresentando uma receita de molho pesto em uma cozinha moderna equipada com câmeras e iluminação de estúdio.",
       "tags": [],
       "uploadDate": "2026-09-21T20:59:06.478Z",
       "sizes": {
