@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024128801-643601089",
+      "filename": "og-image.webp",
+      "title": "og-image",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:55:31.498Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024128801-643601089-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024128801-643601089-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024128801-643601089-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024128801-643601089-original.webp"
+      },
+      "totalBytes": 116234,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024126007-871745251",
       "filename": "hero-split-form-bg.webp",
       "title": "hero-split-form-bg",
