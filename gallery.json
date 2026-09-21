@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790024119613-708712169",
+      "filename": "feature-tab-2.webp",
+      "title": "feature-tab-2",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-21T20:55:22.080Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024119613-708712169-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024119613-708712169-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024119613-708712169-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024119613-708712169-original.webp"
+      },
+      "totalBytes": 168674,
+      "originalExt": ".webp",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790024112007-314340669",
       "filename": "feature-tab-1.webp",
       "title": "feature-tab-1",
@@ -157,8 +179,8 @@
     {
       "id": "img-1790024034384-717221387",
       "filename": "bento-2.webp",
-      "title": "bento-2",
-      "description": "",
+      "title": "Edição de Vídeo Profissional",
+      "description": "Visão em close-up de um profissional trabalhando em um estúdio de pós-produção moderno, utilizando softwares de edição de vídeo e áudio em telas de alta resolução.",
       "tags": [],
       "uploadDate": "2026-09-21T20:53:56.603Z",
       "sizes": {
