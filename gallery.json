@@ -267,7 +267,9 @@
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_59_57 (3).png",
       "title": "ChatGPT Image 24 de jul",
       "description": "",
-      "tags": [],
+      "tags": [
+        "Portfolio"
+      ],
       "uploadDate": "2026-09-21T21:09:18.222Z",
       "sizes": {
         "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024939290-313038647-thumb.webp",
@@ -277,12 +279,17 @@
       },
       "totalBytes": 963696,
       "originalExt": ".png",
-      "visionLabels": [],
+      "visionLabels": [
+        "Portfolio"
+      ],
       "usage": {
         "qsiteCount": 0,
         "chatCount": 0
       },
-      "cachedContentId": null
+      "cachedContentId": null,
+      "active": true,
+      "price": "",
+      "fields": {}
     },
     {
       "id": "img-1790024919981-890400889",
