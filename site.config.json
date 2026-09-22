@@ -7,7 +7,7 @@
     "features": {
         "site": true,
         "blog": true,
-        "podcast": true,
+        "podcast": false,
         "bios": true,
         "catalog": true,
         "catalog_slug": "catalogo",
