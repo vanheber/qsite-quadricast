@@ -21,19 +21,19 @@
         "maintenance": true
     },
     "social": {
-        "instagram": "https://instagram.com/quadricast",
+        "instagram": "https://www.instagram.com/quadricastoficial/",
         "twitter": "",
         "linkedin": "https://linkedin.com/company/quadricast",
         "discord": "",
-        "facebook": "",
-        "tiktok": "",
-        "whatsapp": "https://wa.me/5515999999999"
+        "facebook": "https://www.facebook.com/quadricastoficial",
+        "tiktok": "https://www.tiktok.com/@quadricast",
+        "whatsapp": "https://wa.me/5515997862901"
     },
     "messaging": {
         "channels": [
             "whatsapp"
         ],
-        "whatsapp": "5515999999999",
+        "whatsapp": "5515997862901",
         "telegram": "",
         "xchat": ""
     },
@@ -95,7 +95,7 @@
         ],
         "phones": [
             {
-                "number": "(15) 99999-9999",
+                "number": "(15) 99786-2901",
                 "label": "WhatsApp Comercial",
                 "type": "whatsapp"
             }
@@ -103,12 +103,12 @@
         "addresses": [
             {
                 "label": "Matriz",
-                "street": "",
-                "neighborhood": "",
+                "street": "AV STA CRUZ 327 SALA 11",
+                "neighborhood": "Jd. Vera Cruz",
                 "complement": "",
                 "city": "Sorocaba",
                 "state": "SP",
-                "zip": "",
+                "zip": "18050-260",
                 "googleMapsEmbed": ""
             }
         ],

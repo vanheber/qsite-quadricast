@@ -6,19 +6,19 @@ theme_layout: navbar-classic
 sections:
   - type: hero-split-form
     bg_image: assets/img/hero-split-form-bg.webp
-    badge: Estratégia • Produção • Transmissão • Resultados
+    badge: PRODUÇÃO - TRANSMISSÃO - RESULTADOS
     title: Conteúdo profissional começa com estrutura.
-    desc: Estúdios profissionais, tecnologia multicâmera e equipe especializada para podcasts, vídeos, lives, transmissões, conteúdos corporativos e produções externas.
+    desc: Estúdios profissionais, tecnologia e equipe especializada.
     bullet_points:
       - icon: camera-reels-fill
         title: Estrutura Própria Completa
-        desc: Ambientes dedicados com acústica tratada, captação 4K nativa e iluminação cenográfica profissional.
+        desc: Ambientes dedicados com acústica tratada, captação 4K nativa e iluminação.
       - icon: broadcast-pin
         title: Operação Itinerante Modular
-        desc: Transportamos equipe técnica, ilha de corte e sinal broadcast até feiras, congressos e sedes corporativas.
+        desc: Transportamos equipamento e sinal até feiras, congressos e sedes corporativas.
       - icon: stack
         title: Uma Produção, Vários Formatos
-        desc: Transformamos uma única diária de gravação em dezenas de pílulas, carrosséis e cortes verticais de alta retenção.
+        desc: Transformamos uma única diária de gravação em dezenas de conteúdos de alta retenção.
     form_title: Vamos produzir?
     form_desc: Conte seu projeto e receba uma orientação estratégica sobre estrutura de estúdio, transmissão ou produção externa.
     form_fields:
