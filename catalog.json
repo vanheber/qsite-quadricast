@@ -16,7 +16,8 @@
             "description": "Galeria de eventos.",
             "tags": [
                 "Eventos"
-            ]
+            ],
+            "showInIndex": false
         }
     ],
     "indexPage": {
