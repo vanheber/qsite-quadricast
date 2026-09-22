@@ -17,7 +17,7 @@
             "tags": [
                 "Eventos"
             ],
-            "showInIndex": false
+            "showInIndex": true
         }
     ],
     "indexPage": {
