@@ -514,7 +514,9 @@
       "filename": "ChatGPT Image 24 de jul. de 2026, 15_18_26 (1).png",
       "title": "ChatGPT Image 24 de jul",
       "description": "",
-      "tags": [],
+      "tags": [
+        "Eventos"
+      ],
       "uploadDate": "2026-09-21T21:00:25.204Z",
       "sizes": {
         "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024406507-544688417-thumb.webp",
@@ -524,12 +526,17 @@
       },
       "totalBytes": 854540,
       "originalExt": ".png",
-      "visionLabels": [],
+      "visionLabels": [
+        "Eventos"
+      ],
       "usage": {
         "qsiteCount": 0,
         "chatCount": 0
       },
-      "cachedContentId": null
+      "cachedContentId": null,
+      "active": true,
+      "price": "",
+      "fields": {}
     },
     {
       "id": "img-1790024332380-515753290",
