@@ -873,15 +873,6 @@
       "cachedContentId": null
     },
     {
-      "id": "mock-1",
-      "title": "Projeto Alpha",
-      "description": "Design arquitetônico moderno com elementos de vidro.",
-      "filename": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-      "tags": [
-        "Portfolio"
-      ]
-    },
-    {
       "id": "evento-1",
       "title": "Palestra",
       "description": "Uma palestra interessante.",
