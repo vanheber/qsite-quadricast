@@ -618,7 +618,9 @@
       "filename": "ChatGPT Image 24 de jul. de 2026, 14_33_59.png",
       "title": "Gravação do Podcast Sabores em Papo",
       "description": "Bastidores da gravação de um episódio do programa 'Sabores em Papo', destacando a equipe de produção de vídeo e os apresentadores em um estúdio de culinária moderno.",
-      "tags": [],
+      "tags": [
+        "Portfolio"
+      ],
       "uploadDate": "2026-09-21T20:56:45.064Z",
       "sizes": {
         "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024193514-845238523-thumb.webp",
@@ -628,12 +630,17 @@
       },
       "totalBytes": 954805,
       "originalExt": ".png",
-      "visionLabels": [],
+      "visionLabels": [
+        "Portfolio"
+      ],
       "usage": {
         "qsiteCount": 0,
         "chatCount": 0
       },
-      "cachedContentId": null
+      "cachedContentId": null,
+      "active": true,
+      "price": "",
+      "fields": {}
     },
     {
       "id": "img-1790024128801-643601089",
