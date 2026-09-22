@@ -799,7 +799,9 @@
       "filename": "feature-benefit-4.webp",
       "title": "Produção de Vídeo Profissional em Eventos",
       "description": "Um operador ajusta uma câmera de cinema em um carrinho de produção móvel durante uma grande feira de tecnologia. A imagem demonstra a alta qualidade e precisão na cobertura audiovisual de eventos corporativos.",
-      "tags": [],
+      "tags": [
+        "Eventos"
+      ],
       "uploadDate": "2026-09-21T20:55:10.782Z",
       "sizes": {
         "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790024099722-465916973-thumb.webp",
@@ -809,12 +811,17 @@
       },
       "totalBytes": 163722,
       "originalExt": ".webp",
-      "visionLabels": [],
+      "visionLabels": [
+        "Eventos"
+      ],
       "usage": {
         "qsiteCount": 0,
         "chatCount": 0
       },
-      "cachedContentId": null
+      "cachedContentId": null,
+      "active": true,
+      "price": "",
+      "fields": {}
     },
     {
       "id": "img-1790024091401-505891950",
