@@ -216,7 +216,7 @@ sections:
     plans:
       - name: Locação de Estúdio
         desc: Para produtoras, criadores e equipes que precisam de infraestrutura física de alto padrão para gravação independente.
-        price: R$ 350,00
+        price: R$350,00
         period: hora
         popular: false
         features:
@@ -229,12 +229,8 @@ sections:
         cta_link: '#contato'
       - name: Produção de Podcasts & Videocasts
         desc: Solução ponta a ponta para programas e especialistas que exigem direção técnica e pós-produção completa.
-        price: R$ 650,00
-        period: 1 episódio/mês já com 5 cortes
-        price: R$ 1.250,00
-        period: 2 episódio/mês já com 10 cortes
-        price: R$ 2.250,00
-        period: 4 episódio/mês já com 20 cortes
+        price: R$650,00
+        period: Episódio
         popular: true
         features:
           - Direção de estúdio e captação multicâmera 4K nativa
