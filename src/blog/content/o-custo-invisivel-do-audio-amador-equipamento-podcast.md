@@ -4,7 +4,7 @@ date: "2024-05-20"
 description: "Entenda como a infraestrutura técnica e o áudio de padrão broadcast impactam a retenção do seu podcast e o posicionamento da sua marca no mercado B2B."
 tags: ["Podcasts","Infraestrutura Audiovisual","Branded Content"]
 slug: "o-custo-invisivel-do-audio-amador-equipamento-podcast"
-cover: "/assets/img/posts/equipamento-podcast/cover.webp"
+cover: "https://galeria.agenciaquadri.com.br/quadricast/img-1790129288021-860548144-large.webp"
 layout: "blog-post"
 ---
 
