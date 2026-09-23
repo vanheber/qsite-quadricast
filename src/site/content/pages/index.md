@@ -216,11 +216,11 @@ sections:
     plans:
       - name: Locação de Estúdio
         desc: Para produtoras, criadores e equipes que precisam de infraestrutura física de alto padrão para gravação independente.
-        price: R$ 290
+        price: R$ 350,00
         period: hora
         popular: false
         features:
-          - Ambientes com acústica zero-hiss certificada
+          - Ambientes com acústica zero-hiss certificada, prontos para gravações e lives.
           - Grid de iluminação cenográfica profissional pré-configurado
           - Cenários versáteis e monitores para identidade visual
           - Operador técnico de switcher e monitoramento de sinal
@@ -229,11 +229,14 @@ sections:
         cta_link: '#contato'
       - name: Produção de Podcasts & Videocasts
         desc: Solução ponta a ponta para programas e especialistas que exigem direção técnica e pós-produção completa.
-        price: R$ 1.890
-        period: por episódio
+        price: R$ 650,00
+        period: 1 episódio/mês já com 5 cortes
+        price: R$ 1.250,00
+        period: 2 episódio/mês já com 10 cortes
+        price: R$ 2.250,00
+        period: 4 episódio/mês já com 20 cortes
         popular: true
         features:
-          - Suporte no alinhamento de pauta e preparação técnica
           - Direção de estúdio e captação multicâmera 4K nativa
           - Edição completa com tratamento de cor e engenharia de áudio
           - Pacote de até 5 cortes verticais legendados por gravação
@@ -247,7 +250,7 @@ sections:
         popular: false
         features:
           - Deslocamento de estúdio móvel e equipe técnica externa
-          - Transmissões ao vivo multicâmera para eventos e lives
+          - Transmissões ao vivo multicâmera
           - Diárias mensais planejadas para comunicação interna e RH
           - Gravação de cursos online, masterclasses e treinamentos
           - Gerente de projeto dedicado e calendário contínuo de entregas
