@@ -1,6 +1,28 @@
 {
   "images": [
     {
+      "id": "img-1790129288021-860548144",
+      "filename": "Gemini_Generated_Image_9j56da9j56da9j56.jpeg",
+      "title": "Gemini_Generated_Image_9j56da9j56da9j56",
+      "description": "",
+      "tags": [],
+      "uploadDate": "2026-09-23T02:08:16.181Z",
+      "sizes": {
+        "thumb": "https://galeria.agenciaquadri.com.br/quadricast/img-1790129288021-860548144-thumb.webp",
+        "medium": "https://galeria.agenciaquadri.com.br/quadricast/img-1790129288021-860548144-medium.webp",
+        "large": "https://galeria.agenciaquadri.com.br/quadricast/img-1790129288021-860548144-large.webp",
+        "original": "https://galeria.agenciaquadri.com.br/quadricast/img-1790129288021-860548144-original.jpeg"
+      },
+      "totalBytes": 691830,
+      "originalExt": ".jpeg",
+      "visionLabels": [],
+      "usage": {
+        "qsiteCount": 0,
+        "chatCount": 0
+      },
+      "cachedContentId": null
+    },
+    {
       "id": "img-1790025671694-160036480",
       "filename": "ChatGPT Image 6 de jul. de 2026, 16_24_52.png",
       "title": "ChatGPT Image 6 de jul",
