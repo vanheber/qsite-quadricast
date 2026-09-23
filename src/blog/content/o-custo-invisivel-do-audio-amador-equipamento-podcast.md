@@ -1,8 +1,8 @@
 ---
 title: "O Custo Invisível do Áudio Amador: Por Que o Equipamento Define a Autoridade do seu Podcast"
-date: 2024-05-20
+date: "2024-05-20"
 description: "Entenda como a infraestrutura técnica e o áudio de padrão broadcast impactam a retenção do seu podcast e o posicionamento da sua marca no mercado B2B."
-tags: ["Podcasts", "Infraestrutura Audiovisual", "Branded Content"]
+tags: ["Podcasts","Infraestrutura Audiovisual","Branded Content"]
 slug: "o-custo-invisivel-do-audio-amador-equipamento-podcast"
 cover: "/assets/img/posts/equipamento-podcast/cover.webp"
 layout: "blog-post"
