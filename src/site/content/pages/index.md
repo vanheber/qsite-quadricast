@@ -252,6 +252,42 @@ sections:
           - Gerente de projeto dedicado e calendário contínuo de entregas
         cta_text: Falar com um Produtor
         cta_link: '#contato'
+  - type: services-grid
+    title: Serviços e Valores
+    desc: Soluções avulsas e recorrentes para acelerar sua presença, conteúdo e resultados.
+    items:
+      - title: Vídeos Institucionais
+        desc: Materiais institucionais e corporativos com produção profissional.
+        price: A partir de R$ 3.150,00
+      - title: Vídeos de Treinamentos
+        desc: Aulas gravadas para capacitação de equipes e clientes.
+        price: A partir de R$ 350,00
+        price_note: por aula de até 15 minutos
+      - title: Cobertura de Eventos
+        desc: Cobertura completa do seu evento, do palco ao produto final.
+        price: 'Meia diária (4h): R$ 1.600,00'
+        price_note: 'Diária (8h): R$ 2.350,00'
+      - title: Captação e Edição de Palestras
+        desc: Gravação e edição profissional das suas palestras e apresentações.
+        price: A partir de R$ 1.600,00
+      - title: Transmissão de Eventos ao Vivo
+        desc: Transmissão ao vivo profissional, com estrutura e operação completa.
+        price: 'Meia diária (4h): R$ 1.850,00'
+        price_note: 'Diária (8h): R$ 2.850,00'
+      - title: Vídeos com Drone ou 360°
+        desc: Imagens aéreas ou imersivas para materiais publicitários e institucionais.
+        price: A partir de R$ 450,00
+      - title: Lives em Estúdio
+        desc: Lives com estrutura profissional em nosso estúdio.
+        price: A partir de R$ 750,00
+      - title: Edição de Vídeos para Redes Sociais
+        desc: Cortes e formatos verticais prontos para publicar nas suas redes.
+        price: A partir de R$ 350,00
+      - title: Locação de Estúdios c/ operador técnico
+        desc: Estúdio completo com operador técnico para suas gravações.
+        price: A partir de R$ 450,00
+        price_note: por hora
+    footnote: 'Valores de investimentos "a partir de", sujeitos a briefing, escopo e disponibilidade de agenda.'
   - type: faq-accordion
     title: Dúvidas Frequentes sobre nossa Produção
     items:
