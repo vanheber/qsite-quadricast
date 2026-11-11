@@ -1,0 +1,136 @@
+<footer class="py-5 mt-auto">
+    <div class="container py-4">
+        <div class="row g-5">
+            <!-- Brand & Mission (Dual Logos) -->
+            <div class="col-lg-4 col-md-6">
+                <a href="/" class="d-flex align-items-center mb-4 text-decoration-none">
+                    <img src="/assets/logo.svg" alt="Quadricast - Estúdio e Produção Audiovisual"
+                        class="logo-footer logo-light-theme">
+                    <img src="/assets/logo-inverted.svg"
+                        alt="Quadricast - Estúdio e Produção Audiovisual" class="logo-footer logo-dark-theme">
+                </a>
+                <p class="text-muted mb-4 pe-lg-5">
+                    Arquitetura de alta performance. Eliminamos a complexidade para que você foque apenas no crescimento do seu negócio.
+                </p>
+                
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Links Rápidos</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a href="/" class="text-decoration-none transition-all">Home</a></li>
+                    
+                        <li><a href="/blog" class="text-decoration-none transition-all">Blog</a></li>
+                        
+                            
+                                    <li><a href="/contato"
+                                            class="text-decoration-none transition-all">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal/Help -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Suporte</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a href="/faq" class="text-decoration-none transition-all">FAQ</a></li>
+                    <li><a href="/sobre" class="text-decoration-none transition-all">Sobre Nós</a></li>
+                    <li><a href="/privacidade"
+                            class="text-decoration-none transition-all">Privacidade</a></li>
+                    <li><a href="/termos" class="text-decoration-none transition-all">Termos</a></li>
+                    
+                        <li class="mt-2 pt-2 border-top border-secondary border-opacity-10">
+                            <a href="/bio" class="text-decoration-none transition-all small">
+                                <i class="bi bi-people me-1"></i> Lista de Bios
+                            </a>
+                        </li>
+                        
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-lg-4 col-md-6">
+                <h6 class="text-uppercase fw-bold mb-4 tracking-wide fs-7 text-muted">Comunidade</h6>
+                <p class="text-muted mb-4">Acompanhe as novidades e participe da conversa em nossas redes.</p>
+
+                <div id="social-icons-container" class="d-flex flex-wrap gap-3"></div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        if (typeof CONFIG === 'undefined' || !CONFIG.social) return;
+
+                        const iconsConfig = (CONFIG.brand && CONFIG.brand.icons) ? CONFIG.brand.icons : {};
+                        const mappings = iconsConfig.mappings || {};
+
+                        const socialMap = {
+                            discord: mappings.discord || 'bi bi-discord',
+                            twitter: mappings.twitter || 'bi bi-twitter-x',
+                            instagram: mappings.instagram || 'bi bi-instagram',
+                            linkedin: mappings.linkedin || 'bi bi-linkedin',
+                            facebook: mappings.facebook || 'bi bi-facebook',
+                            tiktok: mappings.tiktok || 'bi bi-tiktok'
+                        };
+
+                        const getIconHTML = (iconString, extraClass = '') => {
+                            if (!iconString) return '';
+                            if (iconString.trim().startsWith('<')) return iconString;
+                            if (iconString.includes(':')) {
+                                const [type, iconName] = iconString.split(':');
+                                return `<span class="${type} ${extraClass}">${iconName}</span>`;
+                            }
+                            let classes = iconString.trim();
+                            if (!classes.includes(' ') && !classes.includes('/') && !classes.includes(':')) {
+                                classes = 'bi ' + classes;
+                            }
+                            return `<i class="${classes} ${extraClass}"></i>`;
+                        };
+
+                        const container = document.getElementById('social-icons-container');
+                        let html = '';
+
+                        for (const [key, iconClass] of Object.entries(socialMap)) {
+                            const url = CONFIG.social[key];
+                            if (url && url.trim() !== '') {
+                                html += `<a href="${url}" target="_blank" class="qsi-f9c72d20b social-icon-link d-flex align-items-center justify-content-center bg-card-custom text-theme-icon rounded-circle text-decoration-none transition-all" aria-label="${key}">
+                                     ${getIconHTML(iconClass, 'fs-5')}
+                                 </a>`;
+                            }
+                        }
+                        container.innerHTML = html;
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="container d-flex flex-column flex-md-row justify-content-between align-items-center pt-5 mt-5 footer-bottom text-center text-md-start">
+        <p class="mb-0 text-muted fs-7">&copy; 2026
+                Quadricast - Estúdio e Produção Audiovisual - Agência Quadri. Todos os direitos reservados.
+                    
+                        <a href="/bio" class="qsi-c18708d91 text-decoration-none ms-2 uppercase">BIO</a>
+                        
+
+                            
+                                <a href="/catalogo" class="qsi-c18708d91 text-decoration-none ms-2 uppercase">GALERIA</a>
+                                
+
+                                    
+        </p>
+        <p class="mb-0 text-muted fs-7 mt-2 mt-md-0">
+            <span class="opacity-75">Desenvolvido por</span>
+            <a href="https://agenciaquadri.com" class="text-decoration-none fw-bold">Agência Quadri</a>
+        </p>
+    </div>
+</footer>
+
+<div class="position-fixed bottom-0 end-0 m-4 z-3 d-flex gap-2 align-items-center" id="floating-buttons">
+        <a href="#" id="floating-whatsapp" target="_blank" class="qsi-ba8a24b48 btn btn-success rounded-circle d-none align-items-center justify-content-center shadow-lg p-0" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp fs-5"></i>
+        </a>
+        <div class="js-messaging d-none" data-variant="float"></div>
+        <button id="floating-back-to-top" class="qsi-ba8a24b48 btn btn-primary rounded-circle d-none align-items-center justify-content-center shadow-lg p-0" aria-label="Voltar ao topo">
+            <i class="bi bi-arrow-up fs-5"></i>
+        </button>
+    </div>
+<script src="/assets/js/quadricast.js"></script>

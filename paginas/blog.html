@@ -1,0 +1,73 @@
+<!-- meta
+title: Blog
+description: Nosso Blog
+slug: blog
+type: artigo
+-->
+
+<section data-block="conteudo">
+
+        <!-- Page Header -->
+<header class="page-header text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Blog</h1>
+        <p class="lead text-muted" id="page-subtitle">Conteúdo estratégico para mentes digitais.</p>
+    </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="container text-center">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small justify-content-center">
+            <li class="breadcrumb-item"><a href="../">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container pt-5 pb-5">
+
+    <!-- Navegação por Categorias -->
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <p class="text-muted small fw-bold text-uppercase ls-1">Navegue por assuntos</p>
+            <div id="categories-container" class="d-flex flex-wrap justify-content-center gap-2">
+                <!-- Badges serão injetados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Container dos Posts -->
+    <div id="posts-container" class="row g-4">
+<!-- lista:artigo -->
+<template>
+<div class="col-md-6 col-lg-4">
+  <div class="card h-100 border-0 shadow-sm hover-lift">
+    <div class="position-relative">
+      <div class="ratio ratio-1x1 card-img-top overflow-hidden">
+        <img src="{{cover}}" class="object-fit-cover w-100 h-100" alt="{{title}}" loading="lazy">
+      </div>
+    </div>
+    <div class="card-body">
+      <small class="text-body fw-bold">{{date_texto}}</small>
+      <h5 class="card-title mt-2">
+        <a href="{{url}}" class="text-decoration-none stretched-link">{{title}}</a>
+      </h5>
+      <p class="card-text text-secondary small">{{description}}</p>
+    </div>
+  </div>
+</div>
+</template>
+<!-- /lista:artigo -->
+</div>
+
+    <!-- Loading / Load More -->
+    <div class="text-center mt-5">
+        
+        
+        
+    </div>
+</div>
+
+    
+</section>

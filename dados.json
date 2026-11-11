@@ -1,0 +1,43 @@
+{
+  "site": {
+    "name": "Quadricast - Estúdio e Produção Audiovisual",
+    "short_name": "Quadricast - Estúdio e Produção Audiovisual",
+    "url": "https://quadricast.com.br",
+    "locale": "pt-BR"
+  },
+  "contact": {
+    "email": "contato@quadricast.com.br",
+    "whatsapp": "5515997862901",
+    "whatsapp_e164": "+5515997862901",
+    "whatsapp_url": "https://wa.me/5515997862901"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/quadricastoficial/",
+    "linkedin": "https://linkedin.com/company/quadricast",
+    "facebook": "https://www.facebook.com/quadricastoficial",
+    "tiktok": "https://www.tiktok.com/@quadricast"
+  },
+  "logos": {
+    "horizontal": {
+      "color": "/assets/logo.svg",
+      "color_white": "/assets/logo-inverted.svg"
+    },
+    "symbol": {
+      "color": "/assets/logo.svg",
+      "color_white": "/assets/logo-inverted.svg"
+    }
+  },
+  "brand": {
+    "colors": {
+      "primary": "#0762C8",
+      "secondary": "#9BC31D",
+      "tertiary": "#054FA3",
+      "info": "#054FA3",
+      "success": "#7EA314",
+      "warning": "#E5A812",
+      "danger": "#D62828",
+      "light": "#F0F5FC",
+      "dark": "#04162B"
+    }
+  }
+}

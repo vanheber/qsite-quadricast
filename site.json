@@ -1,0 +1,66 @@
+{
+  "url": "https://quadricast.com.br",
+  "locale": "pt-BR",
+  "site_title": "Quadricast - Estúdio e Produção Audiovisual",
+  "leads_endpoint": "https://qmind.agenciaquadri.com/api/leads/capture",
+  "assets_cdn": [],
+  "webmcp": false,
+  "tipos": {
+    "pagina": {
+      "url": "",
+      "list": false,
+      "schema": "WebPage"
+    },
+    "artigo": {
+      "url": "blog",
+      "list": true,
+      "schema": "BlogPosting",
+      "ref": "_ref/artigo.html"
+    },
+    "bio": {
+      "url": "bio",
+      "list": true,
+      "schema": "Person",
+      "ref": "_ref/bio.html"
+    }
+  },
+  "menu": [
+    "home",
+    "catalogo",
+    "contato",
+    "eventos",
+    "faq",
+    "funnel",
+    "obrigado",
+    "portfolio",
+    "privacidade",
+    "sobre",
+    "termos"
+  ],
+  "editavel": {
+    "_doc": "Matriz de edição do cliente (migrado do legado).",
+    "padrao": {
+      "texto": true,
+      "imagem": true,
+      "secoes": false
+    },
+    "por_tipo": {
+      "pagina": {
+        "texto": true,
+        "imagem": true,
+        "secoes": false
+      },
+      "artigo": {
+        "texto": true,
+        "imagem": true,
+        "secoes": false
+      },
+      "bio": {
+        "texto": true,
+        "imagem": true,
+        "secoes": false
+      }
+    }
+  },
+  "base_path": "/quadricast"
+}

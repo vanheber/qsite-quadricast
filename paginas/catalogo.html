@@ -1,0 +1,70 @@
+<!-- meta
+title: Nosso Estúdio
+description: Veja nossas galerias e portfólios organizados.
+slug: catalogo
+type: pagina
+-->
+
+<section data-block="conteudo">
+
+        <style>
+    .catalog-list-card {
+        --catalog-radius: 0.5rem;
+        border-radius: var(--catalog-radius);
+        overflow: hidden;
+    }
+</style>
+
+<!-- Page Header (Same pattern as blog-list.html / podcast-list.html) -->
+<header class="page-header text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Nosso Estúdio</h1>
+        
+            <p class="lead text-muted">Veja nossas galerias e portfólios organizados.</p>
+        
+    </div>
+</header>
+
+<nav aria-label="breadcrumb" class="container pb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Nosso Estúdio</li>
+    </ol>
+</nav>
+
+<div class="container pt-5 pb-5">
+
+    <!-- Container dos Catálogos (Same grid as blog-list) -->
+    <div class="row g-4">
+        
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm hover-lift catalog-list-card">
+                    <div class="position-relative">
+                        
+                            <div class="ratio ratio-1x1 card-img-top overflow-hidden">
+                                <img src="https://galeria.agenciaquadri.com.br/quadricast/img-1790024981220-664617129-medium.webp" class="object-fit-cover w-100 h-100" alt="Eventos">
+                            </div>
+                        
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-primary shadow-sm"><i class="bi bi-grid-3x3-gap me-1"></i>Galeria</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mt-2">
+                            <a href="../eventos" class="text-decoration-none stretched-link">
+                                Eventos
+                            </a>
+                        </h5>
+                        <p class="card-text text-secondary small">Galeria de eventos.</p>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+    <!-- Empty State -->
+    
+</div>
+
+    
+</section>
