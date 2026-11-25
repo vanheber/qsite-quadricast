@@ -1,7 +1,7 @@
 {
   "url": "https://quadricast.com.br",
   "locale": "pt-BR",
-  "site_title": "Quadricast - Estúdio e Produção Audiovisual",
+  "site_title": "Quadricast | Estúdios, podcasts, lives e produção audiovisual",
   "leads_endpoint": "https://qmind.agenciaquadri.com/api/leads/capture",
   "assets_cdn": [],
   "webmcp": false,
@@ -9,7 +9,8 @@
     "pagina": {
       "url": "",
       "list": false,
-      "schema": "WebPage"
+      "schema": "WebPage",
+      "ref": "_ref/pagina.html"
     },
     "artigo": {
       "url": "blog",
@@ -26,15 +27,11 @@
   },
   "menu": [
     "home",
-    "catalogo",
+    "servicos",
+    "agenda",
+    "blog",
     "contato",
-    "eventos",
-    "faq",
-    "funnel",
-    "obrigado",
-    "portfolio",
     "privacidade",
-    "sobre",
     "termos"
   ],
   "editavel": {
@@ -62,5 +59,5 @@
       }
     }
   },
-  "base_path": "/quadricast"
+  "slug": "quadricast"
 }

@@ -1,49 +1,30 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-transition" id="mainNav">
-    <div class="container position-relative">
-        <!-- Brand (Dual Logos for Dark/Light Themes) -->
-        <a class="navbar-brand" href="/">
-            <img src="/assets/logo.svg" alt="Quadricast - Estúdio e Produção Audiovisual" class="logo-nav logo-light-theme">
-            <img src="/assets/logo-inverted.svg" alt="Quadricast - Estúdio e Produção Audiovisual" class="logo-nav logo-dark-theme">
-        </a>
-
-        <!-- Toggler for Offcanvas (Mobile) -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<header class="qs-nav">
+  <nav class="navbar navbar-expand-lg" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand qs-logo" href="/" aria-label="{{site.name}}">
+        <img class="qs-logo-light" src="{{logos.horizontal.color}}" alt="{{site.name}}">
+        <img class="qs-logo-dark" src="{{logos.horizontal.color_white}}" alt="{{site.name}}">
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-3">
+        <button class="qs-theme-toggle" type="button" data-qs-theme-toggle aria-label="Alternar tema claro e escuro">
+          <svg class="qs-icon" data-qs-theme-icon aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-moon"></use></svg>
         </button>
-
-        <!-- Menu Desktop (Visível apenas em telas grandes) -->
-        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarDesktop">
-            <ul class="navbar-nav align-items-center gap-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
-                </li>
-                
-                
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalogo">Nosso Estúdio</a>
-                </li>
-                
-
-                                
-<!-- Theme Toggle Button (Desktop) -->
-                <li class="nav-item">
-                    <button class="btn btn-link text-white-50 px-2 theme-toggle-btn shadow-none" type="button" aria-label="Toggle theme">
-                        <i class="bi bi-sun-fill d-none-light fs-5 text-theme-icon"></i>
-                        <i class="bi bi-moon-stars-fill d-none-dark fs-5 text-theme-icon"></i>
-                    </button>
-                </li>
-
-                <li class="nav-item">
-                    <a class="btn btn-primary rounded-pill px-4" href="/contato">Contato</a>
-                </li>
-            </ul>
-        </div>
+        <a class="qs-btn qs-btn-primary d-none d-sm-inline-flex" href="/agenda">
+          <svg class="qs-icon" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-calendar2-check"></use></svg>Reservar estúdio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#qsMenu" aria-controls="qsMenu" aria-expanded="false" aria-label="Abrir menu">
+          <svg class="qs-icon" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-list"></use></svg>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse order-lg-2" id="qsMenu">
+        <ul class="navbar-nav mx-lg-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="/servicos">Serviços e valores</a></li>
+          <li class="nav-item"><a class="nav-link" href="/agenda">Estúdios e agenda</a></li>
+          <!-- menu:artigo --><li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li><!-- /menu:artigo -->
+          <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
+</header>

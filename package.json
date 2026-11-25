@@ -1,0 +1,15 @@
+{
+  "name": "qsite2-quadricast",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ../qsite2-core/lib/publish.js build:all",
+    "check": "node ../qsite2-core/lib/brief.js check quadricast",
+    "icons": "node ../qsite2-core/tools/icons.js .",
+    "all": "npm run icons && npm run build",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:dry": "node scripts/deploy.mjs --dry-run",
+    "deploy:check": "node scripts/deploy.mjs --check",
+    "deliver": "node ../qsite2-core/lib/deliver.js"
+  }
+}

@@ -9,7 +9,9 @@
     "email": "contato@quadricast.com.br",
     "whatsapp": "5515997862901",
     "whatsapp_e164": "+5515997862901",
-    "whatsapp_url": "https://wa.me/5515997862901"
+    "whatsapp_url": "https://wa.me/5515997862901",
+    "telefone": "(15) 99786-2901",
+    "endereco": "Av. Santa Cruz, 327, Loja 9, Bloco 2 · Jardim Vera Cruz · Sorocaba/SP · CEP 18050-260"
   },
   "social": {
     "instagram": "https://www.instagram.com/quadricastoficial/",
@@ -23,8 +25,8 @@
       "color_white": "/assets/logo-inverted.svg"
     },
     "symbol": {
-      "color": "/assets/logo.svg",
-      "color_white": "/assets/logo-inverted.svg"
+      "color": "/assets/simbolo.svg",
+      "color_white": "/assets/simbolo.svg"
     }
   },
   "brand": {
@@ -39,5 +41,8 @@
       "light": "#F0F5FC",
       "dark": "#04162B"
     }
+  },
+  "agenda": {
+    "responsavel": "Carolina Rodrigues"
   }
 }
