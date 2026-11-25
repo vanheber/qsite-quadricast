@@ -1,8 +1,8 @@
 /* Agenda Quadricast · widget do site (qsite2)
-   Etapa atual: o pedido de reserva é enviado pelo WhatsApp da produção.
-   Não mostra disponibilidade real: a equipe confirma o horário na conversa.
-   Próxima etapa: ligar /espacos, /disponibilidade e /reserva (QG + Google Agenda).
-   Contrato: <div id="qc-agenda" data-whatsapp="55..." data-responsavel="Nome"> */
+   Com data-api preenchido: mostra só os horários livres (agendas Google dos estúdios e da equipe)
+   e envia o pedido para a API da agenda, que abre lead, projeto e tarefas no QG e avisa a equipe.
+   Sem data-api (ou se a API falhar): o pedido segue pelo WhatsApp da produção, como antes.
+   Contrato: <div id="qc-agenda" data-whatsapp="55..." data-responsavel="Nome" data-api="https://.../index.php?r="> */
 (function () {
   'use strict';
   var root = document.getElementById('qc-agenda');
@@ -11,6 +11,10 @@
   var WA = (root.getAttribute('data-whatsapp') || '').replace(/\D/g, '');
   var RESP = root.getAttribute('data-responsavel') || 'nossa equipe';
   var PRIMEIRO = RESP.split(' ')[0];
+  var API = (root.getAttribute('data-api') || '').trim().replace(/\/$/, '');
+  if (API.indexOf('{{') >= 0) API = '';
+  var IMG = '/assets/img/agenda/';
+  function url(p) { return API.indexOf('?') >= 0 ? API + p.replace('?', '&') : API + p; }
 
   /* ---------- dados (mesmos da agenda aprovada) ---------- */
   var ESPACOS = [
@@ -34,7 +38,21 @@
     { n: 'Diária em estúdio fixo', d: '8h de estúdio, até 4 episódios e 16 cortes', v: 'R$ 2.800', m: 'R$ 2.520', no: '+30% após 18h, fins de semana e feriados' },
     { n: 'Episódio em cenário', d: 'Lareira, Vitrine, Externas ou Cozinha do Space · estúdio montado só para você, 4 cortes. Externas também de dia; os demais cenários a partir das 18h', v: 'R$ 1.450', m: 'R$ 1.305', no: 'R$ 1.885' }
   ];
-  var CORTES = [{ n: '10 cortes', v: 'R$ 350', u: 'R$ 35 cada' }, { n: '15 cortes', v: 'R$ 450', u: 'R$ 30 cada' }, { n: '20 cortes', v: 'R$ 500', u: 'R$ 25 cada', top: 1 }];
+  /* fotos de cada estúdio (assets/img/agenda/ID-N.webp) */
+  var NFOTOS = { qspace: 5, qcpod: 3, cruzeiro: 8, qcaulas: 2, lareira: 4, vitrine: 4, externas: 5, spacecozinha: 4, cozinha: 3, __externo: 9 };
+  function fotos(id) { var n = NFOTOS[id] || 0, out = []; for (var i = 1; i <= n; i++) out.push(IMG + id + '-' + i + '.webp'); return out; }
+  var SERVICOS = [
+    ['Vídeos institucionais', 'A partir de R$ 2.450', 'a partir de R$ 2.205'],
+    ['Vídeos de treinamento', 'A partir de R$ 250 por aula de até 15 min', 'a partir de R$ 225'],
+    ['Cobertura de eventos', 'Meia diária (4h) R$ 1.250 · diária (8h) R$ 1.850', 'R$ 1.125 (4h) e R$ 1.665 (8h)'],
+    ['Captação e edição de palestras', 'A partir de R$ 1.250', 'a partir de R$ 1.125'],
+    ['Transmissão de eventos ao vivo', 'Meia diária (4h) R$ 1.450 · diária (8h) R$ 2.250', 'R$ 1.305 (4h) e R$ 2.025 (8h)'],
+    ['Vídeos com drone ou 360°', 'A partir de R$ 350', 'a partir de R$ 315'],
+    ['Lives em estúdio', 'A partir de R$ 600', 'a partir de R$ 540'],
+    ['Edição de vídeos para redes', 'A partir de R$ 250', 'a partir de R$ 225'],
+    ['Locação de estúdio fixo', 'R$ 390 por hora', 'R$ 351 por hora']
+  ];
+  var CORTES = [{ n: '10 cortes', v: 'R$ 350', u: 'R$ 35 cada · membro R$ 315' }, { n: '15 cortes', v: 'R$ 450', u: 'R$ 30 cada · membro R$ 405' }, { n: '20 cortes', v: 'R$ 500', u: 'R$ 25 cada · membro R$ 450', top: 1 }];
   var TIPOS = ['Podcast', 'Videocast', 'Entrevista', 'Aula ou curso', 'Live', 'Redes sociais', 'Gastronomia', 'Outro'];
   var PRODUCAO = [['Gravação com operador', 'Eu levo o conteúdo, vocês cuidam de câmera, luz e áudio'], ['Produção completa', 'Gravação, edição, vinhetas e cortes para as redes'], ['Quero conversar antes', 'Um produtor me chama para montar o projeto']];
   var MES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
@@ -53,6 +71,7 @@
     info: svg('<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/>'),
     tag: svg('<path d="M3 12V4.5A1.5 1.5 0 0 1 4.5 3H12l9 9-9 9-9-9Z"/><circle cx="8" cy="8" r="1.6"/>'),
     x: svg('<path d="M6 6l12 12M18 6L6 18"/>', 2.2),
+    img: svg('<rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 8"/>'),
     wa: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.8L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm5.6 13.7c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>',
     g: {
       'Podcast e videocast': svg('<path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3M8 21h8"/>', 1.6),
@@ -89,21 +108,34 @@
     var e = E();
     for (var i = 0; i < 60; i++) {
       var k = iso(d);
-      out.push({ k: k, ok: !(e && e.inicio && k < e.inicio) });
+      var lv = livresAgora();
+      out.push({ k: k, ok: !(e && e.inicio && k < e.inicio) && (!lv || !!(lv[k] && lv[k].length)) });
       d.setDate(d.getDate() + 1);
     }
     return out;
   }
   /* horários de início pelas regras da agenda (a confirmação é humana) */
+  function chave() { return S.esp + '|' + S.dur; }
+  function livresAgora() { return API && !S.apiFalhou ? S.livres[chave()] || null : null; }
+  function carregar() {
+    if (!API || S.apiFalhou || !S.esp || S.livres[chave()] || S.carregando === chave()) return;
+    var k = chave(); S.carregando = k;
+    fetch(url('/disponibilidade?espaco=' + encodeURIComponent(S.esp) + '&duracao=' + S.dur), { headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { S.livres[k] = j.dias || {}; })
+      .catch(function () { S.apiFalhou = true; })
+      .then(function () { if (S.carregando === k) S.carregando = ''; if (S.dia && livresAgora() && !(livresAgora()[S.dia] || []).length) { S.dia = null; S.hora = null; } render(); });
+  }
   function horarios() {
     var e = E(); if (!e) return [];
+    var lv = livresAgora(); if (lv) return lv[S.dia] || [];
     var ini = soNoite(e) ? 18 * 60 : 8 * 60, out = [];
     for (var t = ini; t <= 22 * 60 && t + S.dur <= 24 * 60; t += 30) out.push(pad(Math.floor(t / 60)) + ':' + pad(t % 60));
     return out;
   }
 
   /* ---------- estado ---------- */
-  var S = { step: 1, grupo: 'Todos', esp: null, dur: 120, dia: null, hora: null, form: { tipo: 'Podcast', producao: 'Produção completa', pessoas: '2' }, erro: '', bad: '', done: null, precos: false, evento: false, fx: 0 };
+  var S = { step: 1, grupo: 'Todos', esp: null, dur: 120, dia: null, hora: null, form: { tipo: 'Podcast', producao: 'Produção completa', pessoas: '2' }, erro: '', bad: '', done: null, precos: false, evento: false, fx: 0, livres: {}, carregando: '', apiFalhou: false, gal: null, gi: 0, enviando: false, viaApi: false };
 
   /* ---------- pedaços ---------- */
   function stepper() {
@@ -124,12 +156,12 @@
     h += '<div class="qa-list" role="radiogroup" aria-label="Estúdios">' + list.map(function (e) {
       var t = tagTxt(e), on = S.esp === e.id;
       return '<button type="button" role="radio" aria-checked="' + on + '" class="qa-st' + (on ? ' on' : '') + '" data-esp="' + esc(e.id) + '">' +
-        '<span class="qa-art g-' + (e.grupo === 'Gastronomia' ? 'gastro' : e.grupo === 'Aulas, cursos e lives' ? 'aulas' : 'pod') + '">' + I.g[e.grupo] + '<span class="tg ' + t[0] + '">' + t[1] + '</span></span>' +
+        '<span class="qa-art has-foto g-' + (e.grupo === 'Gastronomia' ? 'gastro' : e.grupo === 'Aulas, cursos e lives' ? 'aulas' : 'pod') + '" style="background-image:url(\'' + fotos(e.id)[0] + '\')"><span class="tg ' + t[0] + '">' + t[1] + '</span><span class="qa-nf">' + I.img + fotos(e.id).length + ' fotos</span></span>' +
         '<span class="qa-st-b"><span class="nm">' + esc(e.nome) + '</span><span class="lc">' + I.pin + esc(e.local) + '</span><span class="ds">' + esc(e.desc) + '</span>' +
         '<span class="cta">' + (on ? 'Escolhido' : 'Escolher este') + I.r + '</span></span></button>';
     }).join('');
     if (S.grupo === 'Todos' || S.grupo === 'Eventos') {
-      h += '<button type="button" class="qa-st qa-ext" data-evento="1"><span class="qa-art g-ev">' + I.g.Eventos + '<span class="tg soon">Orçamento sob medida</span></span>' +
+      h += '<button type="button" class="qa-st qa-ext" data-evento="1"><span class="qa-art has-foto g-ev" style="background-image:url(\'' + fotos('__externo')[0] + '\')"><span class="tg soon">Orçamento sob medida</span><span class="qa-nf">' + I.img + fotos('__externo').length + ' fotos</span></span>' +
         '<span class="qa-st-b"><span class="nm">Gravação no seu evento</span><span class="lc">' + I.pin + 'Onde você estiver</span><span class="ds">Podcast ao vivo, coberturas e transmissões em congressos, feiras, shoppings e empresas.</span><span class="cta">Pedir orçamento' + I.r + '</span></span></button>';
     }
     return h + '</div>';
@@ -139,7 +171,7 @@
 
   function step2() {
     var e = E(), h = '';
-    h += '<div class="qa-sel"><span class="ic">' + I.g[e.grupo] + '</span><span class="tx"><small>Estúdio escolhido</small><b>' + esc(e.nome) + '</b><span>' + esc(e.local) + '</span></span><button type="button" data-goto="1">Trocar</button></div>';
+    h += '<div class="qa-sel"><button type="button" class="ic qa-sel-foto" data-gal="' + esc(e.id) + '" style="background-image:url(\'' + fotos(e.id)[0] + '\')" aria-label="Ver fotos de ' + esc(e.nome) + '">' + I.img + '</button><span class="tx"><small>Estúdio escolhido</small><b>' + esc(e.nome) + '</b><span>' + esc(e.local) + '</span></span><button type="button" data-goto="1">Trocar</button></div>';
     h += '<section class="qa-q">' + qh(1, true, 'Quanto tempo vai gravar?') + '<div class="qa-seg dur" role="radiogroup">' + DUR.map(function (x) {
       var off = soNoite(e) && x.m > 360;
       return '<button type="button" role="radio" aria-checked="' + (S.dur === x.m) + '" data-dur="' + x.m + '" class="' + (S.dur === x.m ? 'on' : '') + '"' + (off ? ' disabled title="Neste cenário a gravação vai das 18h à meia-noite"' : '') + '><b>' + x.t + '</b><small>' + x.s + '</small></button>';
@@ -154,7 +186,10 @@
       }).join('') + '</div></section>';
 
     h += '<section class="qa-q">' + qh(3, !!S.hora, 'Horário de início');
-    if (!S.dia) h += '<div class="qa-none">Escolha um dia para ver os horários.</div>';
+    if (S.aviso) { h += '<div class="qa-err" role="alert">' + esc(S.aviso) + '</div>'; S.aviso = ''; }
+    if (API && !S.apiFalhou && !livresAgora()) h += '<div class="qa-none">Consultando os horários livres…</div>';
+    else if (!S.dia) h += '<div class="qa-none">Escolha um dia para ver os horários.</div>';
+    else if (!horarios().length) h += '<div class="qa-none">Sem horários livres neste dia. Escolha outro dia ou outra duração.</div>';
     else {
       var per = { 'Manhã': [], 'Tarde': [], 'Noite': [] };
       horarios().forEach(function (x) { var hh = +x.split(':')[0]; (hh < 12 ? per['Manhã'] : hh < 18 ? per['Tarde'] : per['Noite']).push(x); });
@@ -166,7 +201,7 @@
       }).join('');
     }
     h += '</section>';
-    h += '<p class="qa-note">' + I.info + '<span>Você escolhe o horário desejado e ' + esc(PRIMEIRO) + ' confirma a disponibilidade pelo WhatsApp. Montagem e desmontagem não contam no seu tempo. Gravações a partir das 18h, nos fins de semana e feriados têm acréscimo de 30%. Pedidos com no mínimo 48 horas de antecedência. <a href="#" data-precos="1">Ver valores</a></span></p>';
+    h += '<p class="qa-note">' + I.info + '<span>' + (livresAgora() ? 'Só aparecem os horários livres. Ao enviar, o horário fica guardado para você por 48h e ' + esc(PRIMEIRO) + ' confirma pelo WhatsApp.' : 'Você escolhe o horário desejado e ' + esc(PRIMEIRO) + ' confirma a disponibilidade pelo WhatsApp.') + ' Montagem e desmontagem não contam no seu tempo. Gravações a partir das 18h, nos fins de semana e feriados têm acréscimo de 30%. Pedidos com no mínimo 48 horas de antecedência. <a href="#" data-precos="1">Ver valores</a></span></p>';
     return h;
   }
 
@@ -198,6 +233,7 @@
   function mainBtn() {
     if (S.step === 1) return '<button type="button" class="qs-btn ' + (S.esp ? 'qs-btn-primary' : 'qs-btn-outline-dark') + ' qs-btn--block" data-next="1"' + (S.esp ? '' : ' disabled') + '>' + (S.esp ? 'Escolher dia e horário' : 'Escolha um estúdio') + '</button>';
     if (S.step === 2) return '<button type="button" class="qs-btn ' + (S.hora ? 'qs-btn-primary' : 'qs-btn-outline-dark') + ' qs-btn--block" data-next="1"' + (S.hora ? '' : ' disabled') + '>' + (S.hora ? 'Continuar para seus dados' : 'Escolha o dia e o horário') + '</button>';
+    if (API && !S.apiFalhou) return '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-send="1"' + (S.enviando ? ' disabled' : '') + '>' + (S.enviando ? 'Enviando…' : 'Enviar pedido de reserva') + '</button>';
     return '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-send="1">' + I.wa + 'Enviar pedido pelo WhatsApp</button>';
   }
   function dock() {
@@ -212,9 +248,12 @@
       '<div class="qa-prices">' + PRECOS.map(function (p) {
         return '<div class="qa-pr' + (p.top ? ' top' : '') + '">' + (p.top ? '<span class="qa-badge">Mais escolhido</span>' : '') + '<div><b>' + p.n + '</b><small>' + p.d + '</small></div><div class="v"><b>' + p.v + '</b><small>Membro Space ' + p.m + '</small><small class="nt">Noturno ' + p.no + '</small></div></div>';
       }).join('') + '</div>' +
-      '<p class="qa-pnote">Membros do Space: 10% de desconto. Noites (a partir das 18h), fins de semana e feriados: +30%.</p>' +
+      '<p class="qa-pnote">Membros do Space: 10% de desconto em qualquer serviço vendido pelo coworking. Noites (a partir das 18h), fins de semana e feriados: +30%.</p>' +
       '<p class="qa-lbl">Pacotes de cortes</p><div class="qa-cortes">' + CORTES.map(function (c) { return '<div class="' + (c.top ? 'top' : '') + '"><small>' + c.n + '</small><b>' + c.v + '</b><span>' + c.u + '</span></div>'; }).join('') + '</div>' +
       '<p class="qa-pnote">Biombo, painéis, logotipo e decoração do cenário são orçados à parte, conforme o projeto.</p>' +
+      '<p class="qa-lbl">Outros serviços</p><p class="qa-pnote">Valores de referência. O orçamento final depende do projeto.</p>' +
+      '<div class="qa-serv">' + SERVICOS.map(function (x, i) { return '<div><span>' + pad(i + 1) + '</span><b>' + x[0] + '</b><small>' + x[1] + '</small><small class="mb">Membro Space: ' + x[2] + '</small></div>'; }).join('') + '</div>' +
+      '<a class="qs-btn qs-btn-primary qs-btn--block qa-wa" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Olá, ' + PRIMEIRO + '! Vi a tabela de valores da Quadricast e gostaria de mais informações.') + '" target="_blank" rel="noopener">' + I.wa + 'Informações pelo WhatsApp com a ' + esc(PRIMEIRO) + '</a>' +
       '<button type="button" class="qs-btn qs-btn-outline-dark qs-btn--block" data-close="1">Voltar à reserva</button></div></div>';
   }
   function sheetEvento() {
@@ -224,11 +263,29 @@
       '<div class="qa-sheet-h"><div><small>Produção externa</small><b>A Quadricast vai até você</b></div><button type="button" class="qa-x" data-close="1" aria-label="Fechar">' + I.x + '</button></div>' +
       '<div class="qa-opts">' + [['Podcast ao vivo no evento', 'Set completo montado no seu estande ou palco'], ['Cobertura e entrevistas', 'Meia diária ou diária completa, com cortes para as redes'], ['Transmissão ao vivo', 'Multicâmera, com corte em tempo real']].map(function (o) {
         return '<div class="qa-opt is-static"><span class="rd on"></span><span>' + o[0] + '<small>' + o[1] + '</small></span></div>'; }).join('') + '</div>' +
+      '<button type="button" class="qs-btn qs-btn-outline-dark qs-btn--block qa-mb" data-gal="__externo">' + I.img + 'Ver fotos de gravações em eventos</button>' +
       '<p class="qa-pnote">Cada evento tem orçamento sob medida, com equipe, equipamentos e montagem da Quadricast. Conte a data e o local que ' + esc(PRIMEIRO) + ' monta a proposta.</p>' +
       '<a class="qs-btn qs-btn-primary qs-btn--block" href="https://wa.me/' + WA + '?text=' + encodeURIComponent(msg) + '" target="_blank" rel="noopener">' + I.wa + 'Pedir orçamento pelo WhatsApp</a></div></div>';
   }
 
+  function sheetGal() {
+    if (!S.gal) return '';
+    var fs = fotos(S.gal), e = null; for (var i = 0; i < ESPACOS.length; i++) if (ESPACOS[i].id === S.gal) e = ESPACOS[i];
+    var nome = e ? e.nome : 'Gravações em eventos', gi = Math.max(0, Math.min(S.gi, fs.length - 1));
+    return '<div class="qa-sheet qa-gal" role="dialog" aria-modal="true" aria-label="Fotos de ' + esc(nome) + '"><div class="qa-sheet-bg" data-close="1"></div><div class="qa-sheet-in">' +
+      '<div class="qa-sheet-h"><div><small>Fotos · ' + (gi + 1) + ' de ' + fs.length + '</small><b>' + esc(nome) + '</b></div><button type="button" class="qa-x" data-close="1" aria-label="Fechar">' + I.x + '</button></div>' +
+      '<div class="qa-gal-main"><img src="' + fs[gi] + '" alt="' + esc(nome) + ', foto ' + (gi + 1) + '">' +
+      (fs.length > 1 ? '<button type="button" class="qa-gal-nav p" data-gi="' + ((gi - 1 + fs.length) % fs.length) + '" aria-label="Foto anterior">' + I.l + '</button><button type="button" class="qa-gal-nav n" data-gi="' + ((gi + 1) % fs.length) + '" aria-label="Próxima foto">' + I.r + '</button>' : '') + '</div>' +
+      '<div class="qa-gal-th">' + fs.map(function (f, i) { return '<button type="button" data-gi="' + i + '" class="' + (i === gi ? 'on' : '') + '" aria-label="Foto ' + (i + 1) + '"><img src="' + f + '" alt="" loading="lazy"></button>'; }).join('') + '</div>' +
+      (e ? '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-pick="' + esc(e.id) + '">Reservar este estúdio</button>' : '') + '</div></div>';
+  }
+
   function done() {
+    if (S.viaApi) return '<section class="qa-panel qa-done"><div class="ok">' + I.ck + '</div><h2>Pedido enviado!</h2>' +
+      '<p>Seu horário ficou guardado por 48h. ' + esc(PRIMEIRO) + ' vai falar com você pelo WhatsApp para confirmar o valor e as condições e fechar a reserva.</p>' +
+      '<div class="qa-ticket">' + ticket().replace(/<div class="qa-tk-cta">[\s\S]*$/, '') + '</div>' +
+      '<div class="acts"><a class="qs-btn qs-btn-primary qs-btn--block" href="' + esc(S.done) + '" target="_blank" rel="noopener">' + I.wa + 'Falar com ' + esc(PRIMEIRO) + ' agora</a>' +
+      '<button type="button" class="qs-btn qs-btn-outline-dark qs-btn--block" data-novo="1">Fazer outro pedido</button></div></section>';
     return '<section class="qa-panel qa-done"><div class="ok">' + I.wa + '</div><h2>Falta só enviar a mensagem</h2>' +
       '<p>O WhatsApp abriu com o seu pedido pronto. Envie a mensagem para ' + esc(PRIMEIRO) + ' confirmar a disponibilidade e fechar a reserva.</p>' +
       '<div class="qa-ticket">' + ticket().replace(/<div class="qa-tk-cta">[\s\S]*$/, '') + '</div>' +
@@ -249,7 +306,8 @@
         '<div class="qa-body">' + (S.step === 1 ? step1() : S.step === 2 ? step2() : step3()) + '</div></section>' +
         '<aside class="qa-ticket" aria-label="Resumo da reserva">' + ticket() + '</aside>';
     }
-    root.innerHTML = '<div class="qa' + (S.done ? ' is-done' : '') + '">' + body + '</div>' + (S.done ? '' : dock()) + sheetPrecos() + sheetEvento();
+    root.innerHTML = '<div class="qa' + (S.done ? ' is-done' : '') + '">' + body + '</div>' + (S.done ? '' : dock()) + sheetPrecos() + sheetEvento() + sheetGal();
+    if (S.step === 2 && !S.done) carregar();
     root.classList.add('is-ready');
     filtSync();
     st = root.querySelector('.qa-strip');
@@ -304,23 +362,41 @@
       '*Nome:* ' + f.nome + '\n*WhatsApp:* ' + f.whatsapp + '\n*E-mail:* ' + f.email + (f.empresa ? '\n*Empresa:* ' + f.empresa : '') + (f.obs ? '\n*Projeto:* ' + f.obs : '') +
       '\n\nPode confirmar a disponibilidade?';
     var link = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
-    window.open(link, '_blank', 'noopener');
-    S.done = link; render();
-    root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function pelowhats() { window.open(link, '_blank', 'noopener'); S.viaApi = false; S.done = link; render(); root.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    if (!API || S.apiFalhou) { pelowhats(); return; }
+    if (S.enviando) return;
+    S.enviando = true; render();
+    var payload = { espaco: S.esp, data: S.dia, inicio: S.hora, duracao: S.dur, nome: f.nome, empresa: f.empresa, whatsapp: f.whatsapp, email: f.email, tipo: f.tipo, producao: f.producao, pessoas: f.pessoas, obs: f.obs, site: '' };
+    fetch(url('/reserva'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) { var x = new Error(j && j.message || 'Erro'); x.st = r.status; throw x; } return j; }); })
+      .then(function (j) {
+        S.enviando = false; S.viaApi = true;
+        S.done = j.whatsapp || ('https://wa.me/' + WA + '?text=' + encodeURIComponent('Olá, ' + PRIMEIRO + '! Acabei de pedir uma reserva pelo site: ' + e.nome + ', ' + diaTxt(S.dia) + ', ' + S.hora + '. Nome: ' + f.nome));
+        S.livres = {}; render(); root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(function (x) {
+        S.enviando = false;
+        if (x.st === 409) { S.livres = {}; S.hora = null; S.step = 2; S.erro = ''; S.aviso = x.message; render(); return; }
+        if (x.st && x.st < 500) { S.erro = x.message; render(); return; }
+        S.apiFalhou = true; pelowhats();
+      });
   }
 
   root.addEventListener('click', function (ev) {
     var a = ev.target.closest('[data-precos],[data-close],[data-evento]');
-    if (a && root.contains(a)) { ev.preventDefault(); capture(); S.precos = a.hasAttribute('data-precos'); S.evento = a.hasAttribute('data-evento'); render(); return; }
+    if (a && root.contains(a)) { ev.preventDefault(); capture(); S.precos = a.hasAttribute('data-precos'); S.evento = a.hasAttribute('data-evento'); S.gal = null; render(); return; }
     var b = ev.target.closest('button'); if (!b || !root.contains(b)) return;
     var d = b.dataset;
+    if (d.gal) { capture(); S.gal = d.gal; S.gi = 0; S.precos = false; S.evento = false; render(); return; }
+    if (d.gi) { S.gi = +d.gi; render(); return; }
+    if (d.pick) { S.gal = null; if (S.esp !== d.pick) { S.esp = d.pick; S.dia = null; S.hora = null; if (soNoite(E()) && S.dur > 360) S.dur = 120; } go(2); return; }
     if (d.grupo) { S.grupo = d.grupo; render(); return; }
     if (d.fscroll) { var ft = root.querySelector('.qa-filt'); if (ft) ft.scrollBy({ left: +d.fscroll * ft.clientWidth * 0.7, behavior: 'smooth' }); return; }
     if (d.esp) { if (S.esp !== d.esp) { S.esp = d.esp; S.dia = null; S.hora = null; if (soNoite(E()) && S.dur > 360) S.dur = 120; } render(); setTimeout(function () { go(2); }, 220); return; }
     if (d.next) { if (S.step === 1 && S.esp) go(2); else if (S.step === 2 && S.hora) go(3); return; }
     if (d.back) { go(S.step - 1); return; }
     if (d.goto) { go(+d.goto); return; }
-    if (d.dur) { S.dur = +d.dur; S.hora = null; render(); return; }
+    if (d.dur) { S.dur = +d.dur; S.hora = null; if (livresAgora() && S.dia && !(livresAgora()[S.dia] || []).length) S.dia = null; render(); return; }
     if (d.scroll) { var st = root.querySelector('.qa-strip'); if (st) st.scrollBy({ left: +d.scroll * st.clientWidth * 0.9, behavior: 'smooth' }); return; }
     if (d.dia) { S.dia = d.dia; S.hora = null; render(); return; }
     if (d.hora) { S.hora = d.hora; render(); return; }
@@ -328,7 +404,10 @@
     if (d.send) { send(); return; }
     if (d.novo) { S.done = null; S.hora = null; S.step = 1; render(); }
   });
-  root.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && (S.precos || S.evento)) { S.precos = false; S.evento = false; render(); } });
+  root.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && (S.precos || S.evento || S.gal)) { S.precos = false; S.evento = false; S.gal = null; render(); }
+    if (S.gal && (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft')) { var n = fotos(S.gal).length; S.gi = (S.gi + (ev.key === 'ArrowRight' ? 1 : n - 1)) % n; render(); }
+  });
   root.addEventListener('submit', function (ev) { ev.preventDefault(); send(); });
 
   render();

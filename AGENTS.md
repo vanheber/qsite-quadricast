@@ -36,7 +36,15 @@ npm run deploy         # publica public/ via FTP (lftp)
 | `assets/` | Ícones, imagens, `js/` (`qs-*.js` do core + `qc-agenda.js` da instância) |
 | `scripts/deploy.mjs` | Deploy FTP por `lftp`; senha só via `LFTP_PASSWORD` |
 | `_ref/` | Referências de layout (`pagina.html`, `artigo.html`) |
+| `servidor/agenda-api/` | API PHP da agenda (fora do build; ver o LEIA-ME da pasta). `config.php` não vai para o Git |
+| `assets/img/agenda/` | Fotos dos estúdios usadas nas galerias da agenda (`ID-N.webp`) |
 
 ## Deploy
 
 Depende de `.env` (copie de `.env.example`): `FTP_HOST`, `FTP_USER`, `FTP_PASS`, `FTP_PATH`, `FTP_TLS`, `FTP_DELETE`. A senha nunca vai em argv nem em arquivo temporário.
+
+## Agenda
+
+- `paginas/agenda.html` carrega `assets/js/qc-agenda.js` com `data-api="{{agenda.api}}"`.
+- Com `agenda.api` preenchido no `dados.json`, a página mostra só os horários livres e envia o pedido para a API (QG).
+- Com `agenda.api` vazio, o pedido segue pelo WhatsApp da produção.

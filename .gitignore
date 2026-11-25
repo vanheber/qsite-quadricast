@@ -6,3 +6,7 @@ node_modules/
 .env
 entrega/
 _public_quebrado/
+
+# API da agenda: configuração com tokens e endereços secretos fica só no servidor
+servidor/agenda-api/config.php
+servidor/agenda-api/dados/*.json*
