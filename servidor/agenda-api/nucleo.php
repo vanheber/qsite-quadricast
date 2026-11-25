@@ -20,7 +20,7 @@ define('QCA_TZ', 'America/Sao_Paulo');
 function qca_gcal_public($id) {
     // Endereço secreto (privado) da agenda, se configurado: a agenda não precisa ser pública.
     static $seg = null;
-    if ($seg === null) { $c = get_option(QCA_OPT); $seg = is_array($c) && !empty($c['ics_secretos']) ? $c['ics_secretos'] : []; }
+    if ($seg === null) { $seg = []; $c = get_option(QCA_OPT); $seg = is_array($c) && !empty($c['ics_secretos']) ? $c['ics_secretos'] : []; }
     if (!empty($seg[$id])) return 'https://calendar.google.com/calendar/ical/' . rawurlencode($id) . '/' . $seg[$id] . '/basic.ics';
     return 'https://calendar.google.com/calendar/ical/' . rawurlencode($id) . '/public/basic.ics';
 }
@@ -253,7 +253,8 @@ function qca_disponibilidade($espaco_id, $duracao, $dias = null) {
     $espBusy = qca_busy_from_ics($esp['ics'], $from, $to);
     if ($espBusy === null) return new WP_Error('agenda', 'Não foi possível ler a agenda deste espaço agora.', ['status' => 503]);
     // Integração com o sistema de reservas do coworking: cada endereço iCal extra bloqueia os horários dele
-    foreach (preg_split('/\s+/', trim($esp['ics_extra'] ?? '')) as $u) {
+    $extras = trim(($esp['ics_extra'] ?? '') . ' ' . ($s['ics_extra_por_espaco'][$esp['id']] ?? ''));
+    foreach (preg_split('/\s+/', $extras) as $u) {
         if (!$u) continue;
         $x = qca_busy_from_ics($u, $from, $to);
         if ($x === null) return new WP_Error('agenda', 'Não foi possível ler a agenda do coworking agora.', ['status' => 503]);

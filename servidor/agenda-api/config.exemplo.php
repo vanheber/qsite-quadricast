@@ -46,6 +46,12 @@ return [
         'c_61194ca01595ca3fbb3b4434ed055f85ad713b80f28a89e6c3834b791f379908@group.calendar.google.com' => 'private-COLE_AQUI', // Equipe Danillo
     ],
 
+    // Outras agendas que também bloqueiam um espaço (separe por espaço).
+    // Agenda pessoal "Estúdio Quadricast" do Ed: o que ele marcar lá ocupa o estúdio Quadricast na página.
+    'ics_extra_por_espaco' => [
+        'qcpod' => 'COLE_AQUI_O_ICAL_SECRETO_DA_AGENDA_ESTUDIO_QUADRICAST',
+    ],
+
     // Endereços de site que podem usar esta API (separados por vírgula)
     'origens' => 'https://quadricast.com.br,https://www.quadricast.com.br,https://agenciaquadri.com,https://www.agenciaquadri.com',
 ];
