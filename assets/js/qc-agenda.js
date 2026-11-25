@@ -12,7 +12,7 @@
   var RESP = root.getAttribute('data-responsavel') || 'nossa equipe';
   var PRIMEIRO = RESP.split(' ')[0];
   var API = (root.getAttribute('data-api') || '').trim().replace(/\/$/, '');
-  if (API.indexOf('{{') >= 0) API = '';
+  if (!/^(https?:)?\/\//.test(API) && API.charAt(0) !== '/') API = ''; // vazio, "desligada" ou token não resolvido: segue pelo WhatsApp
   var IMG = '/assets/img/agenda/';
   function url(p) { return API.indexOf('?') >= 0 ? API + p.replace('?', '&') : API + p; }
 
