@@ -105,6 +105,15 @@ function qca_parse_dt($val, $params) {
     return [$d ? $d->getTimestamp() : 0, false];
 }
 
+/** Títulos que não ocupam estúdio (config 'ignorar_titulos'; padrão: reservas para edição). */
+function qca_ignorar_titulo($t) {
+    if ($t === '') return false;
+    static $lista = null;
+    if ($lista === null) { $lista = ['Reservado para Edi']; $c = get_option(QCA_OPT); if (is_array($c) && isset($c['ignorar_titulos'])) $lista = (array) $c['ignorar_titulos']; }
+    foreach ($lista as $x) if ($x !== '' && mb_stripos($t, $x) !== false) return true;
+    return false;
+}
+
 /** Retorna lista de intervalos ocupados [ini, fim] (timestamps) dentro da janela. */
 function qca_busy_from_ics($url, $from, $to) {
     if (!$url) return [];
@@ -138,6 +147,7 @@ function qca_busy_from_ics($url, $from, $to) {
                     foreach (explode(',', trim($val)) as $x) { $ev['ex'][] = qca_parse_dt($x, $params)[0]; }
                     break;
                 case 'TRANSP': $ev['transp'] = trim($val); break;
+                case 'SUMMARY': $ev['titulo'] = trim(str_replace(['\\,', '\\;'], [',', ';'], $val)); break;
                 case 'STATUS': $ev['status'] = trim($val); break;
                 case 'UID': $ev['uid'] = trim($val); break;
                 case 'RECURRENCE-ID': $ev['rid'] = qca_parse_dt(trim($val), $params)[0]; break;
@@ -149,6 +159,7 @@ function qca_busy_from_ics($url, $from, $to) {
             continue;
         }
         if (($ev['transp'] ?? '') === 'TRANSPARENT') continue;
+        if (qca_ignorar_titulo($ev['titulo'] ?? '')) continue; // ex.: "Reservado para Edições" não ocupa estúdio
         $events[] = $ev;
     }
     foreach ($events as $ev) {

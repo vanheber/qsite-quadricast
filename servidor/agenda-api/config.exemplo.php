@@ -47,10 +47,14 @@ return [
     ],
 
     // Outras agendas que também bloqueiam um espaço (separe por espaço).
-    // Agenda pessoal "Estúdio Quadricast" do Ed: o que ele marcar lá ocupa o estúdio Quadricast na página.
+    // Agenda pessoal "Estúdio Quadricast" do Ed: o que ele marcar lá ocupa o estúdio Quadricast (podcast e aulas/lives) na página.
     'ics_extra_por_espaco' => [
         'qcpod' => 'COLE_AQUI_O_ICAL_SECRETO_DA_AGENDA_ESTUDIO_QUADRICAST',
+        'qcaulas' => 'COLE_AQUI_O_ICAL_SECRETO_DA_AGENDA_ESTUDIO_QUADRICAST',
     ],
+
+    // Eventos com estes títulos não ocupam estúdio (ex.: horários reservados para edição).
+    'ignorar_titulos' => ['Reservado para Edi'],
 
     // Endereços de site que podem usar esta API (separados por vírgula)
     'origens' => 'https://quadricast.com.br,https://www.quadricast.com.br,https://agenciaquadri.com,https://www.agenciaquadri.com',
