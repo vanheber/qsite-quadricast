@@ -3,3 +3,6 @@ node_modules/
 .contexto/
 .DS_Store
 *.log
+.env
+entrega/
+_public_quebrado/
