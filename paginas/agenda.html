@@ -15,7 +15,7 @@ date: 2026-11-25
         <h1 class="qs-display">Reserve sua gravação <em>em 3 passos</em>.</h1>
       </div>
       <div class="col-lg-4">
-        <p class="qs-lead mb-0">Estúdio, dia e horário livres de verdade. A confirmação chega pelo WhatsApp.</p>
+        <p class="qs-lead mb-0">Escolha estúdio, dia e horário. A confirmação chega pelo WhatsApp.</p>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ date: 2026-11-25
 
 <section data-block="agenda" class="qs-section qs-section--tight pt-0" id="reservar">
   <div class="container">
-    <div id="qc-agenda" class="qs-agenda-slot" data-api="{{agenda.api}}">
+    <div id="qc-agenda" class="qs-agenda-slot" data-whatsapp="{{contact.whatsapp}}" data-responsavel="{{agenda.responsavel}}">
       <div class="qs-agenda-stepper" aria-hidden="true">
         <span class="is-on"><i>1</i>Estúdio</span>
         <span><i>2</i>Dia e horário</span>
@@ -31,9 +31,8 @@ date: 2026-11-25
       </div>
       <div class="qs-agenda-body">
         <h3>Onde você quer gravar?</h3>
-        <p>A agenda está carregando. Se preferir, fale direto com a equipe e reserve pelo WhatsApp.</p>
+        <p>Carregando a agenda. Se preferir, fale direto com a equipe e reserve pelo WhatsApp.</p>
         <a class="qs-btn qs-btn-outline-dark" href="{{contact.whatsapp_url}}" target="_blank" rel="noopener"><svg class="qs-icon" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-whatsapp"></use></svg>Reservar pelo WhatsApp</a>
-        <!-- preview:agenda -->
       </div>
     </div>
   </div>
