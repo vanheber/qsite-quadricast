@@ -31,6 +31,8 @@
   var GRUPOS = [['Todos', 'Todos'], ['Podcast e videocast', 'Podcast'], ['Aulas, cursos e lives', 'Aulas e lives'], ['Cenários', 'Cenários'], ['Gastronomia', 'Gastronomia'], ['Eventos', 'No seu evento']];
   var DUR = [{ m: 120, t: '2h', s: '1 episódio' }, { m: 240, t: '4h', s: '2 episódios' }, { m: 360, t: '6h', s: '3 episódios' }, { m: 480, t: '8h', s: 'diária' }];
   var FERIADOS = ['2026-11-02', '2026-11-15', '2026-11-20', '2026-12-25', '2027-01-01', '2027-02-08', '2027-02-09', '2027-03-26', '2027-04-21', '2027-05-01', '2027-05-27', '2027-09-07', '2027-10-12', '2027-11-02', '2027-11-15', '2027-11-20', '2027-12-25'];
+  /* dias sem estúdio nem equipe (eventos externos): ninguém reserva */
+  var BLOQUEADOS = ['2026-12-01', '2026-12-03', '2026-12-04']; // Seven (01/12) e CCXP (03 e 04/12), São Paulo
   var PRECOS = [
     { n: 'Hora de gravação em estúdio fixo', d: 'QuadriSpace, Quadricast ou Cruzeiro · reservas em blocos de 2h', v: 'R$ 390', m: 'R$ 351', no: 'R$ 507' },
     { n: 'Episódio em estúdio fixo', d: 'QuadriSpace, Quadricast ou Cruzeiro · 2h de estúdio, vinhetas e 4 cortes', v: 'R$ 750', m: 'R$ 675', no: 'R$ 975' },
@@ -109,7 +111,7 @@
     for (var i = 0; i < 60; i++) {
       var k = iso(d);
       var lv = livresAgora();
-      out.push({ k: k, ok: !(e && e.inicio && k < e.inicio) && (!lv || !!(lv[k] && lv[k].length)) });
+      out.push({ k: k, ok: BLOQUEADOS.indexOf(k) < 0 && !(e && e.inicio && k < e.inicio) && (!lv || !!(lv[k] && lv[k].length)) });
       d.setDate(d.getDate() + 1);
     }
     return out;
