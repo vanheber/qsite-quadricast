@@ -813,3 +813,16 @@ img { max-width: 100%; display: block; }
 .qa-pers button.on { background: var(--qs-brand); border-color: var(--qs-brand); color: #fff; }
 .qa-pers button.on small, .qa-pers button.on em { color: rgba(255,255,255,.9); }
 .qa-gal-main { touch-action: pan-y; }
+/* calendário: verde = tem horário, vermelho = lotado */
+.qa-cal-g button.livre { background: rgba(155,195,29,.2); border-color: rgba(155,195,29,.55); color: var(--qs-ink); }
+.qa-cal-g button.livre:hover { background: rgba(155,195,29,.35); border-color: #9BC31D; }
+.qa-cal-g button.livre.ex { border-style: dashed; border-color: #7EA314; }
+.qa-cal-g button.cheio:disabled { background: rgba(255,1,52,.1); border-color: rgba(255,1,52,.25); color: #C4002A; opacity: 1; text-decoration: line-through; }
+[data-bs-theme="dark"] .qa-cal-g button.cheio:disabled { color: #FF6B86; }
+.qa-cal-g button.fora:disabled { opacity: .3; text-decoration: none; }
+.qa-cal-g button.on, .qa-cal-g button.livre.on { background: var(--qs-brand); border-color: var(--qs-brand); color: #fff; border-style: solid; }
+.qa-cal-lg { flex-wrap: wrap; gap: 6px 14px; }
+.qa-cal-lg span { display: inline-flex; align-items: center; gap: 6px; }
+.qa-cal-lg i.livre { background: rgba(155,195,29,.2); border: 1px solid rgba(155,195,29,.55); }
+.qa-cal-lg i.cheio { background: rgba(255,1,52,.1); border: 1px solid rgba(255,1,52,.25); }
+.qa-cal-lg i.ex { border: 1px dashed #7EA314; }

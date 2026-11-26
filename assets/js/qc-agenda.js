@@ -220,12 +220,12 @@
     for (var b = 0; b < first; b++) cells += '<span></span>';
     for (var d = 1; d <= nd; d++) {
       var k = y + '-' + pad(m + 1) + '-' + pad(d), dentro = k in ok, livre = dentro && ok[k], ex = diaExtra(k);
-      cells += '<button type="button" class="' + (k === S.dia ? 'on' : '') + (ex && livre ? ' ex' : '') + '" data-dia="' + k + '"' + (livre ? '' : ' disabled') + ' aria-label="' + esc(diaTxt(k)) + (livre ? '' : ', indisponível') + '">' + d + '</button>';
+      cells += '<button type="button" class="' + (livre ? 'livre' : dentro ? 'cheio' : 'fora') + (k === S.dia ? ' on' : '') + (ex && livre ? ' ex' : '') + '" data-dia="' + k + '"' + (livre ? '' : ' disabled') + ' aria-label="' + esc(diaTxt(k)) + (livre ? ', com horários livres' : dentro ? ', lotado' : ', indisponível') + '">' + d + '</button>';
     }
     return '<div class="qa-cal"><div class="qa-cal-h"><button type="button" data-mes="' + (mi - 1) + '"' + (mi > 0 ? '' : ' disabled') + ' aria-label="Mês anterior">' + I.l + '</button><b>' + MES[m] + ' ' + y + '</b><button type="button" data-mes="' + (mi + 1) + '"' + (mi < ms.length - 1 ? '' : ' disabled') + ' aria-label="Próximo mês">' + I.r + '</button></div>' +
       '<div class="qa-cal-w">' + ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div>' +
       '<div class="qa-cal-g" role="group" aria-label="Dias de ' + MES[m] + '">' + cells + '</div>' +
-      '<p class="qa-cal-lg"><i class="ex"></i>Fins de semana e feriados: +30%</p></div>';
+      '<p class="qa-cal-lg"><span><i class="livre"></i>Tem horário</span><span><i class="cheio"></i>Lotado</span><span><i class="ex"></i>+30% (fim de semana e feriado)</span></p></div>';
   }
   function step2() {
     var e = E(), h = '';
