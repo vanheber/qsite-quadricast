@@ -137,6 +137,24 @@
   /* ---------- estado ---------- */
   var S = { step: 1, grupo: 'Todos', esp: null, dur: 120, dia: null, hora: null, form: { tipo: 'Podcast', producao: 'Produção completa', pessoas: '2' }, erro: '', bad: '', done: null, precos: false, evento: false, fx: 0, livres: {}, carregando: '', apiFalhou: false, gal: null, gi: 0, enviando: false, viaApi: false };
 
+  /* link direto (WhatsApp): /agenda/?estudio=quadricast&horas=2&nome=Ana&whats=15999999999
+     estudio: quadrispace, quadricast, cruzeiro, aulas, lareira, vitrine, externas, cozinha-space, cozinha-pri (ou o id)
+     ver: podcast, aulas, cenarios, gastronomia (só filtra a lista de estúdios) */
+  (function () {
+    var q; try { q = new URLSearchParams(location.search); } catch (x) { return; }
+    var AL = { quadrispace: 'qspace', space: 'qspace', quadricast: 'qcpod', podcast: 'qcpod', cruzeiro: 'cruzeiro', aulas: 'qcaulas', lives: 'qcaulas', lareira: 'lareira', vitrine: 'vitrine', externas: 'externas', jardim: 'externas', 'cozinha-space': 'spacecozinha', 'cozinha-pri': 'cozinha', cozinha: 'cozinha' };
+    var VER = { podcast: 'Podcast e videocast', aulas: 'Aulas, cursos e lives', cenarios: 'Cenários', gastronomia: 'Gastronomia' };
+    function lim(v) { return (v || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-'); }
+    var es = lim(q.get('estudio')), id = AL[es] || es, h = parseInt(q.get('horas'), 10);
+    if (VER[lim(q.get('ver'))]) S.grupo = VER[lim(q.get('ver'))];
+    if (q.get('nome')) S.form.nome = q.get('nome').slice(0, 80);
+    if (q.get('whats')) S.form.whatsapp = q.get('whats').replace(/[^\d()+ -]/g, '').slice(0, 20);
+    if (q.get('empresa')) S.form.empresa = q.get('empresa').slice(0, 80);
+    for (var i = 0; i < ESPACOS.length; i++) if (ESPACOS[i].id === id) { S.esp = id; S.step = 2; S.grupo = ESPACOS[i].grupo; }
+    if ([2, 4, 6, 8].indexOf(h) >= 0 && !(soNoite(E()) && h > 6)) S.dur = h * 60;
+    if (S.esp && /aulas|lives/.test(S.esp + es)) S.form.tipo = 'Aula ou curso';
+  })();
+
   /* ---------- pedaços ---------- */
   function stepper() {
     var e = E();
@@ -411,4 +429,5 @@
   root.addEventListener('submit', function (ev) { ev.preventDefault(); send(); });
 
   render();
+  if (S.esp) setTimeout(function () { root.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
 })();
