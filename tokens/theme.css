@@ -826,3 +826,7 @@ img { max-width: 100%; display: block; }
 .qa-cal-lg i.livre { background: rgba(155,195,29,.2); border: 1px solid rgba(155,195,29,.55); }
 .qa-cal-lg i.cheio { background: rgba(255,1,52,.1); border: 1px solid rgba(255,1,52,.25); }
 .qa-cal-lg i.ex { border: 1px dashed #7EA314; }
+/* topo da home: filme dos estúdios (no celular aparece antes do título) */
+.qs-viewfinder-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 991.98px) { .qs-hero .qs-viewfinder-screen { aspect-ratio: 4 / 3; } }
+@media (max-width: 991.98px) { .qs-hero .row > .order-first { order: -1; margin-bottom: 36px; } }
