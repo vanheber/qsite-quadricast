@@ -44,6 +44,6 @@
   },
   "agenda": {
     "responsavel": "Carolina Rodrigues",
-    "api": "desligada"
+    "api": "/agenda-api/index.php?r="
   }
 }

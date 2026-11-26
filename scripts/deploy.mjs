@@ -70,6 +70,22 @@ const cfg = {
   local: path.resolve(ROOT, env.FTP_LOCAL || 'public'),
 };
 
+/* ── API da agenda: vai junto em /agenda-api quando o config.php existe ─── */
+{
+  const api = path.join(ROOT, 'servidor', 'agenda-api');
+  const conf = path.join(api, 'config.php');
+  if (fs.existsSync(conf) && fs.existsSync(cfg.local)) {
+    const dest = path.join(cfg.local, 'agenda-api');
+    fs.rmSync(dest, { recursive: true, force: true });
+    fs.mkdirSync(path.join(dest, 'dados'), { recursive: true });
+    for (const f of ['index.php', 'nucleo.php', 'shim.php', 'config.php', '.htaccess']) {
+      if (fs.existsSync(path.join(api, f))) fs.copyFileSync(path.join(api, f), path.join(dest, f));
+    }
+    if (fs.existsSync(path.join(api, 'dados', '.htaccess'))) fs.copyFileSync(path.join(api, 'dados', '.htaccess'), path.join(dest, 'dados', '.htaccess'));
+    console.log('  agenda    API incluída em /agenda-api (config.php encontrado)');
+  }
+}
+
 const faltando = [
   !cfg.host && 'FTP_HOST',
   !cfg.user && 'FTP_USER',
@@ -173,6 +189,7 @@ const script = [
     '--parallel=4',
     '--exclude-glob _audit.html',
     '--exclude-glob contrast-report.json',
+    '--exclude-glob agenda-api/dados/*.json*',
     DRY ? '--dry-run' : '',
     aspas(cfg.local),
     '.',
