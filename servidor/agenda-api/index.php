@@ -1,6 +1,20 @@
 <?php
 /* API da Agenda Quadricast (sem WordPress).
    Rotas: ?r=/espacos · ?r=/disponibilidade&espaco=ID&duracao=120 · ?r=/reserva (POST) */
+/* Diagnóstico: erro fatal vira JSON curto (sem dados secretos) e ?r=/ping mostra o ambiente. */
+ini_set('display_errors', '0');
+register_shutdown_function(function () {
+    $e = error_get_last();
+    if ($e && in_array($e['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
+        if (!headers_sent()) { http_response_code(500); header('Content-Type: application/json; charset=utf-8'); }
+        echo json_encode(['erro' => $e['message'], 'arquivo' => basename($e['file']), 'linha' => $e['line'], 'php' => PHP_VERSION], JSON_UNESCAPED_UNICODE);
+    }
+});
+if (($_GET['r'] ?? '') === '/ping' || ($_GET['r'] ?? '') === 'ping') {
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['php' => PHP_VERSION, 'mbstring' => extension_loaded('mbstring'), 'curl' => extension_loaded('curl'), 'url_fopen' => (bool) ini_get('allow_url_fopen'), 'dados_gravavel' => is_writable(__DIR__ . '/dados'), 'config' => is_file(__DIR__ . '/config.php')]);
+    exit;
+}
 require __DIR__ . '/shim.php';
 require __DIR__ . '/nucleo.php';
 

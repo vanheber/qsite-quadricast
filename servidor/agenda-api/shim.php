@@ -94,8 +94,12 @@ class WP_REST_Request implements ArrayAccess {
     function __construct($q, $j) { $this->q = $q; $this->j = $j; }
     function get_json_params() { return $this->j; }
     function get_params() { return array_merge($this->q, $this->j ?: []); }
-    #[\ReturnTypeWillChange] function offsetGet($k) { return $this->q[$k] ?? ($this->j[$k] ?? null); }
-    #[\ReturnTypeWillChange] function offsetExists($k) { return isset($this->q[$k]) || isset($this->j[$k]); }
-    #[\ReturnTypeWillChange] function offsetSet($k, $v) {}
-    #[\ReturnTypeWillChange] function offsetUnset($k) {}
+    #[\ReturnTypeWillChange]
+    function offsetGet($k) { return $this->q[$k] ?? ($this->j[$k] ?? null); }
+    #[\ReturnTypeWillChange]
+    function offsetExists($k) { return isset($this->q[$k]) || isset($this->j[$k]); }
+    #[\ReturnTypeWillChange]
+    function offsetSet($k, $v) {}
+    #[\ReturnTypeWillChange]
+    function offsetUnset($k) {}
 }
