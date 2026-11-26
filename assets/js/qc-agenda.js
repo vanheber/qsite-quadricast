@@ -42,7 +42,7 @@
   ];
   /* fotos de cada estúdio (assets/img/agenda/ID-N.webp) */
   var NFOTOS = { qspace: 5, qcpod: 3, cruzeiro: 8, qcaulas: 2, lareira: 4, vitrine: 4, externas: 5, spacecozinha: 4, cozinha: 3, __externo: 9 };
-  function fotos(id) { var n = NFOTOS[id] || 0, out = []; for (var i = 1; i <= n; i++) out.push(IMG + id + '-' + i + '.webp'); return out; }
+  function fotos(id) { var n = NFOTOS[id] || 0, out = []; for (var i = 1; i <= n; i++) out.push(IMG + id.replace(/^__/, '') + '-' + i + '.webp'); return out; }
   var SERVICOS = [
     ['Vídeos institucionais', 'A partir de R$ 2.450', 'a partir de R$ 2.205'],
     ['Vídeos de treinamento', 'A partir de R$ 250 por aula de até 15 min', 'a partir de R$ 225'],
@@ -137,7 +137,7 @@
   }
 
   /* ---------- estado ---------- */
-  var S = { step: 1, grupo: 'Todos', esp: null, dur: 120, dia: null, hora: null, form: { tipo: 'Podcast', producao: 'Produção completa', pessoas: '2' }, erro: '', bad: '', done: null, precos: false, evento: false, fx: 0, livres: {}, carregando: '', apiFalhou: false, gal: null, gi: 0, enviando: false, viaApi: false };
+  var S = { step: 1, grupo: 'Todos', esp: null, dur: 120, dia: null, hora: null, form: { tipo: 'Podcast', producao: 'Produção completa', pessoas: '2' }, erro: '', bad: '', done: null, precos: false, evento: false, fx: 0, livres: {}, carregando: '', apiFalhou: false, gal: null, gi: 0, enviando: false, viaApi: false, nivel: 'a', ver: null, vi: 0, mes: null, per: null };
 
   /* link direto (WhatsApp): /agenda/?estudio=quadricast&horas=2&nome=Ana&whats=15999999999
      estudio: quadrispace, quadricast, cruzeiro, aulas, lareira, vitrine, externas, cozinha-space, cozinha-pri (ou o id)
@@ -148,7 +148,7 @@
     var VER = { podcast: 'Podcast e videocast', aulas: 'Aulas, cursos e lives', cenarios: 'Cenários', gastronomia: 'Gastronomia' };
     function lim(v) { return (v || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-'); }
     var es = lim(q.get('estudio')), id = AL[es] || es, h = parseInt(q.get('horas'), 10);
-    if (VER[lim(q.get('ver'))]) S.grupo = VER[lim(q.get('ver'))];
+    if (VER[lim(q.get('ver'))]) { S.grupo = VER[lim(q.get('ver'))]; S.nivel = 'b'; }
     if (q.get('nome')) S.form.nome = q.get('nome').slice(0, 80);
     if (q.get('whats')) S.form.whatsapp = q.get('whats').replace(/[^\d()+ -]/g, '').slice(0, 20);
     if (q.get('empresa')) S.form.empresa = q.get('empresa').slice(0, 80);
@@ -167,61 +167,93 @@
     }).join('<i class="ln" aria-hidden="true"></i>') + '</nav>';
   }
 
+  /* ---------- etapa 1: tipo > estúdios > página do estúdio ---------- */
+  function capa(id) { return fotos(id)[0] || ''; }
+  function doGrupo(g) { return ESPACOS.filter(function (e) { return e.grupo === g; }); }
+  function V() { for (var i = 0; i < ESPACOS.length; i++) if (ESPACOS[i].id === S.ver) return ESPACOS[i]; return null; }
   function step1() {
-    var list = ESPACOS.filter(function (e) { return S.grupo === 'Todos' || e.grupo === S.grupo; });
-    var h = '<div class="qa-fwrap"><button type="button" class="qa-fnav p" data-fscroll="-1" aria-label="Ver tipos anteriores" hidden>' + I.l + '</button>' +
-      '<div class="qa-seg qa-filt" role="tablist" aria-label="Tipo de gravação">' + GRUPOS.map(function (g) {
-        return '<button type="button" role="tab" aria-selected="' + (S.grupo === g[0]) + '" data-grupo="' + esc(g[0]) + '" class="' + (S.grupo === g[0] ? 'on' : '') + '">' + esc(g[1]) + '</button>';
-      }).join('') + '</div><button type="button" class="qa-fnav n" data-fscroll="1" aria-label="Ver mais tipos" hidden>' + I.r + '</button></div>';
-    h += '<div class="qa-list" role="radiogroup" aria-label="Estúdios">' + list.map(function (e) {
-      var t = tagTxt(e), on = S.esp === e.id;
-      return '<button type="button" role="radio" aria-checked="' + on + '" class="qa-st' + (on ? ' on' : '') + '" data-esp="' + esc(e.id) + '">' +
-        '<span class="qa-art has-foto g-' + (e.grupo === 'Gastronomia' ? 'gastro' : e.grupo === 'Aulas, cursos e lives' ? 'aulas' : 'pod') + '" style="background-image:url(\'' + fotos(e.id)[0] + '\')"><span class="tg ' + t[0] + '">' + t[1] + '</span><span class="qa-nf">' + I.img + fotos(e.id).length + ' fotos</span></span>' +
-        '<span class="qa-st-b"><span class="nm">' + esc(e.nome) + '</span><span class="lc">' + I.pin + esc(e.local) + '</span><span class="ds">' + esc(e.desc) + '</span>' +
-        '<span class="cta">' + (on ? 'Escolhido' : 'Escolher este') + I.r + '</span></span></button>';
-    }).join('');
-    if (S.grupo === 'Todos' || S.grupo === 'Eventos') {
-      h += '<button type="button" class="qa-st qa-ext" data-evento="1"><span class="qa-art has-foto g-ev" style="background-image:url(\'' + fotos('__externo')[0] + '\')"><span class="tg soon">Orçamento sob medida</span><span class="qa-nf">' + I.img + fotos('__externo').length + ' fotos</span></span>' +
-        '<span class="qa-st-b"><span class="nm">Gravação no seu evento</span><span class="lc">' + I.pin + 'Onde você estiver</span><span class="ds">Podcast ao vivo, coberturas e transmissões em congressos, feiras, shoppings e empresas.</span><span class="cta">Pedir orçamento' + I.r + '</span></span></button>';
-    }
-    return h + '</div>';
+    if (S.nivel === 'c' && V()) return step1c();
+    if (S.nivel === 'b') return step1b();
+    return '<div class="qa-cats">' + GRUPOS.filter(function (g) { return g[0] !== 'Todos'; }).map(function (g) {
+      var ev = g[0] === 'Eventos', lst = ev ? [] : doGrupo(g[0]), img = ev ? capa('__externo') : capa(lst[0].id);
+      return '<button type="button" class="qa-cat" ' + (ev ? 'data-evento="1"' : 'data-cat="' + esc(g[0]) + '"') + '>' +
+        '<span class="ph" style="background-image:url(\'' + img + '\')"></span>' +
+        '<span class="tx"><span class="ic">' + (I.g[g[0]] || I.mic) + '</span><b>' + esc(ev ? 'No seu evento' : g[0]) + '</b><small>' + (ev ? 'A Quadricast vai até você' : lst.length + (lst.length > 1 ? ' estúdios' : ' estúdio')) + '</small></span>' +
+        '<span class="go">' + I.r + '</span></button>';
+    }).join('') + '</div>';
+  }
+  function step1b() {
+    return '<div class="qa-list">' + doGrupo(S.grupo).map(function (e) {
+      var t = tagTxt(e);
+      return '<button type="button" class="qa-st" data-ver="' + esc(e.id) + '">' +
+        '<span class="qa-art has-foto" style="background-image:url(\'' + capa(e.id) + '\')"><span class="tg ' + t[0] + '">' + t[1] + '</span><span class="qa-nf">' + I.img + fotos(e.id).length + ' fotos</span></span>' +
+        '<span class="qa-st-b"><span class="nm">' + esc(e.nome) + '</span><span class="lc">' + I.pin + esc(e.local) + '</span>' +
+        '<span class="cta">Ver o estúdio' + I.r + '</span></span></button>';
+    }).join('') + '</div>';
+  }
+  function step1c() {
+    var e = V(), fs = fotos(e.id), n = fs.length, i = Math.max(0, Math.min(S.vi, n - 1)), t = tagTxt(e);
+    var h = '<div class="qa-vw">' +
+      '<div class="qa-vw-ph" data-swipe="vi"><img src="' + fs[i] + '" alt="' + esc(e.nome) + ', foto ' + (i + 1) + '">' +
+      '<span class="cnt">' + (i + 1) + ' / ' + n + '</span>' +
+      '<button type="button" class="zoom" data-gal="' + esc(e.id) + '" aria-label="Ver em tela cheia">' + I.img + '</button>' +
+      (n > 1 ? '<button type="button" class="nav p" data-vi="' + ((i - 1 + n) % n) + '" aria-label="Foto anterior">' + I.l + '</button><button type="button" class="nav n" data-vi="' + ((i + 1) % n) + '" aria-label="Próxima foto">' + I.r + '</button>' : '') + '</div>' +
+      (n > 1 ? '<div class="qa-vw-th">' + fs.map(function (f, k) { return '<button type="button" data-vi="' + k + '" class="' + (k === i ? 'on' : '') + '" aria-label="Foto ' + (k + 1) + '"><img src="' + f + '" alt="" loading="lazy"></button>'; }).join('') + '</div>' : '') +
+      '<div class="qa-vw-tx"><span class="tg ' + t[0] + '">' + t[1] + '</span><h4>' + esc(e.nome) + '</h4><span class="lc">' + I.pin + esc(e.local) + '</span><p>' + esc(e.desc) + '</p>' +
+      '<ul>' + (e.fixo ? ['Set pronto, multicâmera', 'Iluminação e áudio profissionais', 'Até 4 pessoas', 'Reserva em blocos de 2h'] : soNoite(e) ? ['Cenário montado só para você', 'Gravação a partir das 18h', 'Equipe chega 1h antes'] : cenario(e) ? ['Cenário montado só para você', 'Pode ser de dia', 'Equipe chega 1h antes'] : ['Estúdio equipado', 'Operador da Quadricast', 'Reserva em blocos de 2h']).map(function (x) { return '<li>' + I.ck + x + '</li>'; }).join('') + '</ul></div>' +
+      '<div class="qa-vw-acts"><button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-pick="' + esc(e.id) + '">Reservar este estúdio</button>' +
+      '<button type="button" class="qs-btn qs-btn-outline-dark qs-btn--block" data-back="1">Ver outros estúdios</button></div></div>';
+    return h;
   }
 
   function qh(n, ok, t) { return '<header class="qa-qh"><span class="n' + (ok ? ' ok' : '') + '">' + (ok ? I.ck : n) + '</span><b>' + t + '</b></header>'; }
 
+  /* ---------- etapa 2: duração > calendário > período > horário ---------- */
+  var PERIODOS = [['Manhã', 'das 8h às 12h', 0, 12], ['Tarde', 'das 12h às 18h', 12, 18], ['Noite', 'das 18h à meia-noite', 18, 24]];
+  function doPer(p) { var r = PERIODOS.filter(function (x) { return x[0] === p; })[0]; return horarios().filter(function (x) { var hh = +x.split(':')[0]; return hh >= r[2] && hh < r[3]; }); }
+  function meses() { var ds = dias(), out = []; ds.forEach(function (x) { var m = x.k.slice(0, 7); if (out.indexOf(m) < 0) out.push(m); }); return out; }
+  function calendario() {
+    var ds = dias(), ok = {}, ms = meses(); ds.forEach(function (x) { ok[x.k] = x.ok; });
+    if (S.mes === null) { var f1 = ds.filter(function (x) { return x.ok; })[0]; S.mes = f1 ? Math.max(0, ms.indexOf(f1.k.slice(0, 7))) : 0; }
+    var mi = Math.max(0, Math.min(S.mes, ms.length - 1)), p = ms[mi].split('-'), y = +p[0], m = +p[1] - 1;
+    var first = new Date(y, m, 1, 12).getDay(), nd = new Date(y, m + 1, 0).getDate(), cells = '';
+    for (var b = 0; b < first; b++) cells += '<span></span>';
+    for (var d = 1; d <= nd; d++) {
+      var k = y + '-' + pad(m + 1) + '-' + pad(d), dentro = k in ok, livre = dentro && ok[k], ex = diaExtra(k);
+      cells += '<button type="button" class="' + (k === S.dia ? 'on' : '') + (ex && livre ? ' ex' : '') + '" data-dia="' + k + '"' + (livre ? '' : ' disabled') + ' aria-label="' + esc(diaTxt(k)) + (livre ? '' : ', indisponível') + '">' + d + '</button>';
+    }
+    return '<div class="qa-cal"><div class="qa-cal-h"><button type="button" data-mes="' + (mi - 1) + '"' + (mi > 0 ? '' : ' disabled') + ' aria-label="Mês anterior">' + I.l + '</button><b>' + MES[m] + ' ' + y + '</b><button type="button" data-mes="' + (mi + 1) + '"' + (mi < ms.length - 1 ? '' : ' disabled') + ' aria-label="Próximo mês">' + I.r + '</button></div>' +
+      '<div class="qa-cal-w">' + ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div>' +
+      '<div class="qa-cal-g" role="group" aria-label="Dias de ' + MES[m] + '">' + cells + '</div>' +
+      '<p class="qa-cal-lg"><i class="ex"></i>Fins de semana e feriados: +30%</p></div>';
+  }
   function step2() {
     var e = E(), h = '';
-    h += '<div class="qa-sel"><button type="button" class="ic qa-sel-foto" data-gal="' + esc(e.id) + '" style="background-image:url(\'' + fotos(e.id)[0] + '\')" aria-label="Ver fotos de ' + esc(e.nome) + '">' + I.img + '</button><span class="tx"><small>Estúdio escolhido</small><b>' + esc(e.nome) + '</b><span>' + esc(e.local) + '</span></span><button type="button" data-goto="1">Trocar</button></div>';
+    h += '<div class="qa-sel"><button type="button" class="ic qa-sel-foto" data-gal="' + esc(e.id) + '" style="background-image:url(\'' + capa(e.id) + '\')" aria-label="Ver fotos de ' + esc(e.nome) + '">' + I.img + '</button><span class="tx"><small>Estúdio escolhido</small><b>' + esc(e.nome) + '</b><span>' + esc(e.local) + '</span></span><button type="button" data-goto="1">Trocar</button></div>';
     h += '<section class="qa-q">' + qh(1, true, 'Quanto tempo vai gravar?') + '<div class="qa-seg dur" role="radiogroup">' + DUR.map(function (x) {
       var off = soNoite(e) && x.m > 360;
-      return '<button type="button" role="radio" aria-checked="' + (S.dur === x.m) + '" data-dur="' + x.m + '" class="' + (S.dur === x.m ? 'on' : '') + '"' + (off ? ' disabled title="Neste cenário a gravação vai das 18h à meia-noite"' : '') + '><b>' + x.t + '</b><small>' + x.s + '</small></button>';
-    }).join('') + '</div>' + (soNoite(e) ? '<p class="qa-qsub">Neste cenário a equipe monta o set a partir das 17h e a gravação começa às 18h.</p>' : cenario(e) ? '<p class="qa-qsub">As Externas podem ser reservadas de dia. A equipe chega 1h antes para montar o set.</p>' : '') + '</section>';
-
-    var ds = dias(), cur = parse(S.dia || ds[0].k);
-    h += '<section class="qa-q">' + qh(2, !!S.dia, 'Escolha o dia') +
-      '<div class="qa-mes"><b data-mes>' + MES[cur.getMonth()] + ' ' + cur.getFullYear() + '</b><span class="qa-arrows"><button type="button" data-scroll="-1" aria-label="Dias anteriores">' + I.l + '</button><button type="button" data-scroll="1" aria-label="Próximos dias">' + I.r + '</button></span></div>' +
-      '<div class="qa-strip" role="radiogroup" aria-label="Dias">' + ds.map(function (x) {
-        var d = parse(x.k), ex = diaExtra(x.k);
-        return '<button type="button" role="radio" aria-checked="' + (x.k === S.dia) + '" class="qa-d' + (x.k === S.dia ? ' on' : '') + (ex ? ' ex' : '') + '" data-dia="' + x.k + '"' + (x.ok ? '' : ' disabled') + ' aria-label="' + esc(diaTxt(x.k)) + (ex ? ', ' + ex : '') + '"><span class="w">' + WD[d.getDay()] + '</span><span class="n">' + d.getDate() + '</span><span class="m">' + MES[d.getMonth()].slice(0, 3) + '</span></button>';
-      }).join('') + '</div></section>';
-
-    h += '<section class="qa-q">' + qh(3, !!S.hora, 'Horário de início');
-    if (S.aviso) { h += '<div class="qa-err" role="alert">' + esc(S.aviso) + '</div>'; S.aviso = ''; }
-    if (API && !S.apiFalhou && !livresAgora()) h += '<div class="qa-none">Consultando os horários livres…</div>';
-    else if (!S.dia) h += '<div class="qa-none">Escolha um dia para ver os horários.</div>';
-    else if (!horarios().length) h += '<div class="qa-none">Sem horários livres neste dia. Escolha outro dia ou outra duração.</div>';
-    else {
-      var per = { 'Manhã': [], 'Tarde': [], 'Noite': [] };
-      horarios().forEach(function (x) { var hh = +x.split(':')[0]; (hh < 12 ? per['Manhã'] : hh < 18 ? per['Tarde'] : per['Noite']).push(x); });
-      if (diaExtra(S.dia)) h += '<p class="qa-qsub"><b>' + diaExtra(S.dia) + ':</b> acréscimo de 30% em todos os horários deste dia.</p>';
-      h += Object.keys(per).filter(function (p) { return per[p].length; }).map(function (p) {
-        return '<div class="qa-per"><span class="pl">' + p + '</span><div class="qa-slots" role="radiogroup" aria-label="' + p + '">' + per[p].map(function (x) {
-          return '<button type="button" role="radio" aria-checked="' + (S.hora === x) + '" class="qa-sl' + (S.hora === x ? ' on' : '') + '" data-hora="' + x + '"><b>' + x + '</b><small>até ' + plus(x, S.dur) + '</small>' + (!diaExtra(S.dia) && noturno(x) ? '<i class="nt">+30%</i>' : '') + '</button>';
-        }).join('') + '</div></div>';
-      }).join('');
-    }
+      return '<button type="button" role="radio" aria-checked="' + (S.dur === x.m) + '" data-dur="' + x.m + '" class="' + (S.dur === x.m ? 'on' : '') + '"' + (off ? ' disabled' : '') + '><b>' + x.t + '</b><small>' + x.s + '</small></button>';
+    }).join('') + '</div></section>';
+    h += '<section class="qa-q">' + qh(2, !!S.dia, 'Escolha o dia');
+    if (API && !S.apiFalhou && !livresAgora()) h += '<div class="qa-none">Consultando os dias livres…</div>';
+    else h += calendario();
     h += '</section>';
-    h += '<p class="qa-note">' + I.info + '<span>' + (livresAgora() ? 'Só aparecem os horários livres. Ao enviar, o horário fica guardado para você por 48h e ' + esc(PRIMEIRO) + ' confirma pelo WhatsApp.' : 'Você escolhe o horário desejado e ' + esc(PRIMEIRO) + ' confirma a disponibilidade pelo WhatsApp.') + ' Montagem e desmontagem não contam no seu tempo. Gravações a partir das 18h, nos fins de semana e feriados têm acréscimo de 30%. Pedidos com no mínimo 48 horas de antecedência. <a href="#" data-precos="1">Ver valores</a></span></p>';
+    if (S.aviso) { h += '<div class="qa-err" role="alert">' + esc(S.aviso) + '</div>'; S.aviso = ''; }
+    if (S.dia) {
+      h += '<section class="qa-q" id="qa-per">' + qh(3, !!S.per, 'Manhã, tarde ou noite?') + '<p class="qa-qsub">' + esc(diaTxt(S.dia)) + (diaExtra(S.dia) ? ' · <b>' + diaExtra(S.dia) + ': +30%</b>' : '') + '</p>';
+      if (!horarios().length) h += '<div class="qa-none">Sem horários livres neste dia. Escolha outro dia ou outra duração.</div>';
+      else h += '<div class="qa-pers">' + PERIODOS.map(function (p) {
+        var n = doPer(p[0]).length;
+        return '<button type="button" data-per="' + p[0] + '" class="' + (S.per === p[0] ? 'on' : '') + '"' + (n ? '' : ' disabled') + '><b>' + p[0] + '</b><small>' + p[1] + '</small><em>' + (n ? n + (n > 1 ? ' horários' : ' horário') : 'Sem horários') + (p[0] === 'Noite' && n && !diaExtra(S.dia) ? ' · +30%' : '') + '</em></button>';
+      }).join('') + '</div>';
+      h += '</section>';
+    }
+    if (S.dia && S.per && doPer(S.per).length) {
+      h += '<section class="qa-q" id="qa-hr">' + qh(4, !!S.hora, 'Horário de início') + '<div class="qa-slots" role="radiogroup">' + doPer(S.per).map(function (x) {
+        return '<button type="button" role="radio" aria-checked="' + (S.hora === x) + '" class="qa-sl' + (S.hora === x ? ' on' : '') + '" data-hora="' + x + '"><b>' + x + '</b><small>até ' + plus(x, S.dur) + '</small></button>';
+      }).join('') + '</div></section>';
+    }
+    h += '<p class="qa-note">' + I.info + '<span>' + (livresAgora() ? 'Só aparecem os horários livres. Ao enviar, o horário fica guardado por 48h e ' + esc(PRIMEIRO) + ' confirma pelo WhatsApp.' : esc(PRIMEIRO) + ' confirma a disponibilidade pelo WhatsApp.') + ' Pedidos com no mínimo 48h de antecedência. <a href="#" data-precos="1">Ver valores</a></span></p>';
     return h;
   }
 
@@ -251,13 +283,14 @@
       '<div class="qa-tk-cta">' + mainBtn() + '<p class="qa-help"><a href="#" data-precos="1">Ver tabela de valores</a></p></div>';
   }
   function mainBtn() {
+    if (S.step === 1 && S.nivel === 'c' && V()) return '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-pick="' + esc(S.ver) + '">Reservar este estúdio</button>';
     if (S.step === 1) return '<button type="button" class="qs-btn ' + (S.esp ? 'qs-btn-primary' : 'qs-btn-outline-dark') + ' qs-btn--block" data-next="1"' + (S.esp ? '' : ' disabled') + '>' + (S.esp ? 'Escolher dia e horário' : 'Escolha um estúdio') + '</button>';
     if (S.step === 2) return '<button type="button" class="qs-btn ' + (S.hora ? 'qs-btn-primary' : 'qs-btn-outline-dark') + ' qs-btn--block" data-next="1"' + (S.hora ? '' : ' disabled') + '>' + (S.hora ? 'Continuar para seus dados' : 'Escolha o dia e o horário') + '</button>';
     if (API && !S.apiFalhou) return '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-send="1"' + (S.enviando ? ' disabled' : '') + '>' + (S.enviando ? 'Enviando…' : 'Enviar pedido de reserva') + '</button>';
     return '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-send="1">' + I.wa + 'Enviar pedido pelo WhatsApp</button>';
   }
   function dock() {
-    if (S.step === 1 && !S.esp) return '';
+    if (S.step === 1) return '';
     return '<div class="qa-dock">' + mainBtn() + '</div>';
   }
 
@@ -294,7 +327,7 @@
     var nome = e ? e.nome : 'Gravações em eventos', gi = Math.max(0, Math.min(S.gi, fs.length - 1));
     return '<div class="qa-sheet qa-gal" role="dialog" aria-modal="true" aria-label="Fotos de ' + esc(nome) + '"><div class="qa-sheet-bg" data-close="1"></div><div class="qa-sheet-in">' +
       '<div class="qa-sheet-h"><div><small>Fotos · ' + (gi + 1) + ' de ' + fs.length + '</small><b>' + esc(nome) + '</b></div><button type="button" class="qa-x" data-close="1" aria-label="Fechar">' + I.x + '</button></div>' +
-      '<div class="qa-gal-main"><img src="' + fs[gi] + '" alt="' + esc(nome) + ', foto ' + (gi + 1) + '">' +
+      '<div class="qa-gal-main" data-swipe="gal"><img src="' + fs[gi] + '" alt="' + esc(nome) + ', foto ' + (gi + 1) + '">' +
       (fs.length > 1 ? '<button type="button" class="qa-gal-nav p" data-gi="' + ((gi - 1 + fs.length) % fs.length) + '" aria-label="Foto anterior">' + I.l + '</button><button type="button" class="qa-gal-nav n" data-gi="' + ((gi + 1) % fs.length) + '" aria-label="Próxima foto">' + I.r + '</button>' : '') + '</div>' +
       '<div class="qa-gal-th">' + fs.map(function (f, i) { return '<button type="button" data-gi="' + i + '" class="' + (i === gi ? 'on' : '') + '" aria-label="Foto ' + (i + 1) + '"><img src="' + f + '" alt="" loading="lazy"></button>'; }).join('') + '</div>' +
       (e ? '<button type="button" class="qs-btn qs-btn-primary qs-btn--block" data-pick="' + esc(e.id) + '">Reservar este estúdio</button>' : '') + '</div></div>';
@@ -313,16 +346,16 @@
       '<button type="button" class="qs-btn qs-btn-outline-dark qs-btn--block" data-novo="1">Fazer outro pedido</button></div></section>';
   }
 
-  var TITLES = { 1: ['Onde você quer gravar?', 'Toque no estúdio para escolher.'], 2: ['Quando você quer gravar?', 'Responda as 3 perguntas, na ordem.'], 3: ['Para quem é a reserva?', 'Só faltam seus contatos. A confirmação chega pelo WhatsApp.'] };
+  var TITLES = { 1: ['Onde você quer gravar?', 'Toque no estúdio para escolher.'], 2: ['Quando você quer gravar?', 'Escolha a duração, o dia e o horário.'], 3: ['Para quem é a reserva?', 'Só faltam seus contatos. A confirmação chega pelo WhatsApp.'] };
 
   function render(stripToSel) {
     capture();
     var st = root.querySelector('.qa-strip'), sx = st ? st.scrollLeft : 0, body;
     if (S.done) body = done();
     else {
-      var t = TITLES[S.step];
+      var t = S.step === 1 ? (S.nivel === 'c' && V() ? [V().nome, 'Veja as fotos e reserve.'] : S.nivel === 'b' ? [S.grupo, 'Escolha o estúdio para ver as fotos.'] : ['Que tipo de gravação?', 'Toque para ver os estúdios.']) : TITLES[S.step];
       body = '<section class="qa-panel">' + stepper() +
-        '<div class="qa-head">' + (S.step > 1 ? '<button type="button" class="qa-back" data-back="1" aria-label="Voltar">' + I.l + '</button>' : '') + '<div><h3>' + t[0] + '</h3><p>' + t[1] + '</p></div></div>' +
+        '<div class="qa-head">' + (S.step > 1 || S.nivel !== 'a' ? '<button type="button" class="qa-back" data-back="1" aria-label="Voltar">' + I.l + '</button>' : '') + '<div><h3>' + t[0] + '</h3><p>' + t[1] + '</p></div></div>' +
         '<div class="qa-body">' + (S.step === 1 ? step1() : S.step === 2 ? step2() : step3()) + '</div></section>' +
         '<aside class="qa-ticket" aria-label="Resumo da reserva">' + ticket() + '</aside>';
     }
@@ -331,7 +364,7 @@
     root.classList.add('is-ready');
     filtSync();
     st = root.querySelector('.qa-strip');
-    if (st) {
+    if (st && 0) {
       var on = st.querySelector('.qa-d.on');
       if (stripToSel && on) st.scrollLeft = Math.max(0, on.offsetLeft - st.offsetLeft - 8); else st.scrollLeft = sx;
       st.addEventListener('scroll', mesLabel, { passive: true });
@@ -361,6 +394,7 @@
     if (f.elements.ok) S.form.ok = f.elements.ok.checked;
   }
   function go(n) {
+    if (n === 1 && S.step > 1 && E()) { S.grupo = E().grupo; S.ver = S.esp; S.vi = 0; S.nivel = 'c'; }
     S.step = n; S.erro = ''; S.bad = '';
     render(n === 2);
     var top = root.getBoundingClientRect().top;
@@ -409,23 +443,39 @@
     var d = b.dataset;
     if (d.gal) { capture(); S.gal = d.gal; S.gi = 0; S.precos = false; S.evento = false; render(); return; }
     if (d.gi) { S.gi = +d.gi; render(); return; }
-    if (d.pick) { S.gal = null; if (S.esp !== d.pick) { S.esp = d.pick; S.dia = null; S.hora = null; if (soNoite(E()) && S.dur > 360) S.dur = 120; } go(2); return; }
+    if (d.pick) { S.gal = null; if (S.esp !== d.pick) { S.esp = d.pick; S.dia = null; S.hora = null; S.per = null; S.mes = null; if (soNoite(E()) && S.dur > 360) S.dur = 120; } go(2); return; }
     if (d.grupo) { S.grupo = d.grupo; render(); return; }
     if (d.fscroll) { var ft = root.querySelector('.qa-filt'); if (ft) ft.scrollBy({ left: +d.fscroll * ft.clientWidth * 0.7, behavior: 'smooth' }); return; }
     if (d.esp) { if (S.esp !== d.esp) { S.esp = d.esp; S.dia = null; S.hora = null; if (soNoite(E()) && S.dur > 360) S.dur = 120; } render(); setTimeout(function () { go(2); }, 220); return; }
     if (d.next) { if (S.step === 1 && S.esp) go(2); else if (S.step === 2 && S.hora) go(3); return; }
-    if (d.back) { go(S.step - 1); return; }
+    if (d.back) { if (S.step === 1) { S.nivel = S.nivel === 'c' ? 'b' : 'a'; topo(); render(); } else go(S.step - 1); return; }
+    if (d.cat) { S.grupo = d.cat; S.nivel = 'b'; topo(); render(); return; }
+    if (d.ver) { S.ver = d.ver; S.vi = 0; S.nivel = 'c'; topo(); render(); return; }
+    if (d.vi) { S.vi = +d.vi; render(); return; }
+    if (d.mes) { S.mes = +d.mes; render(); return; }
+    if (d.per) { S.per = d.per; S.hora = null; render(); revela('qa-hr'); return; }
     if (d.goto) { go(+d.goto); return; }
-    if (d.dur) { S.dur = +d.dur; S.hora = null; if (livresAgora() && S.dia && !(livresAgora()[S.dia] || []).length) S.dia = null; render(); return; }
+    if (d.dur) { S.dur = +d.dur; S.hora = null; S.per = null; if (livresAgora() && S.dia && !(livresAgora()[S.dia] || []).length) S.dia = null; render(); return; }
     if (d.scroll) { var st = root.querySelector('.qa-strip'); if (st) st.scrollBy({ left: +d.scroll * st.clientWidth * 0.9, behavior: 'smooth' }); return; }
-    if (d.dia) { S.dia = d.dia; S.hora = null; render(); return; }
+    if (d.dia) { S.dia = d.dia; S.hora = null; S.per = null; var ps = PERIODOS.filter(function (p) { return doPer(p[0]).length; }); if (ps.length === 1) S.per = ps[0][0]; render(); revela(S.per ? 'qa-hr' : 'qa-per'); return; }
     if (d.hora) { S.hora = d.hora; render(); return; }
     if (d.pess) { capture(); S.form.pessoas = d.pess; render(); return; }
     if (d.send) { send(); return; }
-    if (d.novo) { S.done = null; S.hora = null; S.step = 1; render(); }
+    if (d.novo) { S.done = null; S.hora = null; S.per = null; S.step = 1; S.nivel = 'a'; render(); }
   });
+  function topo() { var t = root.getBoundingClientRect().top; if (t < 0) root.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  function revela(id) { setTimeout(function () { var el = document.getElementById(id); if (!el) return; var r = el.getBoundingClientRect(); if (r.bottom > window.innerHeight - 90) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 60); }
+  var tx0 = null;
+  root.addEventListener('touchstart', function (ev) { if (ev.target.closest('[data-swipe]')) tx0 = ev.touches[0].clientX; }, { passive: true });
+  root.addEventListener('touchend', function (ev) {
+    if (tx0 === null) return; var dx = ev.changedTouches[0].clientX - tx0, z = ev.target.closest('[data-swipe]'); tx0 = null;
+    if (!z || Math.abs(dx) < 40) return;
+    var k = z.getAttribute('data-swipe'), n = fotos(k === 'vi' ? S.ver : S.gal).length, st = dx < 0 ? 1 : n - 1;
+    if (k === 'vi') S.vi = (S.vi + st) % n; else S.gi = (S.gi + st) % n; render();
+  }, { passive: true });
   root.addEventListener('keydown', function (ev) {
     if (ev.key === 'Escape' && (S.precos || S.evento || S.gal)) { S.precos = false; S.evento = false; S.gal = null; render(); }
+    if (!S.gal && S.step === 1 && S.nivel === 'c' && (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft')) { var m = fotos(S.ver).length; S.vi = (S.vi + (ev.key === 'ArrowRight' ? 1 : m - 1)) % m; render(); }
     if (S.gal && (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft')) { var n = fotos(S.gal).length; S.gi = (S.gi + (ev.key === 'ArrowRight' ? 1 : n - 1)) % n; render(); }
   });
   root.addEventListener('submit', function (ev) { ev.preventDefault(); send(); });
